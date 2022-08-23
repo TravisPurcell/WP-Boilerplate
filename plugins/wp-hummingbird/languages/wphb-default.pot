@@ -2905,7 +2905,7 @@ msgstr ""
 #: admin/views/caching/page/meta-box.php:285
 msgid ""
 "If one of your pages or posts gets updated, turning this setting on will "
-"also regenerate all cached entertainments and taxonomies for all post types."
+"also regenerate all cached boilers and taxonomies for all post types."
 msgstr ""
 
 #: admin/views/caching/page/meta-box.php:295
@@ -7358,7 +7358,7 @@ msgid "Posts"
 msgstr ""
 
 #: core/modules/class-page-cache.php:588
-msgid "entertainments"
+msgid "boilers"
 msgstr ""
 
 #: core/modules/class-page-cache.php:589

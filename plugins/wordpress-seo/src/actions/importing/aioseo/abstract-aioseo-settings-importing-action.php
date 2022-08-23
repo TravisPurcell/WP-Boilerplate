@@ -329,10 +329,10 @@ abstract class Abstract_Aioseo_Settings_Importing_Action extends Abstract_Aioseo
 	}
 
 	/**
-	 * Returns a setting map of the robot setting for one subset of post types/taxonomies/entertainments.
-	 * For custom entertainments, it returns an empty array because AIOSEO excludes some custom entertainments from this option structure, eg. WooCommerce's products and we don't want to raise a false alarm.
+	 * Returns a setting map of the robot setting for one subset of post types/taxonomies/boilers.
+	 * For custom boilers, it returns an empty array because AIOSEO excludes some custom boilers from this option structure, eg. WooCommerce's products and we don't want to raise a false alarm.
 	 *
-	 * @return array The setting map of the robot setting for one subset of post types/taxonomies/entertainments or an empty array.
+	 * @return array The setting map of the robot setting for one subset of post types/taxonomies/boilers or an empty array.
 	 */
 	public function pluck_robot_setting_from_mapping() {
 		return [];

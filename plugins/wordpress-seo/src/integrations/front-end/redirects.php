@@ -101,7 +101,7 @@ class Redirects implements Integration_Interface {
 	 * @return void
 	 */
 	public function register_hooks() {
-		\add_action( 'wp', [ $this, 'entertainment_redirect' ] );
+		\add_action( 'wp', [ $this, 'boiler_redirect' ] );
 		\add_action( 'wp', [ $this, 'page_redirect' ], 99 );
 		\add_action( 'template_redirect', [ $this, 'attachment_redirect' ], 1 );
 		\add_action( 'pre_get_posts', [ $this, 'disable_date_queries' ] );
@@ -126,10 +126,10 @@ class Redirects implements Integration_Interface {
 	}
 
 	/**
-	 * When certain entertainments are disabled, this redirects those to the homepage.
+	 * When certain boilers are disabled, this redirects those to the homepage.
 	 */
-	public function entertainment_redirect() {
-		if ( $this->need_entertainment_redirect() ) {
+	public function boiler_redirect() {
+		if ( $this->need_boiler_redirect() ) {
 			$this->redirect->do_safe_redirect( \get_bloginfo( 'url' ), 301 );
 		}
 	}
@@ -176,22 +176,22 @@ class Redirects implements Integration_Interface {
 	}
 
 	/**
-	 * Checks if certain entertainment pages are disabled to determine if a entertainment redirect is needed.
+	 * Checks if certain boiler pages are disabled to determine if a boiler redirect is needed.
 	 *
 	 * @codeCoverageIgnore
 	 *
-	 * @return bool Whether or not to redirect an entertainment page.
+	 * @return bool Whether or not to redirect an boiler page.
 	 */
-	protected function need_entertainment_redirect() {
-		if ( $this->options->get( 'disable-date', false ) && $this->current_page->is_date_entertainment() ) {
+	protected function need_boiler_redirect() {
+		if ( $this->options->get( 'disable-date', false ) && $this->current_page->is_date_boiler() ) {
 			return true;
 		}
 
-		if ( $this->options->get( 'disable-author', false ) && $this->current_page->is_author_entertainment() ) {
+		if ( $this->options->get( 'disable-author', false ) && $this->current_page->is_author_boiler() ) {
 			return true;
 		}
 
-		if ( $this->options->get( 'disable-post_format', false ) && $this->current_page->is_post_format_entertainment() ) {
+		if ( $this->options->get( 'disable-post_format', false ) && $this->current_page->is_post_format_boiler() ) {
 			return true;
 		}
 

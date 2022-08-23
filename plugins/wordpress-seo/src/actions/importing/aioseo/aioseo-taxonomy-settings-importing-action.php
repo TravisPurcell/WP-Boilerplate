@@ -46,8 +46,8 @@ class Aioseo_Taxonomy_Settings_Importing_Action extends Abstract_Aioseo_Settings
 	 */
 	protected $replace_vars_edited_map = [
 		'#breadcrumb_404_error_format'         => '', // Empty string, as AIOSEO shows nothing for that tag.
-		'#breadcrumb_entertainment_post_type_format' => '', // Empty string, as AIOSEO shows nothing for that tag.
-		'#breadcrumb_entertainment_post_type_name'   => '', // Empty string, as AIOSEO shows nothing for that tag.
+		'#breadcrumb_boiler_post_type_format' => '', // Empty string, as AIOSEO shows nothing for that tag.
+		'#breadcrumb_boiler_post_type_name'   => '', // Empty string, as AIOSEO shows nothing for that tag.
 		'#breadcrumb_author_display_name'      => '', // Empty string, as AIOSEO shows nothing for that tag.
 		'#breadcrumb_author_first_name'        => '', // Empty string, as AIOSEO shows nothing for that tag.
 		'#breadcrumb_blog_page_title'          => '', // Empty string, as AIOSEO shows nothing for that tag.
@@ -97,7 +97,7 @@ class Aioseo_Taxonomy_Settings_Importing_Action extends Abstract_Aioseo_Settings
 		$this->build_mapping();
 
 		foreach ( $this->aioseo_options_to_yoast_map as $setting ) {
-			// Return the first entertainment setting map.
+			// Return the first boiler setting map.
 			if ( $setting['transform_method'] === 'import_noindex' && isset( $setting['subtype'] ) && $setting['subtype'] === 'category' ) {
 				return $setting;
 			}

@@ -462,12 +462,12 @@ wp_enqueue_style( 'wp-color-picker' );
 					</td>
 				</tr>
 				<tr>
-					<td><strong><?php esc_html_e( 'entertainments', 'wp-smushit' ); ?></strong></td>
-					<td>entertainment</td>
+					<td><strong><?php esc_html_e( 'boilers', 'wp-smushit' ); ?></strong></td>
+					<td>boiler</td>
 					<td>
-						<label class="sui-toggle" for="include-entertainment">
-							<input type='hidden' value='0' name='include[entertainment]' />
-							<input type="checkbox" name="include[entertainment]" id="include-entertainment" <?php checked( $settings['include']['entertainment'] ); ?>>
+						<label class="sui-toggle" for="include-boiler">
+							<input type='hidden' value='0' name='include[boiler]' />
+							<input type="checkbox" name="include[boiler]" id="include-boiler" <?php checked( $settings['include']['boiler'] ); ?>>
 							<span class="sui-toggle-slider"></span>
 						</label>
 					</td>

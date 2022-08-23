@@ -5,11 +5,11 @@ namespace Yoast\WP\SEO\Presentations;
 use Yoast\WP\SEO\Helpers\Pagination_Helper;
 
 /**
- * Class Indexable_Date_entertainment_Presentation.
+ * Class Indexable_Date_boiler_Presentation.
  *
  * Presentation object for indexables.
  */
-class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
+class Indexable_Date_boiler_Presentation extends Indexable_Presentation {
 
 	/**
 	 * Holds the Pagination_Helper instance.
@@ -19,7 +19,7 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 	protected $pagination;
 
 	/**
-	 * Indexable_Date_entertainment_Presentation constructor.
+	 * Indexable_Date_boiler_Presentation constructor.
 	 *
 	 * @param Pagination_Helper $pagination The pagination helper.
 	 */
@@ -33,9 +33,9 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 	 * @return string The canonical.
 	 */
 	public function generate_canonical() {
-		$canonical = $this->current_page->get_date_entertainment_permalink();
+		$canonical = $this->current_page->get_date_boiler_permalink();
 
-		$current_page = $this->pagination->get_current_entertainment_page_number();
+		$current_page = $this->pagination->get_current_boiler_page_number();
 		if ( $current_page > 1 ) {
 			return $this->pagination->get_paginated_url( $canonical, $current_page );
 		}
@@ -51,7 +51,7 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 	public function generate_robots() {
 		$robots = $this->get_base_robots();
 
-		if ( $this->options->get( 'noindex-entertainment-wpseo', false ) ) {
+		if ( $this->options->get( 'noindex-boiler-wpseo', false ) ) {
 			$robots['index'] = 'noindex';
 		}
 
@@ -68,7 +68,7 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 			return $this->model->title;
 		}
 
-		return $this->options->get_title_default( 'title-entertainment-wpseo' );
+		return $this->options->get_title_default( 'title-boiler-wpseo' );
 	}
 
 	/**
@@ -81,17 +81,17 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 			return '';
 		}
 
-		$current_page = \max( 1, $this->pagination->get_current_entertainment_page_number() );
+		$current_page = \max( 1, $this->pagination->get_current_boiler_page_number() );
 		// Check if there is a previous page.
 		if ( $current_page === 1 ) {
 			return '';
 		}
 		// Check if the previous page is the first page.
 		if ( $current_page === 2 ) {
-			return $this->current_page->get_date_entertainment_permalink();
+			return $this->current_page->get_date_boiler_permalink();
 		}
 
-		return $this->pagination->get_paginated_url( $this->current_page->get_date_entertainment_permalink(), ( $current_page - 1 ) );
+		return $this->pagination->get_paginated_url( $this->current_page->get_date_boiler_permalink(), ( $current_page - 1 ) );
 	}
 
 	/**
@@ -104,12 +104,12 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 			return '';
 		}
 
-		$current_page = \max( 1, $this->pagination->get_current_entertainment_page_number() );
-		if ( $this->pagination->get_number_of_entertainment_pages() <= $current_page ) {
+		$current_page = \max( 1, $this->pagination->get_current_boiler_page_number() );
+		if ( $this->pagination->get_number_of_boiler_pages() <= $current_page ) {
 			return '';
 		}
 
-		return $this->pagination->get_paginated_url( $this->current_page->get_date_entertainment_permalink(), ( $current_page + 1 ) );
+		return $this->pagination->get_paginated_url( $this->current_page->get_date_boiler_permalink(), ( $current_page + 1 ) );
 	}
 
 	/**
@@ -118,6 +118,6 @@ class Indexable_Date_entertainment_Presentation extends Indexable_Presentation {
 	 * @return string The open graph url.
 	 */
 	public function generate_open_graph_url() {
-		return $this->current_page->get_date_entertainment_permalink();
+		return $this->current_page->get_date_boiler_permalink();
 	}
 }

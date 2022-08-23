@@ -1854,7 +1854,7 @@ msgid "Page Link"
 msgstr "URL stranice"
 
 #: includes/fields/class-acf-field-page_link.php:165
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arhiva"
 
 #: includes/fields/class-acf-field-page_link.php:249,
@@ -1888,7 +1888,7 @@ msgid "All taxonomies"
 msgstr "Sve taksonomije"
 
 #: includes/fields/class-acf-field-page_link.php:494
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Omogući odabir arhive tipova"
 
 #: includes/fields/class-acf-field-page_link.php:506,
@@ -3751,7 +3751,7 @@ msgstr "Obavijest od nadogradnjama"
 #~ msgstr ""
 #~ "Nova funkcionalnost polja omogućuje premještanje polja i skupa polja"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Nova skupina ‘arhiva’ prilikom odabira polja page_link"
 
 #~ msgid "Better Options Pages"

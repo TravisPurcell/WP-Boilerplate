@@ -72,7 +72,7 @@ class WPSEO_Customizer {
 		$this->breadcrumbs_separator_setting();
 		$this->breadcrumbs_home_setting();
 		$this->breadcrumbs_prefix_setting();
-		$this->breadcrumbs_entertainmentprefix_setting();
+		$this->breadcrumbs_boilerprefix_setting();
 		$this->breadcrumbs_searchprefix_setting();
 		$this->breadcrumbs_404_setting();
 	}
@@ -161,12 +161,12 @@ class WPSEO_Customizer {
 	}
 
 	/**
-	 * Adds the breadcrumbs entertainment prefix text field.
+	 * Adds the breadcrumbs boiler prefix text field.
 	 */
-	private function breadcrumbs_entertainmentprefix_setting() {
-		$index        = 'breadcrumbs-entertainmentprefix';
+	private function breadcrumbs_boilerprefix_setting() {
+		$index        = 'breadcrumbs-boilerprefix';
 		$control_args = [
-			'label' => __( 'Prefix for entertainment pages:', 'wordpress-seo' ),
+			'label' => __( 'Prefix for boiler pages:', 'wordpress-seo' ),
 		];
 
 		$this->add_setting_and_control( $index, $control_args );

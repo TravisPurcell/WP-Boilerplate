@@ -3,7 +3,7 @@
 namespace Yoast\WP\SEO\Builders;
 
 use wpdb;
-use Yoast\WP\SEO\Helpers\Author_entertainment_Helper;
+use Yoast\WP\SEO\Helpers\Author_boiler_Helper;
 use Yoast\WP\SEO\Helpers\Post_Helper;
 use Yoast\WP\SEO\Models\Indexable;
 use Yoast\WP\SEO\Values\Indexables\Indexable_Builder_Versions;
@@ -18,11 +18,11 @@ class Indexable_Author_Builder {
 	use Indexable_Social_Image_Trait;
 
 	/**
-	 * The author entertainment helper.
+	 * The author boiler helper.
 	 *
-	 * @var Author_entertainment_Helper
+	 * @var Author_boiler_Helper
 	 */
-	private $author_entertainment;
+	private $author_boiler;
 
 	/**
 	 * The latest version of the Indexable_Author_Builder.
@@ -48,18 +48,18 @@ class Indexable_Author_Builder {
 	/**
 	 * Indexable_Author_Builder constructor.
 	 *
-	 * @param Author_entertainment_Helper      $author_entertainment The author entertainment helper.
+	 * @param Author_boiler_Helper      $author_boiler The author boiler helper.
 	 * @param Indexable_Builder_Versions $versions       The Indexable version manager.
 	 * @param Post_Helper                $post_helper    The post helper.
 	 * @param wpdb                       $wpdb           The WPDB instance.
 	 */
 	public function __construct(
-		Author_entertainment_Helper $author_entertainment,
+		Author_boiler_Helper $author_boiler,
 		Indexable_Builder_Versions $versions,
 		Post_Helper $post_helper,
 		wpdb $wpdb
 	) {
-		$this->author_entertainment = $author_entertainment;
+		$this->author_boiler = $author_boiler;
 		$this->version        = $versions->get_latest_version_for_type( 'user' );
 		$this->post_helper    = $post_helper;
 		$this->wpdb           = $wpdb;
@@ -84,11 +84,11 @@ class Indexable_Author_Builder {
 		$indexable->is_cornerstone         = false;
 		$indexable->is_robots_noindex      = ( $meta_data['wpseo_noindex_author'] === 'on' );
 		$indexable->is_robots_nofollow     = null;
-		$indexable->is_robots_noentertainment    = null;
+		$indexable->is_robots_noboiler    = null;
 		$indexable->is_robots_noimageindex = null;
 		$indexable->is_robots_nosnippet    = null;
 		$indexable->is_public              = ( $indexable->is_robots_noindex ) ? false : null;
-		$indexable->has_public_posts       = $this->author_entertainment->author_has_public_posts( $user_id );
+		$indexable->has_public_posts       = $this->author_boiler->author_has_public_posts( $user_id );
 		$indexable->blog_id                = \get_current_blog_id();
 
 		$this->reset_social_images( $indexable );

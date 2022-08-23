@@ -20,12 +20,12 @@ echo '<h3>' . esc_html( sprintf( __( 'Single %s settings', 'wordpress-seo' ), $w
 require __DIR__ . '/post_type/post-type.php';
 
 /**
- * Allow adding custom fields to the admin meta page, just before the entertainment settings - Content Types tab.
+ * Allow adding custom fields to the admin meta page, just before the boiler settings - Content Types tab.
  *
  * @param Yoast_Form $yform The Yoast_Form object.
  * @param string     $name  The post type name.
  */
-do_action( 'Yoast\WP\SEO\admin_post_types_beforeentertainment', $yform, $wpseo_post_type->name );
+do_action( 'Yoast\WP\SEO\admin_post_types_beforeboiler', $yform, $wpseo_post_type->name );
 
 if ( $wpseo_post_type->name === 'product' && YoastSEO()->helpers->woocommerce->is_active() ) {
 	require __DIR__ . '/post_type/woocommerce-shop-page.php';
@@ -33,41 +33,41 @@ if ( $wpseo_post_type->name === 'product' && YoastSEO()->helpers->woocommerce->i
 	return;
 }
 
-if ( WPSEO_Post_Type::has_entertainment( $wpseo_post_type ) ) {
+if ( WPSEO_Post_Type::has_boiler( $wpseo_post_type ) ) {
 	$plural_label = $wpseo_post_type->labels->name;
-	$entertainment_url  = get_post_type_entertainment_link( $wpseo_post_type->name );
-	$label        = '<a href="' . esc_url( $entertainment_url ) . '">' . esc_html( $plural_label ) . '</a>';
+	$boiler_url  = get_post_type_boiler_link( $wpseo_post_type->name );
+	$label        = '<a href="' . esc_url( $boiler_url ) . '">' . esc_html( $plural_label ) . '</a>';
 
 	/* translators: %s is the plural version of the post type's name. */
-	echo '<h3>' . esc_html( sprintf( __( '%s entertainment settings', 'wordpress-seo' ), $plural_label ) ) . '</h3>';
+	echo '<h3>' . esc_html( sprintf( __( '%s boiler settings', 'wordpress-seo' ), $plural_label ) ) . '</h3>';
 
 	echo '<div class="yoast-settings-section">';
 
-	$custom_post_type_entertainment_help = $view_utils->search_results_setting_help( $wpseo_post_type, 'entertainment' );
+	$custom_post_type_boiler_help = $view_utils->search_results_setting_help( $wpseo_post_type, 'boiler' );
 
 	$yform->index_switch(
-		'noindex-ptentertainment-' . $wpseo_post_type->name,
+		'noindex-ptboiler-' . $wpseo_post_type->name,
 		sprintf(
-			/* translators: %s expands to the post type's name with a link to the entertainment. */
-			esc_html__( 'the entertainment for %s', 'wordpress-seo' ),
+			/* translators: %s expands to the post type's name with a link to the boiler. */
+			esc_html__( 'the boiler for %s', 'wordpress-seo' ),
 			$label
 		),
-		$custom_post_type_entertainment_help->get_button_html() . $custom_post_type_entertainment_help->get_panel_html()
+		$custom_post_type_boiler_help->get_button_html() . $custom_post_type_boiler_help->get_panel_html()
 	);
 
 	echo '</div>';
 
 	echo '<div class="yoast-settings-section">';
 
-	$page_type = $recommended_replace_vars->determine_for_entertainment( $wpseo_post_type->name );
+	$page_type = $recommended_replace_vars->determine_for_boiler( $wpseo_post_type->name );
 
 	$editor = new WPSEO_Replacevar_Editor(
 		$yform,
 		[
-			'title'                 => 'title-ptentertainment-' . $wpseo_post_type->name,
-			'description'           => 'metadesc-ptentertainment-' . $wpseo_post_type->name,
-			'page_type_recommended' => $recommended_replace_vars->determine_for_entertainment( $wpseo_post_type->name ),
-			'page_type_specific'    => $editor_specific_replace_vars->determine_for_entertainment( $wpseo_post_type->name ),
+			'title'                 => 'title-ptboiler-' . $wpseo_post_type->name,
+			'description'           => 'metadesc-ptboiler-' . $wpseo_post_type->name,
+			'page_type_recommended' => $recommended_replace_vars->determine_for_boiler( $wpseo_post_type->name ),
+			'page_type_specific'    => $editor_specific_replace_vars->determine_for_boiler( $wpseo_post_type->name ),
 			'paper_style'           => false,
 		]
 	);
@@ -78,24 +78,24 @@ if ( WPSEO_Post_Type::has_entertainment( $wpseo_post_type ) ) {
 	if ( WPSEO_Options::get( 'breadcrumbs-enable' ) === true ) {
 		echo '<div class="yoast-settings-section">';
 
-		$yform->textinput_extra_content( 'bctitle-ptentertainment-' . $wpseo_post_type->name, __( 'Breadcrumbs title', 'wordpress-seo' ) );
+		$yform->textinput_extra_content( 'bctitle-ptboiler-' . $wpseo_post_type->name, __( 'Breadcrumbs title', 'wordpress-seo' ) );
 
 		echo '</div>';
 	}
 
 	/**
-	 * Allow adding custom fields to the admin meta page at the end of the entertainment settings for a post type - Content Types tab.
+	 * Allow adding custom fields to the admin meta page at the end of the boiler settings for a post type - Content Types tab.
 	 *
 	 * @param Yoast_Form $yform The Yoast_Form object.
 	 * @param string     $name  The post type name.
 	 */
-	do_action( 'Yoast\WP\SEO\admin_post_types_entertainment', $yform, $wpseo_post_type->name );
+	do_action( 'Yoast\WP\SEO\admin_post_types_boiler', $yform, $wpseo_post_type->name );
 }
 
 /**
  * Allow adding a custom checkboxes to the admin meta page - Post Types tab.
  *
- * @deprecated 16.3 Use the {@see 'Yoast\WP\SEO\admin_post_types_beforeentertainment'} action instead.
+ * @deprecated 16.3 Use the {@see 'Yoast\WP\SEO\admin_post_types_beforeboiler'} action instead.
  *
  * @param Yoast_Form $yform The Yoast_Form object.
  * @param string     $name  The post type name.
@@ -104,5 +104,5 @@ do_action_deprecated(
 	'wpseo_admin_page_meta_post_types',
 	[ $yform, $wpseo_post_type->name ],
 	'16.3',
-	'Yoast\WP\SEO\admin_post_types_beforeentertainment'
+	'Yoast\WP\SEO\admin_post_types_beforeboiler'
 );

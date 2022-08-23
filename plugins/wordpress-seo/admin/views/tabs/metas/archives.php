@@ -12,18 +12,18 @@ if ( ! defined( 'WPSEO_VERSION' ) ) {
 }
 
 // To improve readability, this tab has been divided into separate blocks, included below.
-require __DIR__ . '/entertainments/help.php';
+require __DIR__ . '/boilers/help.php';
 
-$wpseo_entertainments = [
+$wpseo_boilers = [
 	[
-		'title'     => esc_html__( 'Author entertainments', 'wordpress-seo' ),
-		'view_file' => 'paper-content/author-entertainment-settings.php',
-		'paper_id'  => 'settings-author-entertainments',
+		'title'     => esc_html__( 'Author boilers', 'wordpress-seo' ),
+		'view_file' => 'paper-content/author-boiler-settings.php',
+		'paper_id'  => 'settings-author-boilers',
 	],
 	[
-		'title'     => esc_html__( 'Date entertainments', 'wordpress-seo' ),
-		'view_file' => 'paper-content/date-entertainments-settings.php',
-		'paper_id'  => 'settings-date-entertainments',
+		'title'     => esc_html__( 'Date boilers', 'wordpress-seo' ),
+		'view_file' => 'paper-content/date-boilers-settings.php',
+		'paper_id'  => 'settings-date-boilers',
 	],
 	[
 		'title'     => esc_html__( 'Special pages', 'wordpress-seo' ),
@@ -35,19 +35,19 @@ $wpseo_entertainments = [
 $view_utils                   = new Yoast_View_Utils();
 $recommended_replace_vars     = new WPSEO_Admin_Recommended_Replace_Vars();
 $editor_specific_replace_vars = new WPSEO_Admin_Editor_Specific_Replace_Vars();
-$opengraph_disabled_alert     = $view_utils->generate_opengraph_disabled_alert( 'entertainments' );
+$opengraph_disabled_alert     = $view_utils->generate_opengraph_disabled_alert( 'boilers' );
 
 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Is correctly escaped in the generate_opengraph_disabled_alert() method.
 echo $opengraph_disabled_alert;
 
-foreach ( $wpseo_entertainments as $wpseo_entertainment_index => $wpseo_entertainment ) {
-	$wpseo_entertainment_presenter = new WPSEO_Paper_Presenter(
-		$wpseo_entertainment['title'],
-		__DIR__ . '/' . $wpseo_entertainment['view_file'],
+foreach ( $wpseo_boilers as $wpseo_boiler_index => $wpseo_boiler ) {
+	$wpseo_boiler_presenter = new WPSEO_Paper_Presenter(
+		$wpseo_boiler['title'],
+		__DIR__ . '/' . $wpseo_boiler['view_file'],
 		[
 			'collapsible'                  => true,
-			'expanded'                     => ( $wpseo_entertainment_index === 0 ),
-			'paper_id'                     => $wpseo_entertainment['paper_id'],
+			'expanded'                     => ( $wpseo_boiler_index === 0 ),
+			'paper_id'                     => $wpseo_boiler['paper_id'],
 			'recommended_replace_vars'     => $recommended_replace_vars,
 			'editor_specific_replace_vars' => $editor_specific_replace_vars,
 			'class'                        => 'search-appearance',
@@ -55,7 +55,7 @@ foreach ( $wpseo_entertainments as $wpseo_entertainment_index => $wpseo_entertai
 	);
 
 	// phpcs:ignore WordPress.Security.EscapeOutput -- get_output() output is properly escaped.
-	echo $wpseo_entertainment_presenter->get_output();
+	echo $wpseo_boiler_presenter->get_output();
 }
 
-unset( $wpseo_entertainments, $wpseo_entertainment_presenter, $wpseo_entertainment_index );
+unset( $wpseo_boilers, $wpseo_boiler_presenter, $wpseo_boiler_index );

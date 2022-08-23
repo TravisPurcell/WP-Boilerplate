@@ -334,7 +334,7 @@ From your WordPress dashboard
 * Fix - Fixed bug breaking Image field UI when displaying a scaled portrait attachment.
 * Fix - Fixed bug in Link field incorrectly treating the "Cancel" button as "Submit".
 * Fix - Fixed bug where a sub field within a collapsed Repeater row did not grow to the full available width.
-* Fix - Ensured all entertainment URLs shown in the Page Link field dropdown are unique.
+* Fix - Ensured all boiler URLs shown in the Page Link field dropdown are unique.
 * Fix - Fixed bug causing incorrect conditional logic settings on nested fields when duplicating a Field Group.
 * Fix - Fixed bug causing license activation issues with some password management browser extensions.
 * Dev - Major improvements to `ACF_Location` class.

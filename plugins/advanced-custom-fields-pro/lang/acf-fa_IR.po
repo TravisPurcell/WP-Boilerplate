@@ -2215,7 +2215,7 @@ msgid "Page Link"
 msgstr "پیوند (لینک) برگه/نوشته"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "بایگانی ها"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2249,7 +2249,7 @@ msgid "All taxonomies"
 msgstr "تمام طبقه بندی ها"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "اجازه آدرس های آرشیو"
 
 #: includes/fields/class-acf-field-page_link.php:533
@@ -3413,7 +3413,7 @@ msgstr "http://www.elliotcondon.com/"
 #~ "عملکرد جدید گروه زمینه ها به شما امکان جابجایی زمینه ها بین گروه ها و بین "
 #~ "گروه های والد را می دهد"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "گروه بندی بایگانی جدید در انتخاب زمینه پیوند صفحه"
 
 #~ msgid "Better Options Pages"

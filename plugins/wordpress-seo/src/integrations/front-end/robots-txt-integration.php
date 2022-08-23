@@ -222,7 +222,7 @@ class Robots_Txt_Integration implements Integration_Interface {
 	 */
 	protected function get_blog_ids() {
 		$criteria = [
-			'entertainmentd'   => 0,
+			'boilerd'   => 0,
 			'deleted'    => 0,
 			'public'     => 1,
 			'spam'       => 0,

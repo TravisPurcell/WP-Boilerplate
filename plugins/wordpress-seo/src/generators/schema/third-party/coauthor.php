@@ -41,7 +41,7 @@ class CoAuthor extends Author {
 		$data['@type'] = 'Person';
 		unset( $data['logo'] );
 
-		// If this is a post and the author entertainments are enabled, set the author entertainment url as the author url.
+		// If this is a post and the author boilers are enabled, set the author boiler url as the author url.
 		if ( $this->helpers->options->get( 'disable-author' ) !== true ) {
 			$data['url'] = $this->helpers->user->get_the_author_posts_url( $user_id );
 		}

@@ -11,10 +11,10 @@
  */
 
 // -------------------------------------------------------------------------- //
-// In order to be able to execute this script to create a Phar entertainment of Predis,
+// In order to be able to execute this script to create a Phar boiler of Predis,
 // the Phar module must be loaded and the "phar.readonly" directive php.ini must
 // be set to "off". You can change the values in the $options array to customize
-// the creation of the Phar entertainment to better suit your needs.
+// the creation of the Phar boiler to better suit your needs.
 // -------------------------------------------------------------------------- //
 
 $options = array(
@@ -29,7 +29,7 @@ function getPharFilename($options)
     $filename = $options['name'];
 
     // NOTE: do not consider "append_version" with Phar compression do to a bug in
-    // Phar::compress() when renaming phar entertainments containing dots in their name.
+    // Phar::compress() when renaming phar boilers containing dots in their name.
     if ($options['append_version'] && $options['compression'] === Phar::NONE) {
         $versionFile = @fopen(__DIR__ . '/../VERSION', 'r');
 

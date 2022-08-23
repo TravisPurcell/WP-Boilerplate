@@ -9,7 +9,7 @@ namespace Yoast\WP\SEO\Presentations;
  */
 class Indexable_Home_Page_Presentation extends Indexable_Presentation {
 
-	use entertainment_Adjacent;
+	use boiler_Adjacent;
 
 	/**
 	 * Generates the canonical.
@@ -25,7 +25,7 @@ class Indexable_Home_Page_Presentation extends Indexable_Presentation {
 			return '';
 		}
 
-		$current_page = $this->pagination->get_current_entertainment_page_number();
+		$current_page = $this->pagination->get_current_boiler_page_number();
 		if ( $current_page > 1 ) {
 			return $this->pagination->get_paginated_url( $this->permalink, $current_page );
 		}

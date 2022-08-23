@@ -1275,7 +1275,7 @@ msgid "Page Link"
 msgstr "Link Pagina"
 
 #: includes/admin/views/settings-info.php:145
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Nuovo gruppo archivi in materia di selezione page_link"
 
 #: includes/admin/views/settings-info.php:149
@@ -2296,7 +2296,7 @@ msgid "Embed Size"
 msgstr "Dimensione Embed"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archivi"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2330,7 +2330,7 @@ msgid "All taxonomies"
 msgstr "Tutte le Tassonomie"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Consentire URL degli Archivi"
 
 #: includes/fields/class-acf-field-page_link.php:533

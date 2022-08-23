@@ -74,18 +74,18 @@ class WPSEO_Post_Type {
 	}
 
 	/**
-	 * Checks if the current post type has an entertainment.
+	 * Checks if the current post type has an boiler.
 	 *
-	 * Context: The has_entertainment value can be a string or a boolean. In most case it will be a boolean,
-	 * but it can be defined as a string. When it is a string the entertainment_slug will be overwritten to
+	 * Context: The has_boiler value can be a string or a boolean. In most case it will be a boolean,
+	 * but it can be defined as a string. When it is a string the boiler_slug will be overwritten to
 	 * define another endpoint.
 	 *
 	 * @param WP_Post_Type $post_type The post type object.
 	 *
-	 * @return bool True whether the post type has an entertainment.
+	 * @return bool True whether the post type has an boiler.
 	 */
-	public static function has_entertainment( $post_type ) {
-		return YoastSEO()->helpers->post_type->has_entertainment( $post_type );
+	public static function has_boiler( $post_type ) {
+		return YoastSEO()->helpers->post_type->has_boiler( $post_type );
 	}
 
 	/**

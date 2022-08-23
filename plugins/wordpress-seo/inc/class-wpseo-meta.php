@@ -171,7 +171,7 @@ class WPSEO_Meta {
 				'description'   => '', // Translation added later.
 				'options'       => [
 					'noimageindex' => '', // Translation added later.
-					'noentertainment'    => '', // Translation added later.
+					'noboiler'    => '', // Translation added later.
 					'nosnippet'    => '', // Translation added later.
 				],
 			],
@@ -915,7 +915,7 @@ class WPSEO_Meta {
 		/*
 		 * Deal with the multiselect (meta-robots-adv) field.
 		 *
-		 * Removes invalid option combinations, such as 'none,noentertainment'.
+		 * Removes invalid option combinations, such as 'none,noboiler'.
 		 *
 		 * Default values have already been removed, so we should have a small result set and
 		 * (hopefully) even smaller set of invalid results.

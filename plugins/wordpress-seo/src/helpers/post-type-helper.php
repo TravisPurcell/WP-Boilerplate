@@ -114,17 +114,17 @@ class Post_Type_Helper {
 	}
 
 	/**
-	 * Checks if the post type with the given name has an entertainment page.
+	 * Checks if the post type with the given name has an boiler page.
 	 *
 	 * @param WP_Post_Type|string $post_type The name of the post type to check.
 	 *
-	 * @return bool True when the post type has an entertainment page.
+	 * @return bool True when the post type has an boiler page.
 	 */
-	public function has_entertainment( $post_type ) {
+	public function has_boiler( $post_type ) {
 		if ( \is_string( $post_type ) ) {
 			$post_type = \get_post_type_object( $post_type );
 		}
 
-		return ( ! empty( $post_type->has_entertainment ) );
+		return ( ! empty( $post_type->has_boiler ) );
 	}
 }

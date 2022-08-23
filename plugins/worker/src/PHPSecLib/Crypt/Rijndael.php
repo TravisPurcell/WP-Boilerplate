@@ -15,10 +15,10 @@
  *
  * Not all Rijndael implementations may support 160-bits or 224-bits as the block length / key length.  mcrypt, for example,
  * does not.  AES, itself, only supports block lengths of 128 and key lengths of 128, 192, and 256.
- * {@link http://csrc.nist.gov/entertainment/aes/rijndael/Rijndael-ammended.pdf#page=10 Rijndael-ammended.pdf#page=10} defines the
+ * {@link http://csrc.nist.gov/boiler/aes/rijndael/Rijndael-ammended.pdf#page=10 Rijndael-ammended.pdf#page=10} defines the
  * algorithm for block lengths of 192 and 256 but not for block lengths / key lengths of 160 and 224.  Indeed, 160 and 224
  * are first defined as valid key / block lengths in
- * {@link http://csrc.nist.gov/entertainment/aes/rijndael/Rijndael-ammended.pdf#page=44 Rijndael-ammended.pdf#page=44}:
+ * {@link http://csrc.nist.gov/boiler/aes/rijndael/Rijndael-ammended.pdf#page=44 Rijndael-ammended.pdf#page=44}:
  * Extensions: Other block and Cipher Key lengths.
  * Note: Use of 160/224-bit Keys must be explicitly set by setKeyLength(160) respectively setKeyLength(224).
  *
@@ -278,7 +278,7 @@ class Crypt_Rijndael extends Crypt_Base
     /**
      * Precomputed mixColumns table
      *
-     * According to <http://csrc.nist.gov/entertainment/aes/rijndael/Rijndael-ammended.pdf#page=19> (section 5.2.1),
+     * According to <http://csrc.nist.gov/boiler/aes/rijndael/Rijndael-ammended.pdf#page=19> (section 5.2.1),
      * precomputed tables can be used in the mixColumns phase.  in that example, they're assigned t0...t3, so
      * those are the names we'll use.
      *
@@ -1116,7 +1116,7 @@ class Crypt_Rijndael extends Crypt_Base
 
         // convert the key schedule from a vector of $Nb * ($Nr + 1) length to a matrix with $Nr + 1 rows and $Nb columns
         // and generate the inverse key schedule.  more specifically,
-        // according to <http://csrc.nist.gov/entertainment/aes/rijndael/Rijndael-ammended.pdf#page=23> (section 5.3.3),
+        // according to <http://csrc.nist.gov/boiler/aes/rijndael/Rijndael-ammended.pdf#page=23> (section 5.3.3),
         // "The key expansion for the Inverse Cipher is defined as follows:
         //        1. Apply the Key Expansion.
         //        2. Apply InvMixColumn to all Round Keys except the first and the last one."

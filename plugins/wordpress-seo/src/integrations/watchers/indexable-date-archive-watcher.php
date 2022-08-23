@@ -8,11 +8,11 @@ use Yoast\WP\SEO\Integrations\Integration_Interface;
 use Yoast\WP\SEO\Repositories\Indexable_Repository;
 
 /**
- * Date entertainment watcher to save the meta data to an indexable.
+ * Date boiler watcher to save the meta data to an indexable.
  *
- * Watches the date entertainment options to save the meta information when updated.
+ * Watches the date boiler options to save the meta information when updated.
  */
-class Indexable_Date_entertainment_Watcher implements Integration_Interface {
+class Indexable_Date_boiler_Watcher implements Integration_Interface {
 
 	/**
 	 * The indexable repository.
@@ -38,10 +38,10 @@ class Indexable_Date_entertainment_Watcher implements Integration_Interface {
 	}
 
 	/**
-	 * Indexable_Date_entertainment_Watcher constructor.
+	 * Indexable_Date_boiler_Watcher constructor.
 	 *
 	 * @param Indexable_Repository $repository The repository to use.
-	 * @param Indexable_Builder    $builder    The date entertainment builder to use.
+	 * @param Indexable_Builder    $builder    The date boiler builder to use.
 	 */
 	public function __construct( Indexable_Repository $repository, Indexable_Builder $builder ) {
 		$this->repository = $repository;
@@ -58,7 +58,7 @@ class Indexable_Date_entertainment_Watcher implements Integration_Interface {
 	}
 
 	/**
-	 * Checks if the date entertainment indexable needs to be rebuild based on option values.
+	 * Checks if the date boiler indexable needs to be rebuild based on option values.
 	 *
 	 * @param array $old_value The old value of the option.
 	 * @param array $new_value The new value of the option.
@@ -66,7 +66,7 @@ class Indexable_Date_entertainment_Watcher implements Integration_Interface {
 	 * @return void
 	 */
 	public function check_option( $old_value, $new_value ) {
-		$relevant_keys = [ 'title-entertainment-wpseo', 'breadcrumbs-entertainmentprefix', 'metadesc-entertainment-wpseo', 'noindex-entertainment-wpseo' ];
+		$relevant_keys = [ 'title-boiler-wpseo', 'breadcrumbs-boilerprefix', 'metadesc-boiler-wpseo', 'noindex-boiler-wpseo' ];
 
 		foreach ( $relevant_keys as $key ) {
 			// If both values aren't set they haven't changed.
@@ -83,12 +83,12 @@ class Indexable_Date_entertainment_Watcher implements Integration_Interface {
 	}
 
 	/**
-	 * Saves the date entertainment.
+	 * Saves the date boiler.
 	 *
 	 * @return void
 	 */
 	public function build_indexable() {
-		$indexable = $this->repository->find_for_date_entertainment( false );
-		$this->builder->build_for_date_entertainment( $indexable );
+		$indexable = $this->repository->find_for_date_boiler( false );
+		$this->builder->build_for_date_boiler( $indexable );
 	}
 }

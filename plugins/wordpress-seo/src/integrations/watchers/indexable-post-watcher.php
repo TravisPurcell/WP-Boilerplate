@@ -7,7 +7,7 @@ use WP_Post;
 use Yoast\WP\SEO\Builders\Indexable_Builder;
 use Yoast\WP\SEO\Builders\Indexable_Link_Builder;
 use Yoast\WP\SEO\Conditionals\Migrations_Conditional;
-use Yoast\WP\SEO\Helpers\Author_entertainment_Helper;
+use Yoast\WP\SEO\Helpers\Author_boiler_Helper;
 use Yoast\WP\SEO\Helpers\Post_Helper;
 use Yoast\WP\SEO\Integrations\Integration_Interface;
 use Yoast\WP\SEO\Loggers\Logger;
@@ -52,11 +52,11 @@ class Indexable_Post_Watcher implements Integration_Interface {
 	protected $link_builder;
 
 	/**
-	 * The author entertainment helper.
+	 * The author boiler helper.
 	 *
-	 * @var Author_entertainment_Helper
+	 * @var Author_boiler_Helper
 	 */
-	private $author_entertainment;
+	private $author_boiler;
 
 	/**
 	 * Holds the Post_Helper instance.
@@ -88,7 +88,7 @@ class Indexable_Post_Watcher implements Integration_Interface {
 	 * @param Indexable_Builder              $builder              The post builder to use.
 	 * @param Indexable_Hierarchy_Repository $hierarchy_repository The hierarchy repository to use.
 	 * @param Indexable_Link_Builder         $link_builder         The link builder.
-	 * @param Author_entertainment_Helper          $author_entertainment       The author entertainment helper.
+	 * @param Author_boiler_Helper          $author_boiler       The author boiler helper.
 	 * @param Post_Helper                    $post                 The post helper.
 	 * @param Logger                         $logger               The logger.
 	 */
@@ -97,7 +97,7 @@ class Indexable_Post_Watcher implements Integration_Interface {
 		Indexable_Builder $builder,
 		Indexable_Hierarchy_Repository $hierarchy_repository,
 		Indexable_Link_Builder $link_builder,
-		Author_entertainment_Helper $author_entertainment,
+		Author_boiler_Helper $author_boiler,
 		Post_Helper $post,
 		Logger $logger
 	) {
@@ -105,7 +105,7 @@ class Indexable_Post_Watcher implements Integration_Interface {
 		$this->builder              = $builder;
 		$this->hierarchy_repository = $hierarchy_repository;
 		$this->link_builder         = $link_builder;
-		$this->author_entertainment       = $author_entertainment;
+		$this->author_boiler       = $author_boiler;
 		$this->post                 = $post;
 		$this->logger               = $logger;
 	}
@@ -213,7 +213,7 @@ class Indexable_Post_Watcher implements Integration_Interface {
 		// Update the author indexable's has public posts value.
 		try {
 			$author_indexable                   = $this->repository->find_by_id_and_type( $indexable->author_id, 'user' );
-			$author_indexable->has_public_posts = $this->author_entertainment->author_has_public_posts( $author_indexable->object_id );
+			$author_indexable->has_public_posts = $this->author_boiler->author_has_public_posts( $author_indexable->object_id );
 			$author_indexable->save();
 		} catch ( Exception $exception ) {
 			$this->logger->log( LogLevel::ERROR, $exception->getMessage() );
@@ -252,7 +252,7 @@ class Indexable_Post_Watcher implements Integration_Interface {
 		 */
 		$related_indexables   = [];
 		$related_indexables[] = $this->repository->find_by_id_and_type( $post->post_author, 'user', false );
-		$related_indexables[] = $this->repository->find_for_post_type_entertainment( $post->post_type, false );
+		$related_indexables[] = $this->repository->find_for_post_type_boiler( $post->post_type, false );
 		$related_indexables[] = $this->repository->find_for_home_page( false );
 
 		$taxonomies = \get_post_taxonomies( $post->ID );

@@ -190,7 +190,7 @@ class WPSEO_Metabox extends WPSEO_Meta {
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['title']                   = __( 'Meta robots advanced', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['description']             = __( 'If you want to apply advanced <code>meta</code> robots settings for this page, please define them in the following field.', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['noimageindex'] = __( 'No Image Index', 'wordpress-seo' );
-		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['noentertainment']    = __( 'No entertainment', 'wordpress-seo' );
+		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['noboiler']    = __( 'No boiler', 'wordpress-seo' );
 		WPSEO_Meta::$meta_fields['advanced']['meta-robots-adv']['options']['nosnippet']    = __( 'No Snippet', 'wordpress-seo' );
 
 		WPSEO_Meta::$meta_fields['advanced']['bctitle']['title']       = __( 'Breadcrumbs Title', 'wordpress-seo' );

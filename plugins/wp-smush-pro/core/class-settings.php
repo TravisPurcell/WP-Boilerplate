@@ -973,7 +973,7 @@ class Settings {
 				'home'      => true,
 				'page'      => true,
 				'single'    => true,
-				'entertainment'   => true,
+				'boiler'   => true,
 				'category'  => true,
 				'tag'       => true,
 			),

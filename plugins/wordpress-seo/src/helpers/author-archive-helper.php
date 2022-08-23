@@ -5,22 +5,22 @@ namespace Yoast\WP\SEO\Helpers;
 use Yoast\WP\Lib\Model;
 
 /**
- * A helper object for author entertainments.
+ * A helper object for author boilers.
  */
-class Author_entertainment_Helper {
+class Author_boiler_Helper {
 
 	/**
-	 * Gets the array of post types that are shown on an author's entertainment.
+	 * Gets the array of post types that are shown on an author's boiler.
 	 *
-	 * @return array The post types that are shown on an author's entertainment.
+	 * @return array The post types that are shown on an author's boiler.
 	 */
-	public function get_author_entertainment_post_types() {
+	public function get_author_boiler_post_types() {
 		/**
-		 * Filters the array of post types that are shown on an author's entertainment.
+		 * Filters the array of post types that are shown on an author's boiler.
 		 *
-		 * @param array $args The post types that are shown on an author entertainment.
+		 * @param array $args The post types that are shown on an author boiler.
 		 */
-		return \apply_filters( 'wpseo_author_entertainment_post_types', [ 'post' ] );
+		return \apply_filters( 'wpseo_author_boiler_post_types', [ 'post' ] );
 	}
 
 	/**
@@ -63,7 +63,7 @@ class Author_entertainment_Helper {
 			$indexable_exists = Model::of_type( 'Indexable' )
 				->select( 'id' )
 				->where( 'object_type', 'post' )
-				->where_in( 'object_sub_type', $this->get_author_entertainment_post_types() )
+				->where_in( 'object_sub_type', $this->get_author_boiler_post_types() )
 				->where( 'author_id', $author_id )
 				->where( 'is_public', 1 )
 				->find_one();
@@ -94,7 +94,7 @@ class Author_entertainment_Helper {
 			$indexable_exists = Model::of_type( 'Indexable' )
 				->select( 'id' )
 				->where( 'object_type', 'post' )
-				->where_in( 'object_sub_type', $this->get_author_entertainment_post_types() )
+				->where_in( 'object_sub_type', $this->get_author_boiler_post_types() )
 				->where( 'author_id', $author_id )
 				->where_null( 'is_public' )
 				->find_one();

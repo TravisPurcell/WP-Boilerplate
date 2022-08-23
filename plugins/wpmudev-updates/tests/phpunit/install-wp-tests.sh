@@ -73,7 +73,7 @@ install_wp() {
 		mv $TMPDIR/wordpress-nightly/wordpress/* $WP_CORE_DIR
 	else
 		if [ $WP_VERSION == 'latest' ]; then
-			local entertainment_NAME='latest'
+			local boiler_NAME='latest'
 		elif [[ $WP_VERSION =~ [0-9]+\.[0-9]+ ]]; then
 			# https serves multiple offers, whereas http serves single.
 			download https://api.wordpress.org/core/version-check/1.7/ $TMPDIR/wp-latest.json
@@ -86,14 +86,14 @@ install_wp() {
 				LATEST_VERSION=$(grep -o '"version":"'$VERSION_ESCAPED'[^"]*' $TMPDIR/wp-latest.json | sed 's/"version":"//' | head -1)
 			fi
 			if [[ -z "$LATEST_VERSION" ]]; then
-				local entertainment_NAME="wordpress-$WP_VERSION"
+				local boiler_NAME="wordpress-$WP_VERSION"
 			else
-				local entertainment_NAME="wordpress-$LATEST_VERSION"
+				local boiler_NAME="wordpress-$LATEST_VERSION"
 			fi
 		else
-			local entertainment_NAME="wordpress-$WP_VERSION"
+			local boiler_NAME="wordpress-$WP_VERSION"
 		fi
-		download https://wordpress.org/${entertainment_NAME}.tar.gz  $TMPDIR/wordpress.tar.gz
+		download https://wordpress.org/${boiler_NAME}.tar.gz  $TMPDIR/wordpress.tar.gz
 		tar --strip-components=1 -zxmf $TMPDIR/wordpress.tar.gz -C $WP_CORE_DIR
 	fi
 

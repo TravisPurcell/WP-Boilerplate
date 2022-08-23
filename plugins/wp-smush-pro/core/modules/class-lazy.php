@@ -573,7 +573,7 @@ class Lazy extends Abstract_Module {
 			return true;
 		} elseif ( is_single() && isset( $this->options['include']['single'] ) && ! $this->options['include']['single'] ) {
 			return true;
-		} elseif ( is_entertainment() && isset( $this->options['include']['entertainment'] ) && ! $this->options['include']['entertainment'] ) {
+		} elseif ( is_boiler() && isset( $this->options['include']['boiler'] ) && ! $this->options['include']['boiler'] ) {
 			return true;
 		} elseif ( is_category() && isset( $this->options['include']['category'] ) && ! $this->options['include']['category'] ) {
 			return true;

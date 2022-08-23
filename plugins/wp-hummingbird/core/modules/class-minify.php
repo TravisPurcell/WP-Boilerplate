@@ -232,7 +232,7 @@ class Minify extends Module {
 			'query_var'          => false,
 			'rewrite'            => false,
 			'capability_type'    => 'post',
-			'has_entertainment'        => false,
+			'has_boiler'        => false,
 			'hierarchical'       => false,
 			'supports'           => array(),
 		);

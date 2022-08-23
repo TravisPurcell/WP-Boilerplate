@@ -311,7 +311,7 @@ $dropins = array(
 $dropins['sunrise.php'] = array(__('Executed before Multisite is loaded', 'wordfence'), is_multisite() && 'SUNRISE'); // SUNRISE
 $dropins['blog-deleted.php'] = array(__('Custom site deleted message', 'wordfence'), is_multisite()); // auto on deleted blog
 $dropins['blog-inactive.php'] = array(__('Custom site inactive message', 'wordfence'), is_multisite()); // auto on inactive blog
-$dropins['blog-suspended.php'] = array(__('Custom site suspended message', 'wordfence'), is_multisite()); // auto on entertainmentd or spammed blog
+$dropins['blog-suspended.php'] = array(__('Custom site suspended message', 'wordfence'), is_multisite()); // auto on boilerd or spammed blog
 
 $table = array(
 	array(__('Name', 'wordfence'), __('Status', 'wordfence')),

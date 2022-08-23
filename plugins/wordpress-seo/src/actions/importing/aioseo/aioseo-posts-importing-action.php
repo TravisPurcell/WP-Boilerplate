@@ -98,11 +98,11 @@ class Aioseo_Posts_Importing_Action extends Abstract_Aioseo_Importing_Action {
 			'robots_import'    => true,
 			'robot_type'       => 'nofollow',
 		],
-		'robots_noentertainment'    => [
-			'yoast_name'       => 'is_robots_noentertainment',
+		'robots_noboiler'    => [
+			'yoast_name'       => 'is_robots_noboiler',
 			'transform_method' => 'post_general_robots_import',
 			'robots_import'    => true,
-			'robot_type'       => 'noentertainment',
+			'robot_type'       => 'noboiler',
 		],
 		'robots_nosnippet'    => [
 			'yoast_name'       => 'is_robots_nosnippet',

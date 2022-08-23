@@ -8,7 +8,7 @@ use Yoast\WP\Lib\Model;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_General_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Indexing_Complete_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexation_Action_Interface;
 use Yoast\WP\SEO\Actions\Indexing\Indexing_Prepare_Action;
@@ -36,11 +36,11 @@ class Index_Command implements Command_Interface {
 	private $term_indexation_action;
 
 	/**
-	 * The post type entertainment indexation action.
+	 * The post type boiler indexation action.
 	 *
-	 * @var Indexable_Post_Type_entertainment_Indexation_Action
+	 * @var Indexable_Post_Type_boiler_Indexation_Action
 	 */
-	private $post_type_entertainment_indexation_action;
+	private $post_type_boiler_indexation_action;
 
 	/**
 	 * The general indexation action.
@@ -84,7 +84,7 @@ class Index_Command implements Command_Interface {
 	 *                                                                                           action.
 	 * @param Indexable_Term_Indexation_Action              $term_indexation_action              The term indexation
 	 *                                                                                           action.
-	 * @param Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation_action The post type entertainment
+	 * @param Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation_action The post type boiler
 	 *                                                                                           indexation action.
 	 * @param Indexable_General_Indexation_Action           $general_indexation_action           The general indexation
 	 *                                                                                           action.
@@ -100,7 +100,7 @@ class Index_Command implements Command_Interface {
 	public function __construct(
 		Indexable_Post_Indexation_Action $post_indexation_action,
 		Indexable_Term_Indexation_Action $term_indexation_action,
-		Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation_action,
+		Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation_action,
 		Indexable_General_Indexation_Action $general_indexation_action,
 		Indexable_Indexing_Complete_Action $complete_indexation_action,
 		Indexing_Prepare_Action $prepare_indexing_action,
@@ -109,7 +109,7 @@ class Index_Command implements Command_Interface {
 	) {
 		$this->post_indexation_action              = $post_indexation_action;
 		$this->term_indexation_action              = $term_indexation_action;
-		$this->post_type_entertainment_indexation_action = $post_type_entertainment_indexation_action;
+		$this->post_type_boiler_indexation_action = $post_type_boiler_indexation_action;
 		$this->general_indexation_action           = $general_indexation_action;
 		$this->complete_indexation_action          = $complete_indexation_action;
 		$this->prepare_indexing_action             = $prepare_indexing_action;
@@ -168,7 +168,7 @@ class Index_Command implements Command_Interface {
 			'fields'   => 'ids',
 			'spam'     => 0,
 			'deleted'  => 0,
-			'entertainmentd' => 0,
+			'boilerd' => 0,
 		];
 		$blog_ids = \get_sites( $criteria );
 
@@ -201,14 +201,14 @@ class Index_Command implements Command_Interface {
 
 			// Delete the transients to make sure re-indexing runs every time.
 			\delete_transient( Indexable_Post_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
-			\delete_transient( Indexable_Post_Type_entertainment_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
+			\delete_transient( Indexable_Post_Type_boiler_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
 			\delete_transient( Indexable_Term_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
 		}
 
 		$indexation_actions = [
 			'posts'              => $this->post_indexation_action,
 			'terms'              => $this->term_indexation_action,
-			'post type entertainments' => $this->post_type_entertainment_indexation_action,
+			'post type boilers' => $this->post_type_boiler_indexation_action,
 			'general objects'    => $this->general_indexation_action,
 			'post links'         => $this->post_link_indexing_action,
 			'term links'         => $this->term_link_indexing_action,

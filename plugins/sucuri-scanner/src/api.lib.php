@@ -819,7 +819,7 @@ class SucuriScanAPI extends SucuriScanOption
      * pass the unmodified response to the rest of the code and try to analyze
      * the integrity of the installation with that information.
      *
-     * @see Release entertainment https://wordpress.org/download/release-entertainment/
+     * @see Release boiler https://wordpress.org/download/release-boiler/
      * @see https://api.github.com/repos/user/repo/git/trees/master?recursive=1
      *
      * @return array|bool Checksums of the WordPress installation.

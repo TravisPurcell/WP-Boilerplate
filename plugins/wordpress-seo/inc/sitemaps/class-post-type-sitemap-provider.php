@@ -8,7 +8,7 @@
 use Yoast\WP\SEO\Models\SEO_Links;
 
 /**
- * Sitemap provider for author entertainments.
+ * Sitemap provider for author boilers.
  */
 class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 
@@ -365,7 +365,7 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	protected function get_first_links( $post_type ) {
 
 		$links       = [];
-		$entertainment_url = false;
+		$boiler_url = false;
 
 		if ( $post_type === 'page' ) {
 
@@ -390,22 +390,22 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 		}
 		elseif ( $post_type !== 'page' ) {
 			/**
-			 * Filter the URL Yoast SEO uses in the XML sitemap for this post type entertainment.
+			 * Filter the URL Yoast SEO uses in the XML sitemap for this post type boiler.
 			 *
-			 * @param string $entertainment_url The URL of this entertainment
-			 * @param string $post_type   The post type this entertainment is for.
+			 * @param string $boiler_url The URL of this boiler
+			 * @param string $post_type   The post type this boiler is for.
 			 */
-			$entertainment_url = apply_filters(
-				'wpseo_sitemap_post_type_entertainment_link',
-				$this->get_post_type_entertainment_link( $post_type ),
+			$boiler_url = apply_filters(
+				'wpseo_sitemap_post_type_boiler_link',
+				$this->get_post_type_boiler_link( $post_type ),
 				$post_type
 			);
 		}
 
-		if ( $entertainment_url ) {
+		if ( $boiler_url ) {
 
 			$links[] = [
-				'loc' => $entertainment_url,
+				'loc' => $boiler_url,
 				'mod' => WPSEO_Sitemaps::get_last_modified_gmt( $post_type ),
 
 				// Deprecated, kept for backwards data compat. R.
@@ -418,7 +418,7 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	}
 
 	/**
-	 * Get URL for a post type entertainment.
+	 * Get URL for a post type boiler.
 	 *
 	 * @since 5.3
 	 *
@@ -426,9 +426,9 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	 *
 	 * @return string|bool URL or false if it should be excluded.
 	 */
-	protected function get_post_type_entertainment_link( $post_type ) {
+	protected function get_post_type_boiler_link( $post_type ) {
 
-		$pt_entertainment_page_id = -1;
+		$pt_boiler_page_id = -1;
 
 		if ( $post_type === 'post' ) {
 
@@ -436,48 +436,48 @@ class WPSEO_Post_Type_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 				return YoastSEO()->helpers->url->home();
 			}
 
-			$pt_entertainment_page_id = (int) get_option( 'page_for_posts' );
+			$pt_boiler_page_id = (int) get_option( 'page_for_posts' );
 
-			// Post entertainment should be excluded if posts page isn't set.
-			if ( $pt_entertainment_page_id <= 0 ) {
+			// Post boiler should be excluded if posts page isn't set.
+			if ( $pt_boiler_page_id <= 0 ) {
 				return false;
 			}
 		}
 
-		if ( ! $this->is_post_type_entertainment_indexable( $post_type, $pt_entertainment_page_id ) ) {
+		if ( ! $this->is_post_type_boiler_indexable( $post_type, $pt_boiler_page_id ) ) {
 			return false;
 		}
 
-		return get_post_type_entertainment_link( $post_type );
+		return get_post_type_boiler_link( $post_type );
 	}
 
 	/**
-	 * Determines whether a post type entertainment is indexable.
+	 * Determines whether a post type boiler is indexable.
 	 *
 	 * @since 11.5
 	 *
 	 * @param string $post_type       Post type.
-	 * @param int    $entertainment_page_id The page id.
+	 * @param int    $boiler_page_id The page id.
 	 *
-	 * @return bool True when post type entertainment is indexable.
+	 * @return bool True when post type boiler is indexable.
 	 */
-	protected function is_post_type_entertainment_indexable( $post_type, $entertainment_page_id = -1 ) {
+	protected function is_post_type_boiler_indexable( $post_type, $boiler_page_id = -1 ) {
 
-		if ( WPSEO_Options::get( 'noindex-ptentertainment-' . $post_type, false ) ) {
+		if ( WPSEO_Options::get( 'noindex-ptboiler-' . $post_type, false ) ) {
 			return false;
 		}
 
 		/**
-		 * Filter the page which is dedicated to this post type entertainment.
+		 * Filter the page which is dedicated to this post type boiler.
 		 *
 		 * @since 9.3
 		 *
-		 * @param string $entertainment_page_id The post_id of the page.
-		 * @param string $post_type       The post type this entertainment is for.
+		 * @param string $boiler_page_id The post_id of the page.
+		 * @param string $post_type       The post type this boiler is for.
 		 */
-		$entertainment_page_id = (int) apply_filters( 'wpseo_sitemap_page_for_post_type_entertainment', $entertainment_page_id, $post_type );
+		$boiler_page_id = (int) apply_filters( 'wpseo_sitemap_page_for_post_type_boiler', $boiler_page_id, $post_type );
 
-		if ( $entertainment_page_id > 0 && WPSEO_Meta::get_value( 'meta-robots-noindex', $entertainment_page_id ) === '1' ) {
+		if ( $boiler_page_id > 0 && WPSEO_Meta::get_value( 'meta-robots-noindex', $boiler_page_id ) === '1' ) {
 			return false;
 		}
 

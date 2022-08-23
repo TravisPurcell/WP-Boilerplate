@@ -1790,7 +1790,7 @@ msgid "Page Link"
 msgstr "Link do strony"
 
 #: includes/fields/class-acf-field-page_link.php:165
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archiwa"
 
 #: includes/fields/class-acf-field-page_link.php:249,
@@ -1824,7 +1824,7 @@ msgid "All taxonomies"
 msgstr "Wszystkie taksonomie"
 
 #: includes/fields/class-acf-field-page_link.php:494
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Pozwól na adresy URL archiwów"
 
 #: includes/fields/class-acf-field-page_link.php:506,
@@ -3748,7 +3748,7 @@ msgstr "Informacje o aktualizacji"
 #~ "Nowe ustawienia pola relacji dla \"Filtrów\" (Wyszukiwarka, Typ Wpisu, "
 #~ "Taksonomia)"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Nowe grupy archiwów do wyboru dla pola page_link"
 
 #~ msgid "Better Options Pages"

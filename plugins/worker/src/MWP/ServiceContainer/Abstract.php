@@ -172,7 +172,7 @@ abstract class MWP_ServiceContainer_Abstract implements MWP_ServiceContainer_Int
                 '/htdig/',
                 '/http%20client/',
                 '/HttpMonitor/',
-                '/ia_entertainmentr/',
+                '/ia_boilerr/',
                 '/InfoSeek/',
                 '/inktomi/',
                 '/larbin/',

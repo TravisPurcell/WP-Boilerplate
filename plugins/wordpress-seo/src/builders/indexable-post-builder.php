@@ -294,7 +294,7 @@ class Indexable_Post_Builder {
 	 * @return array List of robots values.
 	 */
 	protected function get_robots_options() {
-		return [ 'noimageindex', 'noentertainment', 'nosnippet' ];
+		return [ 'noimageindex', 'noboiler', 'nosnippet' ];
 	}
 
 	/**

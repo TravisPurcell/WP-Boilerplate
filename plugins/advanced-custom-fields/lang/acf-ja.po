@@ -1097,7 +1097,7 @@ msgid "Page Link"
 msgstr "ページリンク"
 
 #: admin/views/settings-info.php:151
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "新しいページリンクの選択肢に「アーカイブグループ」を追加しています"
 
 #: admin/views/settings-info.php:155
@@ -1769,7 +1769,7 @@ msgid "Embed Size"
 msgstr "埋め込みサイズ"
 
 #: fields/page_link.php:206
-msgid "entertainments"
+msgid "boilers"
 msgstr "アーカイブ"
 
 #: fields/page_link.php:535 fields/post_object.php:401 fields/relationship.php:690

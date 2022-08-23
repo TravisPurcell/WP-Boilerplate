@@ -49,14 +49,14 @@ class Current_Page_Helper {
 				return 'Home_Page';
 			case $this->is_simple_page():
 				return 'Post_Type';
-			case $this->is_post_type_entertainment():
-				return 'Post_Type_entertainment';
-			case $this->is_term_entertainment():
-				return 'Term_entertainment';
-			case $this->is_author_entertainment():
-				return 'Author_entertainment';
-			case $this->is_date_entertainment():
-				return 'Date_entertainment';
+			case $this->is_post_type_boiler():
+				return 'Post_Type_boiler';
+			case $this->is_term_boiler():
+				return 'Term_boiler';
+			case $this->is_author_boiler():
+				return 'Author_boiler';
+			case $this->is_date_boiler():
+				return 'Date_boiler';
 			case $this->is_404():
 				return 'Error_Page';
 		}
@@ -96,11 +96,11 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Returns the id of the currently opened author entertainment.
+	 * Returns the id of the currently opened author boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return int The id of the currently opened author entertainment.
+	 * @return int The id of the currently opened author boiler.
 	 */
 	public function get_author_id() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
@@ -122,9 +122,9 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Returns the id of the currently opened term entertainment.
+	 * Returns the id of the currently opened term boiler.
 	 *
-	 * @return int The id of the currently opened term entertainment.
+	 * @return int The id of the currently opened term boiler.
 	 */
 	public function get_term_id() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
@@ -161,22 +161,22 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Returns the permalink of the currently opened date entertainment.
+	 * Returns the permalink of the currently opened date boiler.
 	 * If the permalink was cached, it returns this permalink.
 	 * If not, we call another function to get the permalink through wp_query.
 	 *
-	 * @return string The permalink of the currently opened date entertainment.
+	 * @return string The permalink of the currently opened date boiler.
 	 */
-	public function get_date_entertainment_permalink() {
-		static $date_entertainment_permalink;
+	public function get_date_boiler_permalink() {
+		static $date_boiler_permalink;
 
-		if ( isset( $date_entertainment_permalink ) ) {
-			return $date_entertainment_permalink;
+		if ( isset( $date_boiler_permalink ) ) {
+			return $date_boiler_permalink;
 		}
 
-		$date_entertainment_permalink = $this->get_non_cached_date_entertainment_permalink();
+		$date_boiler_permalink = $this->get_non_cached_date_boiler_permalink();
 
-		return $date_entertainment_permalink;
+		return $date_boiler_permalink;
 	}
 
 	/**
@@ -253,26 +253,26 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Determine whether this is a post type entertainment.
+	 * Determine whether this is a post type boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return bool Whether nor not the current page is a post type entertainment.
+	 * @return bool Whether nor not the current page is a post type boiler.
 	 */
-	public function is_post_type_entertainment() {
+	public function is_post_type_boiler() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
-		return $wp_query->is_post_type_entertainment();
+		return $wp_query->is_post_type_boiler();
 	}
 
 	/**
-	 * Determine whether this is a term entertainment.
+	 * Determine whether this is a term boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return bool Whether nor not the current page is a term entertainment.
+	 * @return bool Whether nor not the current page is a term boiler.
 	 */
-	public function is_term_entertainment() {
+	public function is_term_boiler() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
 		return $wp_query->is_tax || $wp_query->is_tag || $wp_query->is_category;
@@ -292,26 +292,26 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Determine whether this is an author entertainment.
+	 * Determine whether this is an author boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return bool Whether nor not the current page is an author entertainment.
+	 * @return bool Whether nor not the current page is an author boiler.
 	 */
-	public function is_author_entertainment() {
+	public function is_author_boiler() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
 		return $wp_query->is_author();
 	}
 
 	/**
-	 * Determine whether this is an date entertainment.
+	 * Determine whether this is an date boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return bool Whether nor not the current page is an date entertainment.
+	 * @return bool Whether nor not the current page is an date boiler.
 	 */
-	public function is_date_entertainment() {
+	public function is_date_boiler() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
 		return $wp_query->is_date();
@@ -344,25 +344,25 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Checks if the current page is the post format entertainment.
+	 * Checks if the current page is the post format boiler.
 	 *
 	 * @codeCoverageIgnore It wraps WordPress functionality.
 	 *
-	 * @return bool Whether or not the current page is the post format entertainment.
+	 * @return bool Whether or not the current page is the post format boiler.
 	 */
-	public function is_post_format_entertainment() {
+	public function is_post_format_boiler() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
 		return $wp_query->is_tax( 'post_format' );
 	}
 
 	/**
-	 * Determine whether this page is an taxonomy entertainment page for multiple terms (url: /term-1,term2/).
+	 * Determine whether this page is an taxonomy boiler page for multiple terms (url: /term-1,term2/).
 	 *
-	 * @return bool Whether or not the current page is an entertainment page for multiple terms.
+	 * @return bool Whether or not the current page is an boiler page for multiple terms.
 	 */
 	public function is_multiple_terms_page() {
-		if ( ! $this->is_term_entertainment() ) {
+		if ( ! $this->is_term_boiler() ) {
 			return false;
 		}
 
@@ -454,25 +454,25 @@ class Current_Page_Helper {
 	}
 
 	/**
-	 * Returns the permalink of the currently opened date entertainment.
+	 * Returns the permalink of the currently opened date boiler.
 	 *
-	 * @return string The permalink of the currently opened date entertainment.
+	 * @return string The permalink of the currently opened date boiler.
 	 */
-	protected function get_non_cached_date_entertainment_permalink() {
-		$date_entertainment_permalink = '';
+	protected function get_non_cached_date_boiler_permalink() {
+		$date_boiler_permalink = '';
 		$wp_query               = $this->wp_query_wrapper->get_main_query();
 
 		if ( $wp_query->is_day() ) {
-			$date_entertainment_permalink = \get_day_link( $wp_query->get( 'year' ), $wp_query->get( 'monthnum' ), $wp_query->get( 'day' ) );
+			$date_boiler_permalink = \get_day_link( $wp_query->get( 'year' ), $wp_query->get( 'monthnum' ), $wp_query->get( 'day' ) );
 		}
 		if ( $wp_query->is_month() ) {
-			$date_entertainment_permalink = \get_month_link( $wp_query->get( 'year' ), $wp_query->get( 'monthnum' ) );
+			$date_boiler_permalink = \get_month_link( $wp_query->get( 'year' ), $wp_query->get( 'monthnum' ) );
 		}
 		if ( $wp_query->is_year() ) {
-			$date_entertainment_permalink = \get_year_link( $wp_query->get( 'year' ) );
+			$date_boiler_permalink = \get_year_link( $wp_query->get( 'year' ) );
 		}
 
-		return $date_entertainment_permalink;
+		return $date_boiler_permalink;
 	}
 
 	/**

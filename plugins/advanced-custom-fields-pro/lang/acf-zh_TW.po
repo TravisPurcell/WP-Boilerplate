@@ -2207,7 +2207,7 @@ msgid "Page Link"
 msgstr "頁面連結"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "彙整"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2242,7 +2242,7 @@ msgid "All taxonomies"
 msgstr "所有分類法"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "允許文章彙整網址"
 
 #: includes/fields/class-acf-field-page_link.php:533

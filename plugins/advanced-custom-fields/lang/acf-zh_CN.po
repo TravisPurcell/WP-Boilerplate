@@ -1128,7 +1128,7 @@ msgid "Page Link"
 msgstr "页面链接"
 
 #: admin/views/settings-info.php:151
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "在 page_link 字段选择里的新的存档群组"
 
 #: admin/views/settings-info.php:155
@@ -1810,7 +1810,7 @@ msgid "Embed Size"
 msgstr "嵌入尺寸"
 
 #: fields/page_link.php:206
-msgid "entertainments"
+msgid "boilers"
 msgstr "存档"
 
 #: fields/page_link.php:535 fields/post_object.php:401

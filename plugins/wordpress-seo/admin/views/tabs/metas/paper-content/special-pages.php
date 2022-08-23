@@ -2,7 +2,7 @@
 /**
  * WPSEO plugin file.
  *
- * @package WPSEO\Admin\Views\entertainment
+ * @package WPSEO\Admin\Views\boiler
  *
  * @uses Yoast_Form $yform Form object.
  */

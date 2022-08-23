@@ -2,17 +2,17 @@
 
 namespace Yoast\WP\SEO\Presentations;
 
-use Yoast\WP\SEO\Helpers\Author_entertainment_Helper;
+use Yoast\WP\SEO\Helpers\Author_boiler_Helper;
 use Yoast\WP\SEO\Helpers\Post_Type_Helper;
 
 /**
- * Class Indexable_Author_entertainment_Presentation.
+ * Class Indexable_Author_boiler_Presentation.
  *
  * Presentation object for indexables.
  */
-class Indexable_Author_entertainment_Presentation extends Indexable_Presentation {
+class Indexable_Author_boiler_Presentation extends Indexable_Presentation {
 
-	use entertainment_Adjacent;
+	use boiler_Adjacent;
 
 	/**
 	 * Holds the post type helper instance.
@@ -22,23 +22,23 @@ class Indexable_Author_entertainment_Presentation extends Indexable_Presentation
 	protected $post_type;
 
 	/**
-	 * Holds the author entertainment helper instance.
+	 * Holds the author boiler helper instance.
 	 *
-	 * @var Author_entertainment_Helper
+	 * @var Author_boiler_Helper
 	 */
-	protected $author_entertainment;
+	protected $author_boiler;
 
 	/**
-	 * Indexable_Author_entertainment_Presentation constructor.
+	 * Indexable_Author_boiler_Presentation constructor.
 	 *
 	 * @codeCoverageIgnore
 	 *
 	 * @param Post_Type_Helper      $post_type      The post type helper.
-	 * @param Author_entertainment_Helper $author_entertainment The author entertainment helper.
+	 * @param Author_boiler_Helper $author_boiler The author boiler helper.
 	 */
-	public function __construct( Post_Type_Helper $post_type, Author_entertainment_Helper $author_entertainment ) {
+	public function __construct( Post_Type_Helper $post_type, Author_boiler_Helper $author_boiler ) {
 		$this->post_type      = $post_type;
-		$this->author_entertainment = $author_entertainment;
+		$this->author_boiler = $author_boiler;
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Indexable_Author_entertainment_Presentation extends Indexable_Presentation
 			return '';
 		}
 
-		$current_page = $this->pagination->get_current_entertainment_page_number();
+		$current_page = $this->pagination->get_current_boiler_page_number();
 		if ( $current_page > 1 ) {
 			return $this->pagination->get_paginated_url( $this->permalink, $current_page );
 		}
@@ -109,7 +109,7 @@ class Indexable_Author_entertainment_Presentation extends Indexable_Presentation
 	public function generate_robots() {
 		$robots = $this->get_base_robots();
 
-		// Global option: "Show author entertainments in search results".
+		// Global option: "Show author boilers in search results".
 		if ( $this->options->get( 'noindex-author-wpseo', false ) ) {
 			$robots['index'] = 'noindex';
 			return $this->filter_robots( $robots );
@@ -123,15 +123,15 @@ class Indexable_Author_entertainment_Presentation extends Indexable_Presentation
 			return $this->filter_robots( $robots );
 		}
 
-		$author_entertainment_post_types = $this->author_entertainment->get_author_entertainment_post_types();
+		$author_boiler_post_types = $this->author_boiler->get_author_boiler_post_types();
 
-		// Global option: "Show entertainments for authors without posts in search results".
-		if ( $this->options->get( 'noindex-author-noposts-wpseo', false ) && $this->user->count_posts( $current_author->ID, $author_entertainment_post_types ) === 0 ) {
+		// Global option: "Show boilers for authors without posts in search results".
+		if ( $this->options->get( 'noindex-author-noposts-wpseo', false ) && $this->user->count_posts( $current_author->ID, $author_boiler_post_types ) === 0 ) {
 			$robots['index'] = 'noindex';
 			return $this->filter_robots( $robots );
 		}
 
-		// User option: "Do not allow search engines to show this author's entertainments in search results".
+		// User option: "Do not allow search engines to show this author's boilers in search results".
 		if ( $this->user->get_meta( $current_author->ID, 'wpseo_noindex_author', true ) === 'on' ) {
 			$robots['index'] = 'noindex';
 			return $this->filter_robots( $robots );
@@ -159,7 +159,7 @@ class Indexable_Author_entertainment_Presentation extends Indexable_Presentation
 			return [];
 		}
 
-		return $this->open_graph_image_generator->generate_for_author_entertainment( $this->context );
+		return $this->open_graph_image_generator->generate_for_author_boiler( $this->context );
 	}
 
 	/**

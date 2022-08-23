@@ -139,24 +139,24 @@ class Meta_Surface {
 	}
 
 	/**
-	 * Returns the meta tags context for a post type entertainment.
+	 * Returns the meta tags context for a post type boiler.
 	 *
-	 * @param string|null $post_type Optional. The post type to get the entertainment meta for. Defaults to the current post type.
+	 * @param string|null $post_type Optional. The post type to get the boiler meta for. Defaults to the current post type.
 	 *
 	 * @return Meta|false The meta values. False if none could be found.
 	 */
-	public function for_post_type_entertainment( $post_type = null ) {
+	public function for_post_type_boiler( $post_type = null ) {
 		if ( $post_type === null ) {
 			$post_type = \get_post_type();
 		}
 
-		$indexable = $this->repository->find_for_post_type_entertainment( $post_type );
+		$indexable = $this->repository->find_for_post_type_boiler( $post_type );
 
 		if ( ! $indexable ) {
 			return false;
 		}
 
-		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Post_Type_entertainment' ) );
+		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Post_Type_boiler' ) );
 	}
 
 	/**
@@ -243,7 +243,7 @@ class Meta_Surface {
 			return false;
 		}
 
-		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Term_entertainment' ) );
+		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Term_boiler' ) );
 	}
 
 	/**
@@ -260,7 +260,7 @@ class Meta_Surface {
 			return false;
 		}
 
-		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Author_entertainment' ) );
+		return $this->build_meta( $this->context_memoizer->get( $indexable, 'Author_boiler' ) );
 	}
 
 	/**
@@ -323,8 +323,8 @@ class Meta_Surface {
 		// Ensure the scheme is consistent with values in the DB.
 		$url = $site_parts['scheme'] . '://' . $url_parts['host'] . $url_parts['path'];
 
-		if ( $this->is_date_entertainment_url( $url ) ) {
-			$indexable = $this->repository->find_for_date_entertainment();
+		if ( $this->is_date_boiler_url( $url ) ) {
+			$indexable = $this->repository->find_for_date_boiler();
 		}
 		else {
 			$indexable = $this->repository->find_by_permalink( $url );
@@ -344,13 +344,13 @@ class Meta_Surface {
 	}
 
 	/**
-	 * Checks if a given URL is a date entertainment URL.
+	 * Checks if a given URL is a date boiler URL.
 	 *
 	 * @param string $url The url.
 	 *
 	 * @return bool
 	 */
-	protected function is_date_entertainment_url( $url ) {
+	protected function is_date_boiler_url( $url ) {
 		$path = \wp_parse_url( $url, \PHP_URL_PATH );
 		if ( $path === null ) {
 			return false;

@@ -87,8 +87,8 @@ class Handle_404 implements Integration_Interface {
 			return false;
 		}
 
-		// Don't 404 if it isn't entertainment or singular.
-		if ( ! $wp_query->is_entertainment() && ! $wp_query->is_singular() ) {
+		// Don't 404 if it isn't boiler or singular.
+		if ( ! $wp_query->is_boiler() && ! $wp_query->is_singular() ) {
 			return false;
 		}
 

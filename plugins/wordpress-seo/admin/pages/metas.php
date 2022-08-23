@@ -19,7 +19,7 @@ $metas_tabs->add_tab( new WPSEO_Option_Tab( 'general', __( 'General', 'wordpress
 $metas_tabs->add_tab( new WPSEO_Option_Tab( 'post-types', __( 'Content Types', 'wordpress-seo' ) ) );
 $metas_tabs->add_tab( new WPSEO_Option_Tab( 'media', __( 'Media', 'wordpress-seo' ) ) );
 $metas_tabs->add_tab( new WPSEO_Option_Tab( 'taxonomies', __( 'Taxonomies', 'wordpress-seo' ) ) );
-$metas_tabs->add_tab( new WPSEO_Option_Tab( 'entertainments', __( 'entertainments', 'wordpress-seo' ) ) );
+$metas_tabs->add_tab( new WPSEO_Option_Tab( 'boilers', __( 'boilers', 'wordpress-seo' ) ) );
 $metas_tabs->add_tab( new WPSEO_Option_Tab( 'breadcrumbs', __( 'Breadcrumbs', 'wordpress-seo' ) ) );
 $metas_tabs->add_tab( new WPSEO_Option_Tab( 'rss', __( 'RSS', 'wordpress-seo' ) ) );
 $metas_tabs->display( $yform );

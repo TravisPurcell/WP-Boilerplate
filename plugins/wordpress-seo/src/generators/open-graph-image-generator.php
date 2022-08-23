@@ -112,16 +112,16 @@ class Open_Graph_Image_Generator implements Generator_Interface {
 	}
 
 	/**
-	 * Retrieves the images for an author entertainment indexable.
+	 * Retrieves the images for an author boiler indexable.
 	 *
-	 * This is a custom method to address the case of Author entertainments, since they always have an Open Graph image
+	 * This is a custom method to address the case of Author boilers, since they always have an Open Graph image
 	 * set in the indexable (even if it is an empty default Gravatar).
 	 *
 	 * @param Meta_Tags_Context $context The context.
 	 *
 	 * @return array The images.
 	 */
-	public function generate_for_author_entertainment( Meta_Tags_Context $context ) {
+	public function generate_for_author_boiler( Meta_Tags_Context $context ) {
 		$image_container = $this->get_image_container();
 
 		$this->add_from_templates( $context, $image_container );

@@ -6,11 +6,11 @@
  */
 
 /**
- * Represents the logic for showing the post type entertainment notification.
+ * Represents the logic for showing the post type boiler notification.
  *
  * @deprecated 14.1
  */
-class WPSEO_Post_Type_entertainment_Notification_Handler extends WPSEO_Dismissible_Notification {
+class WPSEO_Post_Type_boiler_Notification_Handler extends WPSEO_Dismissible_Notification {
 
 	/**
 	 * Defaults for the title option.

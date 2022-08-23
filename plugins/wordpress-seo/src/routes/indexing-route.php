@@ -8,7 +8,7 @@ use WP_REST_Response;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_General_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Indexing_Complete_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexation_Action_Interface;
 use Yoast\WP\SEO\Actions\Indexing\Indexing_Complete_Action;
@@ -104,14 +104,14 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	 *
 	 * @var string
 	 */
-	const POST_TYPE_entertainmentS_ROUTE = 'indexing/post-type-entertainments';
+	const POST_TYPE_boilerS_ROUTE = 'indexing/post-type-boilers';
 
 	/**
 	 * The full terms route constant.
 	 *
 	 * @var string
 	 */
-	const FULL_POST_TYPE_entertainmentS_ROUTE = Main::API_V1_NAMESPACE . '/' . self::POST_TYPE_entertainmentS_ROUTE;
+	const FULL_POST_TYPE_boilerS_ROUTE = Main::API_V1_NAMESPACE . '/' . self::POST_TYPE_boilerS_ROUTE;
 
 	/**
 	 * The general route constant.
@@ -170,11 +170,11 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	protected $term_indexation_action;
 
 	/**
-	 * The post type entertainment indexing action.
+	 * The post type boiler indexing action.
 	 *
-	 * @var Indexable_Post_Type_entertainment_Indexation_Action
+	 * @var Indexable_Post_Type_boiler_Indexation_Action
 	 */
-	protected $post_type_entertainment_indexation_action;
+	protected $post_type_boiler_indexation_action;
 
 	/**
 	 * Represents the general indexing action.
@@ -237,7 +237,7 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	 *
 	 * @param Indexable_Post_Indexation_Action              $post_indexation_action              The post indexing action.
 	 * @param Indexable_Term_Indexation_Action              $term_indexation_action              The term indexing action.
-	 * @param Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation_action The post type entertainment indexing action.
+	 * @param Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation_action The post type boiler indexing action.
 	 * @param Indexable_General_Indexation_Action           $general_indexation_action           The general indexing action.
 	 * @param Indexable_Indexing_Complete_Action            $indexable_indexing_complete_action  The complete indexing action.
 	 * @param Indexing_Complete_Action                      $indexing_complete_action            The complete indexing action.
@@ -250,7 +250,7 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	public function __construct(
 		Indexable_Post_Indexation_Action $post_indexation_action,
 		Indexable_Term_Indexation_Action $term_indexation_action,
-		Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation_action,
+		Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation_action,
 		Indexable_General_Indexation_Action $general_indexation_action,
 		Indexable_Indexing_Complete_Action $indexable_indexing_complete_action,
 		Indexing_Complete_Action $indexing_complete_action,
@@ -262,7 +262,7 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	) {
 		$this->post_indexation_action              = $post_indexation_action;
 		$this->term_indexation_action              = $term_indexation_action;
-		$this->post_type_entertainment_indexation_action = $post_type_entertainment_indexation_action;
+		$this->post_type_boiler_indexation_action = $post_type_boiler_indexation_action;
 		$this->general_indexation_action           = $general_indexation_action;
 		$this->indexable_indexing_complete_action  = $indexable_indexing_complete_action;
 		$this->indexing_complete_action            = $indexing_complete_action;
@@ -289,8 +289,8 @@ class Indexing_Route extends Abstract_Indexation_Route {
 		$route_args['callback'] = [ $this, 'index_terms' ];
 		\register_rest_route( Main::API_V1_NAMESPACE, self::TERMS_ROUTE, $route_args );
 
-		$route_args['callback'] = [ $this, 'index_post_type_entertainments' ];
-		\register_rest_route( Main::API_V1_NAMESPACE, self::POST_TYPE_entertainmentS_ROUTE, $route_args );
+		$route_args['callback'] = [ $this, 'index_post_type_boilers' ];
+		\register_rest_route( Main::API_V1_NAMESPACE, self::POST_TYPE_boilerS_ROUTE, $route_args );
 
 		$route_args['callback'] = [ $this, 'index_general' ];
 		\register_rest_route( Main::API_V1_NAMESPACE, self::GENERAL_ROUTE, $route_args );
@@ -330,12 +330,12 @@ class Indexing_Route extends Abstract_Indexation_Route {
 	}
 
 	/**
-	 * Indexes a number of unindexed post type entertainment pages.
+	 * Indexes a number of unindexed post type boiler pages.
 	 *
 	 * @return WP_REST_Response The response.
 	 */
-	public function index_post_type_entertainments() {
-		return $this->run_indexation_action( $this->post_type_entertainment_indexation_action, self::FULL_POST_TYPE_entertainmentS_ROUTE );
+	public function index_post_type_boilers() {
+		return $this->run_indexation_action( $this->post_type_boiler_indexation_action, self::FULL_POST_TYPE_boilerS_ROUTE );
 	}
 
 	/**

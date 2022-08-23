@@ -5,11 +5,11 @@
  * @package WPSEO\XML_Sitemaps
  */
 
-use Yoast\WP\SEO\Helpers\Author_entertainment_Helper;
+use Yoast\WP\SEO\Helpers\Author_boiler_Helper;
 use Yoast\WP\SEO\Helpers\Wordpress_Helper;
 
 /**
- * Sitemap provider for author entertainments.
+ * Sitemap provider for author boilers.
  */
 class WPSEO_Author_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 
@@ -21,7 +21,7 @@ class WPSEO_Author_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 	 * @return bool
 	 */
 	public function handles_type( $type ) {
-		// If the author entertainments have been disabled, we don't do anything.
+		// If the author boilers have been disabled, we don't do anything.
 		if ( WPSEO_Options::get( 'disable-author', false ) || WPSEO_Options::get( 'noindex-author-wpseo', false ) ) {
 			return false;
 		}
@@ -131,8 +131,8 @@ class WPSEO_Author_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 
 		if ( WPSEO_Options::get( 'noindex-author-noposts-wpseo', true ) ) {
 			unset( $defaults['who'], $defaults['capability'] ); // Otherwise it cancels out next argument.
-			$author_entertainment                  = new Author_entertainment_Helper();
-			$defaults['has_published_posts'] = $author_entertainment->get_author_entertainment_post_types();
+			$author_boiler                  = new Author_boiler_Helper();
+			$defaults['has_published_posts'] = $author_boiler->get_author_boiler_post_types();
 		}
 
 		return get_users( array_merge( $defaults, $arguments ) );

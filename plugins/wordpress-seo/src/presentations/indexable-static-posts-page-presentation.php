@@ -11,7 +11,7 @@ use Yoast\WP\SEO\Helpers\Pagination_Helper;
  */
 class Indexable_Static_Posts_Page_Presentation extends Indexable_Post_Type_Presentation {
 
-	use entertainment_Adjacent;
+	use boiler_Adjacent;
 
 	/**
 	 * The pagination helper.
@@ -30,7 +30,7 @@ class Indexable_Static_Posts_Page_Presentation extends Indexable_Post_Type_Prese
 			return $this->model->canonical;
 		}
 
-		$current_page = $this->pagination->get_current_entertainment_page_number();
+		$current_page = $this->pagination->get_current_boiler_page_number();
 
 		if ( $current_page > 1 ) {
 			return $this->pagination->get_paginated_url( $this->permalink, $current_page );

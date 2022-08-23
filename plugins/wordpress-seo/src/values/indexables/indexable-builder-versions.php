@@ -17,11 +17,11 @@ class Indexable_Builder_Versions {
 	 * @var array
 	 */
 	protected $indexable_builder_versions_by_type = [
-		'date-entertainment'      => self::DEFAULT_INDEXABLE_BUILDER_VERSION,
+		'date-boiler'      => self::DEFAULT_INDEXABLE_BUILDER_VERSION,
 		'general'           => self::DEFAULT_INDEXABLE_BUILDER_VERSION,
 		'home-page'         => 2,
 		'post'              => 2,
-		'post-type-entertainment' => 2,
+		'post-type-boiler' => 2,
 		'term'              => 2,
 		'user'              => 2,
 		'system-page'       => self::DEFAULT_INDEXABLE_BUILDER_VERSION,

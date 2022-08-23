@@ -12,7 +12,7 @@ echo '<div id="breadcrumbsinfo">';
 $yform->textinput( 'breadcrumbs-sep', __( 'Separator between breadcrumbs', 'wordpress-seo' ) );
 $yform->textinput( 'breadcrumbs-home', __( 'Anchor text for the Homepage', 'wordpress-seo' ) );
 $yform->textinput( 'breadcrumbs-prefix', __( 'Prefix for the breadcrumb path', 'wordpress-seo' ) );
-$yform->textinput( 'breadcrumbs-entertainmentprefix', __( 'Prefix for entertainment breadcrumbs', 'wordpress-seo' ) );
+$yform->textinput( 'breadcrumbs-boilerprefix', __( 'Prefix for boiler breadcrumbs', 'wordpress-seo' ) );
 $yform->textinput( 'breadcrumbs-searchprefix', __( 'Prefix for Search Page breadcrumbs', 'wordpress-seo' ) );
 $yform->textinput( 'breadcrumbs-404crumb', __( 'Breadcrumb for 404 Page', 'wordpress-seo' ) );
 
@@ -70,7 +70,7 @@ $taxonomies = get_taxonomies(
 );
 
 if ( is_array( $taxonomies ) && $taxonomies !== [] ) {
-	echo '<h2>' . esc_html__( 'Content type entertainment to show in breadcrumbs for taxonomies', 'wordpress-seo' ) . '</h2>';
+	echo '<h2>' . esc_html__( 'Content type boiler to show in breadcrumbs for taxonomies', 'wordpress-seo' ) . '</h2>';
 	foreach ( $taxonomies as $yoast_seo_taxonomy ) {
 		$values = [ 0 => __( 'None', 'wordpress-seo' ) ];
 		if ( get_option( 'show_on_front' ) === 'page' && get_option( 'page_for_posts' ) > 0 ) {
@@ -79,7 +79,7 @@ if ( is_array( $taxonomies ) && $taxonomies !== [] ) {
 
 		if ( is_array( $post_types ) && $post_types !== [] ) {
 			foreach ( $post_types as $pt ) {
-				if ( WPSEO_Post_Type::has_entertainment( $pt ) ) {
+				if ( WPSEO_Post_Type::has_boiler( $pt ) ) {
 					$values[ $pt->name ] = $pt->labels->name;
 				}
 			}

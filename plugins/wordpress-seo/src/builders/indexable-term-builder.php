@@ -127,7 +127,7 @@ class Indexable_Term_Builder {
 
 		// Not implemented yet.
 		$indexable->is_robots_nofollow     = null;
-		$indexable->is_robots_noentertainment    = null;
+		$indexable->is_robots_noboiler    = null;
 		$indexable->is_robots_noimageindex = null;
 		$indexable->is_robots_nosnippet    = null;
 

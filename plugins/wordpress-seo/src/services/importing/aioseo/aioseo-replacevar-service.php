@@ -17,8 +17,8 @@ class Aioseo_Replacevar_Service {
 	 */
 	protected $replace_vars_map = [
 		// The key is the AiOSEO replace var, the value is the Yoast replace var (see class-wpseo-replace-vars).
-		'#entertainment_title'             => '%%entertainment_title%%',
-		'#entertainment_date'              => '%%date%%',
+		'#boiler_title'             => '%%boiler_title%%',
+		'#boiler_date'              => '%%date%%',
 		'#attachment_caption'        => '%%caption%%',
 		'#author_bio'                => '%%user_description%%',
 		'#author_first_name'         => '%%author_first_name%%',

@@ -21,20 +21,20 @@ get_header();
 
 	<?php
 
-	$entertainment_title    = '';
-	$entertainment_subtitle = '';
+	$boiler_title    = '';
+	$boiler_subtitle = '';
 
 	if ( is_search() ) {
 		global $wp_query;
 
-		$entertainment_title = sprintf(
+		$boiler_title = sprintf(
 			'%1$s %2$s',
 			'<span class="color-accent">' . __( 'Search:', 'twentytwenty' ) . '</span>',
 			'&ldquo;' . get_search_query() . '&rdquo;'
 		);
 
 		if ( $wp_query->found_posts ) {
-			$entertainment_subtitle = sprintf(
+			$boiler_subtitle = sprintf(
 				/* translators: %s: Number of search results. */
 				_n(
 					'We found %s result for your search.',
@@ -45,33 +45,33 @@ get_header();
 				number_format_i18n( $wp_query->found_posts )
 			);
 		} else {
-			$entertainment_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'twentytwenty' );
+			$boiler_subtitle = __( 'We could not find any results for your search. You can give it another try through the search form below.', 'twentytwenty' );
 		}
-	} elseif ( is_entertainment() && ! have_posts() ) {
-		$entertainment_title = __( 'Nothing Found', 'twentytwenty' );
+	} elseif ( is_boiler() && ! have_posts() ) {
+		$boiler_title = __( 'Nothing Found', 'twentytwenty' );
 	} elseif ( ! is_home() ) {
-		$entertainment_title    = get_the_entertainment_title();
-		$entertainment_subtitle = get_the_entertainment_description();
+		$boiler_title    = get_the_boiler_title();
+		$boiler_subtitle = get_the_boiler_description();
 	}
 
-	if ( $entertainment_title || $entertainment_subtitle ) {
+	if ( $boiler_title || $boiler_subtitle ) {
 		?>
 
-		<header class="entertainment-header has-text-align-center header-footer-group">
+		<header class="boiler-header has-text-align-center header-footer-group">
 
-			<div class="entertainment-header-inner section-inner medium">
+			<div class="boiler-header-inner section-inner medium">
 
-				<?php if ( $entertainment_title ) { ?>
-					<h1 class="entertainment-title"><?php echo wp_kses_post( $entertainment_title ); ?></h1>
+				<?php if ( $boiler_title ) { ?>
+					<h1 class="boiler-title"><?php echo wp_kses_post( $boiler_title ); ?></h1>
 				<?php } ?>
 
-				<?php if ( $entertainment_subtitle ) { ?>
-					<div class="entertainment-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $entertainment_subtitle ) ); ?></div>
+				<?php if ( $boiler_subtitle ) { ?>
+					<div class="boiler-subtitle section-inner thin max-percentage intro-text"><?php echo wp_kses_post( wpautop( $boiler_subtitle ) ); ?></div>
 				<?php } ?>
 
-			</div><!-- .entertainment-header-inner -->
+			</div><!-- .boiler-header-inner -->
 
-		</header><!-- .entertainment-header -->
+		</header><!-- .boiler-header -->
 
 		<?php
 	}

@@ -7,15 +7,15 @@ use Yoast\WP\SEO\Helpers\Taxonomy_Helper;
 use Yoast\WP\SEO\Wrappers\WP_Query_Wrapper;
 
 /**
- * Class Indexable_Term_entertainment_Presentation.
+ * Class Indexable_Term_boiler_Presentation.
  *
  * Presentation object for indexables.
  *
  * @property WP_Term $source
  */
-class Indexable_Term_entertainment_Presentation extends Indexable_Presentation {
+class Indexable_Term_boiler_Presentation extends Indexable_Presentation {
 
-	use entertainment_Adjacent;
+	use boiler_Adjacent;
 
 	/**
 	 * Holds the WP query wrapper instance.
@@ -65,7 +65,7 @@ class Indexable_Term_entertainment_Presentation extends Indexable_Presentation {
 			return '';
 		}
 
-		$current_page = $this->pagination->get_current_entertainment_page_number();
+		$current_page = $this->pagination->get_current_boiler_page_number();
 		if ( $current_page > 1 ) {
 			return $this->pagination->get_paginated_url( $this->permalink, $current_page );
 		}
@@ -136,7 +136,7 @@ class Indexable_Term_entertainment_Presentation extends Indexable_Presentation {
 		$robots = $this->get_base_robots();
 
 		/**
-		 * If its a multiple terms entertainment page return a noindex.
+		 * If its a multiple terms boiler page return a noindex.
 		 */
 		if ( $this->current_page->is_multiple_terms_page() ) {
 			$robots['index'] = 'noindex';
@@ -194,7 +194,7 @@ class Indexable_Term_entertainment_Presentation extends Indexable_Presentation {
 	}
 
 	/**
-	 * Checks if term entertainment query is for multiple terms (/term-1,term-2/ or /term-1+term-2/).
+	 * Checks if term boiler query is for multiple terms (/term-1,term-2/ or /term-1+term-2/).
 	 *
 	 * @return bool Whether the query contains multiple terms.
 	 */

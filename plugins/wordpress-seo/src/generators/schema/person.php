@@ -278,7 +278,7 @@ class Person extends Abstract_Schema_Piece {
 			return $this->context->site_user_id === $user_id;
 		}
 
-		// Author entertainment from the same user as the site represents.
+		// Author boiler from the same user as the site represents.
 		return $this->context->indexable->object_type === 'user' && $this->context->site_user_id === $this->context->indexable->object_id;
 	}
 

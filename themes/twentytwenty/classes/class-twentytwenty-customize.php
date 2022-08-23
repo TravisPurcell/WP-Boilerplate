@@ -252,7 +252,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
-			/* Display full content or excerpts on the blog and entertainments --------- */
+			/* Display full content or excerpts on the blog and boilers --------- */
 
 			$wp_customize->add_setting(
 				'blog_content',
@@ -269,7 +269,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 					'type'     => 'radio',
 					'section'  => 'options',
 					'priority' => 10,
-					'label'    => __( 'On entertainment pages, posts show:', 'twentytwenty' ),
+					'label'    => __( 'On boiler pages, posts show:', 'twentytwenty' ),
 					'choices'  => array(
 						'full'    => __( 'Full text', 'twentytwenty' ),
 						'summary' => __( 'Summary', 'twentytwenty' ),

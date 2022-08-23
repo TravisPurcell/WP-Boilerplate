@@ -219,7 +219,7 @@ class WPSEO_Frontend {
 	}
 
 	/**
-	 * Adds 'prev' and 'next' links to entertainments.
+	 * Adds 'prev' and 'next' links to boilers.
 	 *
 	 * @link http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
 	 */

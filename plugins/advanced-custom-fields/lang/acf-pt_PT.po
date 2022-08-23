@@ -1978,7 +1978,7 @@ msgid "Page Link"
 msgstr "Ligação de página"
 
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arquivo"
 
 #: includes/fields/class-acf-field-page_link.php:262
@@ -2012,7 +2012,7 @@ msgid "All taxonomies"
 msgstr "Todas as taxonomias"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Permitir URL do arquivo"
 
 #: includes/fields/class-acf-field-page_link.php:526

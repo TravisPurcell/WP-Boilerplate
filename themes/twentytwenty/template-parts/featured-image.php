@@ -11,7 +11,7 @@ if ( has_post_thumbnail() && ! post_password_required() ) {
 
 	$featured_media_inner_classes = '';
 
-	// Make the featured media thinner on entertainment pages.
+	// Make the featured media thinner on boiler pages.
 	if ( ! is_singular() ) {
 		$featured_media_inner_classes .= ' medium';
 	}

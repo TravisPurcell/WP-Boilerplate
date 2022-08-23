@@ -205,7 +205,7 @@ class WpYoastIndexable extends Migration {
 			]
 		);
 		$indexable_table->column(
-			'is_robots_noentertainment',
+			'is_robots_noboiler',
 			'boolean',
 			[
 				'null'    => true,

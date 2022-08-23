@@ -12,5 +12,5 @@
 
     <td>%%SUCURI.Update.TestedWith%%</td>
 
-    <td><a href="%%SUCURI.Update.entertainmentUrl%%" target="_blank" rel="noopener">{{Download}}</a></td>
+    <td><a href="%%SUCURI.Update.boilerUrl%%" target="_blank" rel="noopener">{{Download}}</a></td>
 </tr>

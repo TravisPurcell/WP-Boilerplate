@@ -27,14 +27,14 @@
             <key name="metadesc-tax-post_tag" />
             <key name="title-author-wpseo" />
             <key name="metadesc-author-wpseo" />
-            <key name="title-entertainment-wpseo" />
-            <key name="metadesc-entertainment-wpseo" />
+            <key name="title-boiler-wpseo" />
+            <key name="metadesc-boiler-wpseo" />
             <key name="title-search-wpseo" />
             <key name="title-404-wpseo" />
             <key name="breadcrumbs-sep" />
             <key name="breadcrumbs-home" />
             <key name="breadcrumbs-prefix" />
-            <key name="breadcrumbs-entertainmentprefix" />
+            <key name="breadcrumbs-boilerprefix" />
             <key name="breadcrumbs-searchprefix" />
             <key name="breadcrumbs-404crumb" />
             <key name="rssbefore" />

@@ -248,7 +248,7 @@ class First_Time_Configuration_Integration implements Integration_Interface {
 			'prepare'            => Indexing_Route::FULL_PREPARE_ROUTE,
 			'terms'              => Indexing_Route::FULL_TERMS_ROUTE,
 			'posts'              => Indexing_Route::FULL_POSTS_ROUTE,
-			'entertainments'           => Indexing_Route::FULL_POST_TYPE_entertainmentS_ROUTE,
+			'boilers'           => Indexing_Route::FULL_POST_TYPE_boilerS_ROUTE,
 			'general'            => Indexing_Route::FULL_GENERAL_ROUTE,
 			'indexablesComplete' => Indexing_Route::FULL_INDEXABLES_COMPLETE_ROUTE,
 			'post_link'          => Indexing_Route::FULL_POST_LINKS_INDEXING_ROUTE,

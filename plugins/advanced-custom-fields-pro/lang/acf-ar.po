@@ -2224,7 +2224,7 @@ msgid "Page Link"
 msgstr "رابط الصفحة"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "الأرشيفات"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2258,7 +2258,7 @@ msgid "All taxonomies"
 msgstr "كافة التصنيفات"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "السماح بالعناوين المؤرشفة"
 
 #: includes/fields/class-acf-field-page_link.php:533
@@ -3411,7 +3411,7 @@ msgstr "إليوت كوندون"
 #~ "New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
 #~ msgstr "إعداد جديد لحقل العلاقة خاص بالفلاتر (البحث، نوع المقالة، التصنيف)"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "مجموعة المحفوظات الجديدة في تحديد الحقل page_link"
 
 #~ msgid "Better Options Pages"

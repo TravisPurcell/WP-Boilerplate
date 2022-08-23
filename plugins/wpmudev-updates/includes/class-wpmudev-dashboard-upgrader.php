@@ -747,7 +747,7 @@ class WPMUDEV_Dashboard_Upgrader {
 
 		// Handle different types of errors.
 		if ( is_wp_error( $skin->result ) ) {
-			if ( in_array( $skin->result->get_error_code(), array( 'remove_old_failed', 'mkdir_failed_zipentertainment' ), true ) ) {
+			if ( in_array( $skin->result->get_error_code(), array( 'remove_old_failed', 'mkdir_failed_zipboiler' ), true ) ) {
 				$response['error']['code']    = 'UPG.10';
 				$response['error']['message'] = $skin->get_error_messages();
 			} else {
@@ -756,7 +756,7 @@ class WPMUDEV_Dashboard_Upgrader {
 			}
 
 			return $response;
-		} elseif ( in_array( $skin->get_errors()->get_error_code(), array( 'remove_old_failed', 'mkdir_failed_zipentertainment' ), true ) ) {
+		} elseif ( in_array( $skin->get_errors()->get_error_code(), array( 'remove_old_failed', 'mkdir_failed_zipboiler' ), true ) ) {
 			$response['error']['code']    = 'UPG.10';
 			$response['error']['message'] = $skin->get_error_messages();
 
@@ -1272,7 +1272,7 @@ class WPMUDEV_Dashboard_Upgrader {
 
 		$this->log = $skin->get_upgrade_messages();
 		if ( is_wp_error( $result ) ) {
-			if ( 'mkdir_failed_zipentertainment' === $skin->$result->get_error_code() ) {
+			if ( 'mkdir_failed_zipboiler' === $skin->$result->get_error_code() ) {
 				$this->set_error( $pid, 'INS.09', $skin->get_error_messages() );
 			} else {
 				$this->set_error( $pid, 'INS.05', $result->get_error_message() );
@@ -1283,7 +1283,7 @@ class WPMUDEV_Dashboard_Upgrader {
 			$this->set_error( $pid, 'INS.03', $skin->result->get_error_message() );
 
 			return false;
-		} elseif ( 'mkdir_failed_zipentertainment' === $skin->get_errors()->get_error_code() ) {
+		} elseif ( 'mkdir_failed_zipboiler' === $skin->get_errors()->get_error_code() ) {
 			$this->set_error( $pid, 'INS.09', $skin->get_error_messages() );
 
 			return false;

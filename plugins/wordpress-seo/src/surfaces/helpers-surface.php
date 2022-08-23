@@ -11,7 +11,7 @@ use YoastSEO_Vendor\Symfony\Component\DependencyInjection\ContainerInterface;
  * Surface for the indexables.
  *
  * @property Helpers\Asset_Helper          $asset
- * @property Helpers\Author_entertainment_Helper $author_entertainment
+ * @property Helpers\Author_boiler_Helper $author_boiler
  * @property Helpers\Blocks_Helper         $blocks
  * @property Helpers\Capability_Helper     $capability
  * @property Helpers\Current_Page_Helper   $current_page

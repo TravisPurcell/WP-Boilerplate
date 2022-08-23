@@ -2243,7 +2243,7 @@ msgid "Page Link"
 msgstr "Odkaz stránky"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archivy"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2277,7 +2277,7 @@ msgid "All taxonomies"
 msgstr "Všechny taxonomie"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Umožnit URL adresy archivu"
 
 #: includes/fields/class-acf-field-page_link.php:533
@@ -3400,7 +3400,7 @@ msgstr "http://www.elliotcondon.com/"
 #~ "Nastavení nových polí pro \"Filtry\" (vyhledávání, typ příspěvku, "
 #~ "taxonomie)"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Nová skupina archivů v poli pro výběr page_link"
 
 #~ msgid "Better Options Pages"

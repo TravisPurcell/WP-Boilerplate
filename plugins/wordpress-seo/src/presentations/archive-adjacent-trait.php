@@ -6,7 +6,7 @@ use Yoast\WP\SEO\Helpers\Pagination_Helper;
 use Yoast\WP\SEO\Models\Indexable;
 
 /**
- * Class entertainment_Adjacent.
+ * Class boiler_Adjacent.
  *
  * Presentation object for indexables.
  *
@@ -14,7 +14,7 @@ use Yoast\WP\SEO\Models\Indexable;
  * @property Pagination_Helper $pagination The pagination helper. Should be defined in the parent
  *                                         class because of trait issues in PHP 5.6.
  */
-trait entertainment_Adjacent {
+trait boiler_Adjacent {
 
 	/**
 	 * Sets the helpers for the trait.
@@ -25,7 +25,7 @@ trait entertainment_Adjacent {
 	 *
 	 * @param Pagination_Helper $pagination The pagination helper.
 	 */
-	public function set_entertainment_adjacent_helpers( Pagination_Helper $pagination ) {
+	public function set_boiler_adjacent_helpers( Pagination_Helper $pagination ) {
 		$this->pagination = $pagination;
 	}
 
@@ -39,7 +39,7 @@ trait entertainment_Adjacent {
 			return '';
 		}
 
-		$current_page = \max( 1, $this->pagination->get_current_entertainment_page_number() );
+		$current_page = \max( 1, $this->pagination->get_current_boiler_page_number() );
 		// Check if there is a previous page.
 		if ( $current_page === 1 ) {
 			return '';
@@ -62,8 +62,8 @@ trait entertainment_Adjacent {
 			return '';
 		}
 
-		$current_page = \max( 1, $this->pagination->get_current_entertainment_page_number() );
-		if ( $this->pagination->get_number_of_entertainment_pages() <= $current_page ) {
+		$current_page = \max( 1, $this->pagination->get_current_boiler_page_number() );
+		if ( $this->pagination->get_number_of_boiler_pages() <= $current_page ) {
 			return '';
 		}
 

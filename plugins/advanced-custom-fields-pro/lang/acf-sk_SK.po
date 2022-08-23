@@ -1090,7 +1090,7 @@ msgid "Page Link"
 msgstr "Odkaz stránky "
 
 #: admin/views/settings-info.php:151
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Nová skupina archívov vo výbere pola page_link"
 
 #: admin/views/settings-info.php:155
@@ -1752,7 +1752,7 @@ msgid "Embed Size"
 msgstr "Veľkosť vloženého obsahu"
 
 #: fields/page_link.php:206
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archívy "
 
 #: fields/page_link.php:535 fields/post_object.php:401 fields/relationship.php:690

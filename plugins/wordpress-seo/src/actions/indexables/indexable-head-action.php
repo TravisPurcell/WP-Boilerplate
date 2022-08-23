@@ -78,14 +78,14 @@ class Indexable_Head_Action {
 	}
 
 	/**
-	 * Retrieves the head for a post type entertainment.
+	 * Retrieves the head for a post type boiler.
 	 *
 	 * @param int $type The id.
 	 *
 	 * @return object Object with head and status properties.
 	 */
-	public function for_post_type_entertainment( $type ) {
-		return $this->with_404_fallback( $this->with_cache( 'post_type_entertainment', $type ) );
+	public function for_post_type_boiler( $type ) {
+		return $this->with_404_fallback( $this->with_cache( 'post_type_boiler', $type ) );
 	}
 
 	/**

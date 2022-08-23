@@ -2222,8 +2222,8 @@ msgid "Page Link"
 msgstr "Lien vers page ou article"
 
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
-msgstr "entertainments"
+msgid "boilers"
+msgstr "boilers"
 
 #: includes/fields/class-acf-field-page_link.php:262
 #: includes/fields/class-acf-field-post_object.php:267
@@ -2257,8 +2257,8 @@ msgid "All taxonomies"
 msgstr "Toutes les taxonomies"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
-msgstr "Afficher les pages d’entertainments"
+msgid "Allow boilers URLs"
+msgstr "Afficher les pages d’boilers"
 
 # @ acf
 #: includes/fields/class-acf-field-page_link.php:526

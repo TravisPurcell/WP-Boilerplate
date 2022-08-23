@@ -32,10 +32,10 @@ class WPSEO_Admin_Recommended_Replace_Vars {
 		// Custom taxonomy.
 		'term-in-custom-taxomomy'  => [ 'sitename', 'term_title', 'sep', 'term_hierarchy' ],
 
-		// Settings - entertainment pages.
-		'author_entertainment'           => [ 'sitename', 'title', 'sep', 'page' ],
-		'date_entertainment'             => [ 'sitename', 'sep', 'date', 'page' ],
-		'custom-post-type_entertainment' => [ 'sitename', 'title', 'sep', 'page' ],
+		// Settings - boiler pages.
+		'author_boiler'           => [ 'sitename', 'title', 'sep', 'page' ],
+		'date_boiler'             => [ 'sitename', 'sep', 'date', 'page' ],
+		'custom-post-type_boiler' => [ 'sitename', 'title', 'sep', 'page' ],
 
 		// Settings - special pages.
 		'search'                   => [ 'sitename', 'searchphrase', 'sep', 'page' ],
@@ -103,15 +103,15 @@ class WPSEO_Admin_Recommended_Replace_Vars {
 	}
 
 	/**
-	 * Determines the page type for an entertainment page.
+	 * Determines the page type for an boiler page.
 	 *
-	 * @param string $name     The name of the entertainment.
+	 * @param string $name     The name of the boiler.
 	 * @param string $fallback The page type to fall back to.
 	 *
 	 * @return string The page type.
 	 */
-	public function determine_for_entertainment( $name, $fallback = 'custom-post-type_entertainment' ) {
-		$page_type                   = $name . '_entertainment';
+	public function determine_for_boiler( $name, $fallback = 'custom-post-type_boiler' ) {
+		$page_type                   = $name . '_boiler';
 		$recommended_replace_vars    = $this->get_recommended_replacevars();
 		$has_recommended_replacevars = $this->has_recommended_replace_vars( $recommended_replace_vars, $page_type );
 

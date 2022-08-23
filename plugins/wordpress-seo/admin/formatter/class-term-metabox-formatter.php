@@ -162,8 +162,8 @@ class WPSEO_Term_Metabox_Formatter implements WPSEO_Metabox_Formatter_Interface 
 
 		if ( $title === '' && $fallback === true ) {
 			/* translators: %s expands to the variable used for term title. */
-			$entertainments = sprintf( __( '%s entertainments', 'wordpress-seo' ), '%%term_title%%' );
-			return $entertainments . ' %%page%% %%sep%% %%sitename%%';
+			$boilers = sprintf( __( '%s boilers', 'wordpress-seo' ), '%%term_title%%' );
+			return $boilers . ' %%page%% %%sep%% %%sitename%%';
 		}
 
 		return $title;

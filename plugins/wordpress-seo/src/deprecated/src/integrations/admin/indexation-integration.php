@@ -6,7 +6,7 @@ use WPSEO_Admin_Asset_Manager;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_General_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Indexing_Complete_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Conditionals\Admin_Conditional;
 use Yoast\WP\SEO\Conditionals\Migrations_Conditional;
@@ -50,7 +50,7 @@ class Indexation_Integration implements Integration_Interface {
 	 *
 	 * @param Indexable_Post_Indexation_Action              $post_indexation              The post indexation action.
 	 * @param Indexable_Term_Indexation_Action              $term_indexation              The term indexation action.
-	 * @param Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation The entertainment indexation action.
+	 * @param Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation The boiler indexation action.
 	 * @param Indexable_General_Indexation_Action           $general_indexation           The general indexation action.
 	 * @param Indexable_Indexing_Complete_Action            $complete_indexation_action   The complete indexation action.
 	 * @param Options_Helper                                $options_helper               The options helper.
@@ -61,7 +61,7 @@ class Indexation_Integration implements Integration_Interface {
 	public function __construct(
 		Indexable_Post_Indexation_Action $post_indexation,
 		Indexable_Term_Indexation_Action $term_indexation,
-		Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation,
+		Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation,
 		Indexable_General_Indexation_Action $general_indexation,
 		Indexable_Indexing_Complete_Action $complete_indexation_action,
 		Options_Helper $options_helper,

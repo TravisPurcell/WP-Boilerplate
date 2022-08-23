@@ -230,7 +230,7 @@ class Indexable_Presentation extends Abstract_Presentation {
 		}
 
 		if ( \is_date() ) {
-			return $this->current_page->get_date_entertainment_permalink();
+			return $this->current_page->get_date_boiler_permalink();
 		}
 
 		return $this->model->permalink;
@@ -299,7 +299,7 @@ class Indexable_Presentation extends Abstract_Presentation {
 		// Remove values that are only listened to when indexing.
 		if ( $robots['index'] === 'noindex' ) {
 			$robots['imageindex']        = null;
-			$robots['entertainment']           = null;
+			$robots['boiler']           = null;
 			$robots['snippet']           = null;
 			$robots['max-snippet']       = null;
 			$robots['max-image-preview'] = null;

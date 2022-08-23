@@ -177,9 +177,9 @@ class Scanner {
 				$urls[] = get_permalink( $posts[0] );
 			}
 
-			$entertainment_link = get_post_type_entertainment_link( $post_type );
-			if ( $entertainment_link ) {
-				$urls[] = $entertainment_link;
+			$boiler_link = get_post_type_boiler_link( $post_type );
+			if ( $boiler_link ) {
+				$urls[] = $boiler_link;
 			}
 		}
 

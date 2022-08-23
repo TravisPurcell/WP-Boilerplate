@@ -1442,7 +1442,7 @@ msgid "Page Link"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:165
-msgid "entertainments"
+msgid "boilers"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:249, includes/fields/class-acf-field-post_object.php:250, includes/fields/class-acf-field-taxonomy.php:948
@@ -1466,7 +1466,7 @@ msgid "All taxonomies"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:494
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:506, includes/fields/class-acf-field-post_object.php:406, includes/fields/class-acf-field-select.php:398, includes/fields/class-acf-field-user.php:79

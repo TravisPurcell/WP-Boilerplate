@@ -35,7 +35,7 @@ with others.
 	7. 	Page Templates
 		a. 	Template: Cover Template
 		c. 	Template: Full Width
-	8.  Post: entertainment
+	8.  Post: boiler
 	9.  Post: Single
 	10. Blocks
 	11. Entry Content
@@ -2353,29 +2353,29 @@ body.template-full-width [class*="wp-block"].alignfull:not(.has-background) [cla
 
 /* -------------------------------------------------------------------------- */
 
-/*	8. Post: entertainment
+/*	8. Post: boiler
 /* -------------------------------------------------------------------------- */
 
 
-/* entertainment Header ---------------------------- */
+/* boiler Header ---------------------------- */
 
-.entertainment-header {
+.boiler-header {
 	background-color: #fff;
 	padding: 4rem 0;
 }
 
-.reduced-spacing .entertainment-header {
+.reduced-spacing .boiler-header {
 	padding-bottom: 2rem;
 }
 
-.entertainment-title {
+.boiler-title {
 	font-size: 2.4rem;
 	font-weight: 700;
 	letter-spacing: -0.026666667em;
 	margin: 0;
 }
 
-.entertainment-subtitle p:last-child {
+.boiler-subtitle p:last-child {
 	margin-bottom: 0;
 }
 
@@ -2827,7 +2827,7 @@ h2.entry-title {
 /* Block Font Families ----------------------- */
 
 .has-drop-cap:not(:focus)::first-letter,
-.entry-content .wp-block-entertainments,
+.entry-content .wp-block-boilers,
 .entry-content .wp-block-categories,
 .entry-content .wp-block-cover-image,
 .entry-content .wp-block-latest-comments,
@@ -2841,7 +2841,7 @@ h2.entry-title {
 @supports ( font-variation-settings: normal ) {
 
 	.has-drop-cap:not(:focus)::first-letter,
-	.entry-content .wp-block-entertainments,
+	.entry-content .wp-block-boilers,
 	.entry-content .wp-block-categories,
 	.entry-content .wp-block-latest-posts,
 	.entry-content .wp-block-latest-comments,
@@ -2888,7 +2888,7 @@ h2.entry-title {
 	margin-bottom: 0;
 }
 
-.wp-block-entertainments:not(.alignwide):not(.alignfull),
+.wp-block-boilers:not(.alignwide):not(.alignfull),
 .wp-block-categories:not(.alignwide):not(.alignfull),
 .wp-block-code,
 .wp-block-columns:not(.alignwide):not(.alignfull),
@@ -2924,7 +2924,7 @@ h2.entry-title {
 
 /* Block: Shared Widget Styles --------------- */
 
-.wp-block-entertainments,
+.wp-block-boilers,
 .wp-block-categories,
 .wp-block-latest-posts,
 .wp-block-latest-comments {
@@ -2932,41 +2932,41 @@ h2.entry-title {
 	margin-left: 0;
 }
 
-.wp-block-entertainments ul,
+.wp-block-boilers ul,
 .wp-block-categories ul,
 .wp-block-latest-posts ul,
 .wp-block-latest-comments ul {
 	list-style: none;
 }
 
-.entry-content .wp-block-entertainments > li,
+.entry-content .wp-block-boilers > li,
 .entry-content .wp-block-categories > li,
 .entry-content .wp-block-latest-posts > li,
 .entry-content .wp-block-latest-comment > li {
 	margin-left: 0;
 }
 
-.entry-content .wp-block-entertainments > li:last-child,
+.entry-content .wp-block-boilers > li:last-child,
 .entry-content .wp-block-categories > li:last-child,
 .entry-content .wp-block-latest-posts > li:last-child,
 .entry-content .wp-block-latest-comment > li:last-child {
 	margin-bottom: 0;
 }
 
-.entry-content .wp-block-entertainments *,
+.entry-content .wp-block-boilers *,
 .entry-content .wp-block-categories *,
 .entry-content .wp-block-latest-posts *,
 .entry-content .wp-block-latest-comments * {
 	font-family: inherit;
 }
 
-.entry-content .wp-block-entertainments li,
+.entry-content .wp-block-boilers li,
 .entry-content .wp-block-categories li,
 .entry-content .wp-block-latest-posts li {
 	color: #6d6d6d;
 }
 
-.wp-block-entertainments a,
+.wp-block-boilers a,
 .wp-block-categories a,
 .wp-block-latest-posts a,
 .wp-block-latest-comments a {
@@ -2974,11 +2974,11 @@ h2.entry-title {
 	text-decoration: none;
 }
 
-.wp-block-entertainments a:hover,
+.wp-block-boilers a:hover,
 .wp-block-categories a:hover,
 .wp-block-latest-posts a:hover,
 .wp-block-latest-comments a:hover,
-.wp-block-entertainments a:focus,
+.wp-block-boilers a:focus,
 .wp-block-categories a:focus,
 .wp-block-latest-posts a:focus,
 .wp-block-latest-comments a:focus {
@@ -4175,7 +4175,7 @@ div.comment:first-of-type {
 
 /* Base List Widget -------------------------- */
 
-.widget_entertainment ul,
+.widget_boiler ul,
 .widget_categories ul,
 .widget_pages ul,
 .widget_meta ul,
@@ -4187,7 +4187,7 @@ div.comment:first-of-type {
 	margin: 0;
 }
 
-.widget_entertainment li,
+.widget_boiler li,
 .widget_categories li,
 .widget_pages li,
 .widget_meta li,
@@ -4196,7 +4196,7 @@ div.comment:first-of-type {
 	margin: 0.3rem 0;
 }
 
-.widget_entertainment li li,
+.widget_boiler li li,
 .widget_categories li li,
 .widget_pages li li,
 .widget_meta li li,
@@ -4204,7 +4204,7 @@ div.comment:first-of-type {
 	margin-left: 2rem;
 }
 
-.widget_entertainment a,
+.widget_boiler a,
 .widget_categories a,
 .widget_pages a,
 .widget_meta a,
@@ -4213,8 +4213,8 @@ div.comment:first-of-type {
 	text-decoration: none;
 }
 
-.widget_entertainment a:focus,
-.widget_entertainment a:hover,
+.widget_boiler a:focus,
+.widget_boiler a:hover,
 .widget_categories a:focus,
 .widget_categories a:hover,
 .widget_pages a:focus,
@@ -5062,17 +5062,17 @@ a.to-the-top > * {
 		margin-right: 4rem;
 	}
 
-	/* Post: entertainment ------------------------- */
+	/* Post: boiler ------------------------- */
 
-	.entertainment-header {
+	.boiler-header {
 		padding: 8rem 0;
 	}
 
-	.reduced-spacing .entertainment-header {
+	.reduced-spacing .boiler-header {
 		padding-bottom: 3rem;
 	}
 
-	.entertainment-title {
+	.boiler-title {
 		font-size: 3.2rem;
 	}
 
@@ -5217,7 +5217,7 @@ a.to-the-top > * {
 
 	/* BLOCK: BASE MARGINS */
 
-	.wp-block-entertainments:not(.alignwide):not(.alignfull),
+	.wp-block-boilers:not(.alignwide):not(.alignfull),
 	.wp-block-categories:not(.alignwide):not(.alignfull),
 	.wp-block-code,
 	.wp-block-columns:not(.alignwide):not(.alignfull),
@@ -5901,7 +5901,7 @@ a.to-the-top > * {
 		margin-left: 2rem;
 	}
 
-	/* Post: entertainment ------------------------- */
+	/* Post: boiler ------------------------- */
 
 	/* Post: Single -------------------------- */
 
@@ -6189,7 +6189,7 @@ a.to-the-top > * {
 		padding-top: 10rem;
 	}
 
-	/* Post: entertainment ------------------------- */
+	/* Post: boiler ------------------------- */
 
 	/* Post: Single -------------------------- */
 

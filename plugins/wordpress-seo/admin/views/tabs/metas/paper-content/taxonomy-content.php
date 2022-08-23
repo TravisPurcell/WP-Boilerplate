@@ -15,7 +15,7 @@
 if ( $wpseo_taxonomy->name === 'post_format' ) {
 	$yform->light_switch(
 		'disable-post_format',
-		__( 'Format-based entertainments', 'wordpress-seo' ),
+		__( 'Format-based boilers', 'wordpress-seo' ),
 		[ __( 'On', 'wordpress-seo' ), __( 'Off', 'wordpress-seo' ) ],
 		false
 	);

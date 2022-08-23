@@ -103,7 +103,7 @@ final class UriResolver
      *    (string) $target === (string) UriResolver::resolve($base, UriResolver::relativize($base, $target))
      *
      * One use-case is to use the current request URI as base URI and then generate relative links in your documents
-     * to reduce the document size or offer self-contained downloadable document entertainments.
+     * to reduce the document size or offer self-contained downloadable document boilers.
      *
      *    $base = new Uri('http://example.com/a/b/');
      *    echo UriResolver::relativize($base, new Uri('http://example.com/a/b/c'));  // prints 'c'.

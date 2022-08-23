@@ -21,8 +21,8 @@ class WPSEO_Admin_Editor_Specific_Replace_Vars {
 		'post'                     => [ 'id', 'term404', 'pt_single', 'pt_plural' ],
 		// Custom post type.
 		'custom_post_type'         => [ 'id', 'term404', 'pt_single', 'pt_plural', 'parent_title' ],
-		// Settings - entertainment pages.
-		'custom-post-type_entertainment' => [ 'pt_single', 'pt_plural' ],
+		// Settings - boiler pages.
+		'custom-post-type_boiler' => [ 'pt_single', 'pt_plural' ],
 
 		// Taxonomies.
 		'category'                 => [ 'term_title', 'term_description', 'category_description', 'parent_title', 'term_hierarchy' ],
@@ -144,15 +144,15 @@ class WPSEO_Admin_Editor_Specific_Replace_Vars {
 	}
 
 	/**
-	 * Determines the page type for an entertainment page.
+	 * Determines the page type for an boiler page.
 	 *
-	 * @param string $name     The name of the entertainment.
+	 * @param string $name     The name of the boiler.
 	 * @param string $fallback The page type to fall back to.
 	 *
 	 * @return string The page type.
 	 */
-	public function determine_for_entertainment( $name, $fallback = 'custom-post-type_entertainment' ) {
-		$page_type = $name . '_entertainment';
+	public function determine_for_boiler( $name, $fallback = 'custom-post-type_boiler' ) {
+		$page_type = $name . '_boiler';
 
 		if ( ! $this->has_for_page_type( $page_type ) ) {
 			return $fallback;

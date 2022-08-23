@@ -3,7 +3,7 @@
 namespace Yoast\WP\SEO\Helpers;
 
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Config\Indexing_Reasons;
 use Yoast\WP\SEO\Models\Indexable;
@@ -78,7 +78,7 @@ class Indexable_Helper {
 		'is_robots_nofollow'     => [
 			'default_value'   => false,
 		],
-		'is_robots_noentertainment'    => [
+		'is_robots_noboiler'    => [
 			'default_value'   => null,
 		],
 		'is_robots_noimageindex' => [
@@ -134,15 +134,15 @@ class Indexable_Helper {
 
 				return 'Post_Type';
 			case 'term':
-				return 'Term_entertainment';
+				return 'Term_boiler';
 			case 'user':
-				return 'Author_entertainment';
+				return 'Author_boiler';
 			case 'home-page':
 				return 'Home_Page';
-			case 'post-type-entertainment':
-				return 'Post_Type_entertainment';
-			case 'date-entertainment':
-				return 'Date_entertainment';
+			case 'post-type-boiler':
+				return 'Post_Type_boiler';
+			case 'date-boiler':
+				return 'Date_boiler';
 			case 'system-page':
 				if ( $indexable->object_sub_type === 'search-result' ) {
 					return 'Search_Result_Page';
@@ -169,7 +169,7 @@ class Indexable_Helper {
 
 		if ( $result !== false && $result > 0 ) {
 			\delete_transient( Indexable_Post_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
-			\delete_transient( Indexable_Post_Type_entertainment_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
+			\delete_transient( Indexable_Post_Type_boiler_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
 			\delete_transient( Indexable_Term_Indexation_Action::UNINDEXED_COUNT_TRANSIENT );
 		}
 	}

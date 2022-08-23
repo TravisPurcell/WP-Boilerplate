@@ -100,7 +100,7 @@ class Indexable_Permalink_Watcher implements Integration_Interface {
 		}
 
 		$this->indexable_helper->reset_permalink_indexables( 'user' );
-		$this->indexable_helper->reset_permalink_indexables( 'date-entertainment' );
+		$this->indexable_helper->reset_permalink_indexables( 'date-boiler' );
 		$this->indexable_helper->reset_permalink_indexables( 'system-page' );
 
 		// Always update `permalink_structure` in the wpseo option.
@@ -114,7 +114,7 @@ class Indexable_Permalink_Watcher implements Integration_Interface {
 	 */
 	public function reset_permalinks_post_type( $post_type ) {
 		$this->indexable_helper->reset_permalink_indexables( 'post', $post_type );
-		$this->indexable_helper->reset_permalink_indexables( 'post-type-entertainment', $post_type );
+		$this->indexable_helper->reset_permalink_indexables( 'post-type-boiler', $post_type );
 	}
 
 	/**

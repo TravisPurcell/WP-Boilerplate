@@ -12,11 +12,11 @@ use Yoast\WP\SEO\Services\Importing\Aioseo\Aioseo_Robots_Provider_Service;
 use Yoast\WP\SEO\Services\Importing\Aioseo\Aioseo_Robots_Transformer_Service;
 
 /**
- * Importing action for AIOSEO custom entertainment settings data.
+ * Importing action for AIOSEO custom boiler settings data.
  *
  * @phpcs:disable Yoast.NamingConventions.ObjectNameDepth.MaxExceeded
  */
-class Aioseo_Custom_entertainment_Settings_Importing_Action extends Abstract_Aioseo_Settings_Importing_Action {
+class Aioseo_Custom_boiler_Settings_Importing_Action extends Abstract_Aioseo_Settings_Importing_Action {
 
 	/**
 	 * The plugin of the action.
@@ -26,7 +26,7 @@ class Aioseo_Custom_entertainment_Settings_Importing_Action extends Abstract_Aio
 	/**
 	 * The type of the action.
 	 */
-	const TYPE = 'custom_entertainment_settings';
+	const TYPE = 'custom_boiler_settings';
 
 	/**
 	 * The option_name of the AIOSEO option that contains the settings.
@@ -45,7 +45,7 @@ class Aioseo_Custom_entertainment_Settings_Importing_Action extends Abstract_Aio
 	 *
 	 * @var string
 	 */
-	protected $settings_tab = 'entertainments';
+	protected $settings_tab = 'boilers';
 
 	/**
 	 * The post type helper.
@@ -55,7 +55,7 @@ class Aioseo_Custom_entertainment_Settings_Importing_Action extends Abstract_Aio
 	protected $post_type;
 
 	/**
-	 * Aioseo_Custom_entertainment_Settings_Importing_Action constructor.
+	 * Aioseo_Custom_boiler_Settings_Importing_Action constructor.
 	 *
 	 * @param Import_Cursor_Helper              $import_cursor      The import cursor helper.
 	 * @param Options_Helper                    $options            The options helper.
@@ -88,20 +88,20 @@ class Aioseo_Custom_entertainment_Settings_Importing_Action extends Abstract_Aio
 		$post_type_objects = \get_post_types( [ 'public' => true ], 'objects' );
 
 		foreach ( $post_type_objects as $pt ) {
-			// Use all the custom post types that have entertainments.
-			if ( ! $pt->_builtin && $this->post_type->has_entertainment( $pt ) ) {
+			// Use all the custom post types that have boilers.
+			if ( ! $pt->_builtin && $this->post_type->has_boiler( $pt ) ) {
 				$this->aioseo_options_to_yoast_map[ '/' . $pt->name . '/title' ]                       = [
-					'yoast_name'       => 'title-ptentertainment-' . $pt->name,
+					'yoast_name'       => 'title-ptboiler-' . $pt->name,
 					'transform_method' => 'simple_import',
 				];
 				$this->aioseo_options_to_yoast_map[ '/' . $pt->name . '/metaDescription' ]             = [
-					'yoast_name'       => 'metadesc-ptentertainment-' . $pt->name,
+					'yoast_name'       => 'metadesc-ptboiler-' . $pt->name,
 					'transform_method' => 'simple_import',
 				];
 				$this->aioseo_options_to_yoast_map[ '/' . $pt->name . '/advanced/robotsMeta/noindex' ] = [
-					'yoast_name'       => 'noindex-ptentertainment-' . $pt->name,
+					'yoast_name'       => 'noindex-ptboiler-' . $pt->name,
 					'transform_method' => 'import_noindex',
-					'type'             => 'entertainments',
+					'type'             => 'boilers',
 					'subtype'          => $pt->name,
 					'option_name'      => 'aioseo_options_dynamic',
 				];

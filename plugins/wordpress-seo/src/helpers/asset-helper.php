@@ -3,7 +3,7 @@
 namespace Yoast\WP\SEO\Helpers;
 
 /**
- * A helper object for author entertainments.
+ * A helper object for author boilers.
  */
 class Asset_Helper {
 

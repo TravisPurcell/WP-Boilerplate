@@ -2246,7 +2246,7 @@ msgid "Page Link"
 msgstr "Enllaç de pàgina"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arxius"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2280,7 +2280,7 @@ msgid "All taxonomies"
 msgstr "Totes les taxonomies"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Permet les URLs dels arxius"
 
 #: includes/fields/class-acf-field-page_link.php:533

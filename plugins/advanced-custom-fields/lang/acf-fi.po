@@ -1776,7 +1776,7 @@ msgid "Page Link"
 msgstr "Sivun URL"
 
 #: includes/fields/class-acf-field-page_link.php:165
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arkistot"
 
 #: includes/fields/class-acf-field-page_link.php:249,
@@ -1810,7 +1810,7 @@ msgid "All taxonomies"
 msgstr "Kaikki taksonomiat"
 
 #: includes/fields/class-acf-field-page_link.php:494
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Salli arkistojen URL-osoitteita"
 
 #: includes/fields/class-acf-field-page_link.php:506,
@@ -3725,7 +3725,7 @@ msgstr "Päivitys Ilmoitus"
 #~ "Uudet Suodata artikkeleita -kentän asetukset 'Suodattamille' (Etsi, "
 #~ "Artikkelityyppi, Taksonomia)"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Uusi arkistoryhmä page_link -kentän valintana"
 
 #~ msgid "Better Options Pages"

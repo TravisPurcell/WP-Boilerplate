@@ -19,6 +19,6 @@ if ( YoastSEO()->helpers->woocommerce->get_shop_page_id() !== -1 ) {
 }
 
 /* translators: %s expands to the post type name. */
-echo '<h3>', esc_html( sprintf( __( 'Settings for %s entertainment', 'wordpress-seo' ), $wpseo_post_type->labels->name ) ), '</h3>';
+echo '<h3>', esc_html( sprintf( __( 'Settings for %s boiler', 'wordpress-seo' ), $wpseo_post_type->labels->name ) ), '</h3>';
 // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Reason: Output is properly escaped already, see above.
 echo '<p>', $description, '</p>';

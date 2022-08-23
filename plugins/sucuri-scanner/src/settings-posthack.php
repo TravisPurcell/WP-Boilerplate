@@ -440,7 +440,7 @@ class SucuriScanSettingsPosthack extends SucuriScanSettings
                     'Update.Version' => $data->Version,
                     'Update.NewVersion' => 'unknown',
                     'Update.TestedWith' => 'unknown',
-                    'Update.entertainmentUrl' => 'unknown',
+                    'Update.boilerUrl' => 'unknown',
                     'Update.MarketUrl' => 'unknown',
                 );
 
@@ -453,7 +453,7 @@ class SucuriScanSettingsPosthack extends SucuriScanSettings
                 }
 
                 if (property_exists($data->update, 'package')) {
-                    $params['Update.entertainmentUrl'] = $data->update->package;
+                    $params['Update.boilerUrl'] = $data->update->package;
                 }
 
                 if (property_exists($data->update, 'url')) {
@@ -478,7 +478,7 @@ class SucuriScanSettingsPosthack extends SucuriScanSettings
                         'Update.Version' => $data->Version,
                         'Update.NewVersion' => $data->update['new_version'],
                         'Update.TestedWith' => __('Newest WordPress', 'sucuri-scanner'),
-                        'Update.entertainmentUrl' => $data->update['package'],
+                        'Update.boilerUrl' => $data->update['package'],
                         'Update.MarketUrl' => $data->update['url'],
                     )
                 );

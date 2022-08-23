@@ -163,7 +163,7 @@ class WPSEO_Import_SEOPressor extends WPSEO_Plugin_Importer {
 		if ( in_array( 'nofollow', $seopressor_robots, true ) ) {
 			$return['follow'] = 1;
 		}
-		foreach ( [ 'noentertainment', 'nosnippet', 'noimageindex' ] as $needle ) {
+		foreach ( [ 'noboiler', 'nosnippet', 'noimageindex' ] as $needle ) {
 			if ( in_array( $needle, $seopressor_robots, true ) ) {
 				$return['advanced'] .= $needle . ',';
 			}

@@ -46,11 +46,11 @@ class User_Helper {
 	}
 
 	/**
-	 * Retrieves the entertainment url of the user.
+	 * Retrieves the boiler url of the user.
 	 *
 	 * @param int|false $user_id User ID.
 	 *
-	 * @return string The author's entertainment url.
+	 * @return string The author's boiler url.
 	 */
 	public function get_the_author_posts_url( $user_id ) {
 		return \get_author_posts_url( $user_id );

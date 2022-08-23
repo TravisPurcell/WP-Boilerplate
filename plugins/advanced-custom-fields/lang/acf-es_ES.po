@@ -2167,7 +2167,7 @@ msgid "Page Link"
 msgstr "Link de página"
 
 #: includes/fields/class-acf-field-page_link.php:165
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archivos"
 
 #: includes/fields/class-acf-field-page_link.php:249
@@ -2201,7 +2201,7 @@ msgid "All taxonomies"
 msgstr "Todas las taxonomías"
 
 #: includes/fields/class-acf-field-page_link.php:494
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Permitir las URLs de los archivos"
 
 #: includes/fields/class-acf-field-page_link.php:506
@@ -3707,7 +3707,7 @@ msgstr "Cerebros deliciosos"
 #~ msgstr ""
 #~ "Nueva funcionalidad de grupos permite mover campos entre grupos y padres"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Nuevo grupo archivos en el campo de selección de page_link"
 
 #~ msgid "Better Options Pages"

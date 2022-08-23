@@ -430,7 +430,7 @@ Inter variable font. Usage:
 
 /* Block: Shared Widget Styles -------------- */
 
-.editor-styles-wrapper ul.wp-block-entertainments,
+.editor-styles-wrapper ul.wp-block-boilers,
 .editor-styles-wrapper ul.wp-block-categories,
 .editor-styles-wrapper ul.wp-block-latest-posts,
 .editor-styles-wrapper ul.wp-block-categories__list {
@@ -444,7 +444,7 @@ Inter variable font. Usage:
 	margin: 0;
 }
 
-.editor-styles-wrapper ul.wp-block-entertainments li,
+.editor-styles-wrapper ul.wp-block-boilers li,
 .editor-styles-wrapper ul.wp-block-categories li,
 .editor-styles-wrapper ul.wp-block-latest-posts li,
 .editor-styles-wrapper ul.wp-block-categories__list li {
@@ -453,22 +453,22 @@ Inter variable font. Usage:
 	margin: 5px 0 0 0;
 }
 
-.editor-styles-wrapper ul.wp-block-entertainments li li,
+.editor-styles-wrapper ul.wp-block-boilers li li,
 .editor-styles-wrapper ul.wp-block-categories li li,
 .editor-styles-wrapper ul.wp-block-categories__list li li,
 .editor-styles-wrapper ul.wp-block-latest-posts li li {
 	margin-right: 20px;
 }
 
-.editor-styles-wrapper .wp-block-entertainments li > a,
+.editor-styles-wrapper .wp-block-boilers li > a,
 .editor-styles-wrapper .wp-block-categories li > a,
 .editor-styles-wrapper .wp-block-latest-posts li > a {
 	font-weight: 700;
 	text-decoration: none;
 }
 
-.editor-styles-wrapper .wp-block-entertainments li > a:focus,
-.editor-styles-wrapper .wp-block-entertainments li > a:hover,
+.editor-styles-wrapper .wp-block-boilers li > a:focus,
+.editor-styles-wrapper .wp-block-boilers li > a:hover,
 .editor-styles-wrapper .wp-block-categories li > a:focus,
 .editor-styles-wrapper .wp-block-categories li > a:hover,
 .editor-styles-wrapper .wp-block-latest-posts li > a:focus,
@@ -477,7 +477,7 @@ Inter variable font. Usage:
 	text-decoration: none;
 }
 
-.editor-styles-wrapper .wp-block-entertainments.aligncenter,
+.editor-styles-wrapper .wp-block-boilers.aligncenter,
 .editor-styles-wrapper .wp-block-categories.aligncenter {
 	text-align: center;
 }

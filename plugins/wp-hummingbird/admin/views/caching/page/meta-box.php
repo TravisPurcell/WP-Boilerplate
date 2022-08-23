@@ -282,7 +282,7 @@ if ( is_wp_error( $error ) ) {
 					<?php esc_html_e( 'Clear full cache when post/page is updated', 'wphb' ); ?>
 				</span>
 				<span class="sui-description sui-toggle-description">
-					<?php esc_html_e( 'If one of your pages or posts gets updated, turning this setting on will also regenerate all cached entertainments and taxonomies for all post types.', 'wphb' ); ?>
+					<?php esc_html_e( 'If one of your pages or posts gets updated, turning this setting on will also regenerate all cached boilers and taxonomies for all post types.', 'wphb' ); ?>
 				</span>
 			</label>
 		</div>

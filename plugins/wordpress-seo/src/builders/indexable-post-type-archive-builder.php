@@ -9,11 +9,11 @@ use Yoast\WP\SEO\Models\Indexable;
 use Yoast\WP\SEO\Values\Indexables\Indexable_Builder_Versions;
 
 /**
- * Post type entertainment builder for the indexables.
+ * Post type boiler builder for the indexables.
  *
- * Formats the post type entertainment meta to indexable format.
+ * Formats the post type boiler meta to indexable format.
  */
-class Indexable_Post_Type_entertainment_Builder {
+class Indexable_Post_Type_boiler_Builder {
 
 	/**
 	 * The options helper.
@@ -23,7 +23,7 @@ class Indexable_Post_Type_entertainment_Builder {
 	protected $options;
 
 	/**
-	 * The latest version of the Indexable_Post_Type_entertainment_Builder.
+	 * The latest version of the Indexable_Post_Type_boiler_Builder.
 	 *
 	 * @var int
 	 */
@@ -44,7 +44,7 @@ class Indexable_Post_Type_entertainment_Builder {
 	protected $wpdb;
 
 	/**
-	 * Indexable_Post_Type_entertainment_Builder constructor.
+	 * Indexable_Post_Type_boiler_Builder constructor.
 	 *
 	 * @param Options_Helper             $options     The options helper.
 	 * @param Indexable_Builder_Versions $versions    The latest version of each Indexable builder.
@@ -58,7 +58,7 @@ class Indexable_Post_Type_entertainment_Builder {
 		wpdb $wpdb
 	) {
 		$this->options     = $options;
-		$this->version     = $versions->get_latest_version_for_type( 'post-type-entertainment' );
+		$this->version     = $versions->get_latest_version_for_type( 'post-type-boiler' );
 		$this->post_helper = $post_helper;
 		$this->wpdb        = $wpdb;
 	}
@@ -72,13 +72,13 @@ class Indexable_Post_Type_entertainment_Builder {
 	 * @return Indexable The extended indexable.
 	 */
 	public function build( $post_type, Indexable $indexable ) {
-		$indexable->object_type       = 'post-type-entertainment';
+		$indexable->object_type       = 'post-type-boiler';
 		$indexable->object_sub_type   = $post_type;
-		$indexable->title             = $this->options->get( 'title-ptentertainment-' . $post_type );
-		$indexable->description       = $this->options->get( 'metadesc-ptentertainment-' . $post_type );
+		$indexable->title             = $this->options->get( 'title-ptboiler-' . $post_type );
+		$indexable->description       = $this->options->get( 'metadesc-ptboiler-' . $post_type );
 		$indexable->breadcrumb_title  = $this->get_breadcrumb_title( $post_type );
-		$indexable->permalink         = \get_post_type_entertainment_link( $post_type );
-		$indexable->is_robots_noindex = $this->options->get( 'noindex-ptentertainment-' . $post_type );
+		$indexable->permalink         = \get_post_type_boiler_link( $post_type );
+		$indexable->is_robots_noindex = $this->options->get( 'noindex-ptboiler-' . $post_type );
 		$indexable->is_public         = ( (int) $indexable->is_robots_noindex !== 1 );
 		$indexable->blog_id           = \get_current_blog_id();
 		$indexable->version           = $this->version;
@@ -98,7 +98,7 @@ class Indexable_Post_Type_entertainment_Builder {
 	 * @return string
 	 */
 	private function get_breadcrumb_title( $post_type ) {
-		$options_breadcrumb_title = $this->options->get( 'bctitle-ptentertainment-' . $post_type );
+		$options_breadcrumb_title = $this->options->get( 'bctitle-ptboiler-' . $post_type );
 
 		if ( $options_breadcrumb_title !== '' ) {
 			return $options_breadcrumb_title;

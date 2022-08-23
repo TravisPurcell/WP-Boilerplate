@@ -44,18 +44,18 @@ class Indexable_Builder {
 	private $home_page_builder;
 
 	/**
-	 * The post type entertainment builder.
+	 * The post type boiler builder.
 	 *
-	 * @var Indexable_Post_Type_entertainment_Builder
+	 * @var Indexable_Post_Type_boiler_Builder
 	 */
-	private $post_type_entertainment_builder;
+	private $post_type_boiler_builder;
 
 	/**
-	 * The data entertainment builder.
+	 * The data boiler builder.
 	 *
-	 * @var Indexable_Date_entertainment_Builder
+	 * @var Indexable_Date_boiler_Builder
 	 */
-	private $date_entertainment_builder;
+	private $date_boiler_builder;
 
 	/**
 	 * The system page builder.
@@ -106,8 +106,8 @@ class Indexable_Builder {
 	 * @param Indexable_Post_Builder              $post_builder              The post builder for creating missing indexables.
 	 * @param Indexable_Term_Builder              $term_builder              The term builder for creating missing indexables.
 	 * @param Indexable_Home_Page_Builder         $home_page_builder         The front page builder for creating missing indexables.
-	 * @param Indexable_Post_Type_entertainment_Builder $post_type_entertainment_builder The post type entertainment builder for creating missing indexables.
-	 * @param Indexable_Date_entertainment_Builder      $date_entertainment_builder      The date entertainment builder for creating missing indexables.
+	 * @param Indexable_Post_Type_boiler_Builder $post_type_boiler_builder The post type boiler builder for creating missing indexables.
+	 * @param Indexable_Date_boiler_Builder      $date_boiler_builder      The date boiler builder for creating missing indexables.
 	 * @param Indexable_System_Page_Builder       $system_page_builder       The search result builder for creating missing indexables.
 	 * @param Indexable_Hierarchy_Builder         $hierarchy_builder         The hierarchy builder for creating the indexable hierarchy.
 	 * @param Primary_Term_Builder                $primary_term_builder      The primary term builder for creating primary terms for posts.
@@ -119,8 +119,8 @@ class Indexable_Builder {
 		Indexable_Post_Builder $post_builder,
 		Indexable_Term_Builder $term_builder,
 		Indexable_Home_Page_Builder $home_page_builder,
-		Indexable_Post_Type_entertainment_Builder $post_type_entertainment_builder,
-		Indexable_Date_entertainment_Builder $date_entertainment_builder,
+		Indexable_Post_Type_boiler_Builder $post_type_boiler_builder,
+		Indexable_Date_boiler_Builder $date_boiler_builder,
 		Indexable_System_Page_Builder $system_page_builder,
 		Indexable_Hierarchy_Builder $hierarchy_builder,
 		Primary_Term_Builder $primary_term_builder,
@@ -131,8 +131,8 @@ class Indexable_Builder {
 		$this->post_builder              = $post_builder;
 		$this->term_builder              = $term_builder;
 		$this->home_page_builder         = $home_page_builder;
-		$this->post_type_entertainment_builder = $post_type_entertainment_builder;
-		$this->date_entertainment_builder      = $date_entertainment_builder;
+		$this->post_type_boiler_builder = $post_type_boiler_builder;
+		$this->date_boiler_builder      = $date_boiler_builder;
 		$this->system_page_builder       = $system_page_builder;
 		$this->hierarchy_builder         = $hierarchy_builder;
 		$this->primary_term_builder      = $primary_term_builder;
@@ -196,27 +196,27 @@ class Indexable_Builder {
 	}
 
 	/**
-	 * Creates an indexable for the date entertainment.
+	 * Creates an indexable for the date boiler.
 	 *
 	 * @param Indexable|bool $indexable Optional. An existing indexable to overwrite.
 	 *
-	 * @return Indexable The date entertainment indexable.
+	 * @return Indexable The date boiler indexable.
 	 */
-	public function build_for_date_entertainment( $indexable = false ) {
-		return $this->build( $indexable, [ 'object_type' => 'date-entertainment' ] );
+	public function build_for_date_boiler( $indexable = false ) {
+		return $this->build( $indexable, [ 'object_type' => 'date-boiler' ] );
 	}
 
 	/**
-	 * Creates an indexable for a post type entertainment.
+	 * Creates an indexable for a post type boiler.
 	 *
 	 * @param string         $post_type The post type.
 	 * @param Indexable|bool $indexable Optional. An existing indexable to overwrite.
 	 *
-	 * @return Indexable The post type entertainment indexable.
+	 * @return Indexable The post type boiler indexable.
 	 */
-	public function build_for_post_type_entertainment( $post_type, $indexable = false ) {
+	public function build_for_post_type_boiler( $post_type, $indexable = false ) {
 		$defaults = [
-			'object_type'     => 'post-type-entertainment',
+			'object_type'     => 'post-type-boiler',
 			'object_sub_type' => $post_type,
 		];
 		return $this->build( $indexable, $defaults );
@@ -358,12 +358,12 @@ class Indexable_Builder {
 					$indexable = $this->home_page_builder->build( $indexable );
 					break;
 
-				case 'date-entertainment':
-					$indexable = $this->date_entertainment_builder->build( $indexable );
+				case 'date-boiler':
+					$indexable = $this->date_boiler_builder->build( $indexable );
 					break;
 
-				case 'post-type-entertainment':
-					$indexable = $this->post_type_entertainment_builder->build( $indexable->object_sub_type, $indexable );
+				case 'post-type-boiler':
+					$indexable = $this->post_type_boiler_builder->build( $indexable->object_sub_type, $indexable );
 					break;
 
 				case 'system-page':

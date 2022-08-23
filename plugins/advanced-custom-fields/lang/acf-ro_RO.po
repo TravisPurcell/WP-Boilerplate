@@ -1215,7 +1215,7 @@ msgid "Page Link"
 msgstr "Legătura Paginii"
 
 #: includes/admin/views/settings-info.php:145
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Noua arhivă de grup în selecția page_link"
 
 #: includes/admin/views/settings-info.php:149
@@ -2235,7 +2235,7 @@ msgid "Embed Size"
 msgstr "Marimea Embed"
 
 #: includes/fields/class-acf-field-page_link.php:177
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arhive"
 
 #: includes/fields/class-acf-field-page_link.php:269
@@ -2269,7 +2269,7 @@ msgid "All taxonomies"
 msgstr "Toate Taxonomiile"
 
 #: includes/fields/class-acf-field-page_link.php:523
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:533

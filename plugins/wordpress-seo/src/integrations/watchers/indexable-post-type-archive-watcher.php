@@ -8,11 +8,11 @@ use Yoast\WP\SEO\Integrations\Integration_Interface;
 use Yoast\WP\SEO\Repositories\Indexable_Repository;
 
 /**
- * Post type entertainment watcher to save the meta data to an Indexable.
+ * Post type boiler watcher to save the meta data to an Indexable.
  *
  * Watches the home page options to save the meta information when updated.
  */
-class Indexable_Post_Type_entertainment_Watcher implements Integration_Interface {
+class Indexable_Post_Type_boiler_Watcher implements Integration_Interface {
 
 	/**
 	 * The indexable repository.
@@ -38,7 +38,7 @@ class Indexable_Post_Type_entertainment_Watcher implements Integration_Interface
 	}
 
 	/**
-	 * Indexable_Post_Type_entertainment_Watcher constructor.
+	 * Indexable_Post_Type_boiler_Watcher constructor.
 	 *
 	 * @param Indexable_Repository $repository The repository to use.
 	 * @param Indexable_Builder    $builder    The post builder to use.
@@ -66,7 +66,7 @@ class Indexable_Post_Type_entertainment_Watcher implements Integration_Interface
 	 * @return bool Whether or not the option has been saved.
 	 */
 	public function check_option( $old_value, $new_value ) {
-		$relevant_keys = [ 'title-ptentertainment-', 'metadesc-ptentertainment-', 'bctitle-ptentertainment-', 'noindex-ptentertainment-' ];
+		$relevant_keys = [ 'title-ptboiler-', 'metadesc-ptboiler-', 'bctitle-ptboiler-', 'noindex-ptboiler-' ];
 
 		// If this is the first time saving the option, thus when value is false.
 		if ( $old_value === false ) {
@@ -82,7 +82,7 @@ class Indexable_Post_Type_entertainment_Watcher implements Integration_Interface
 
 		foreach ( $keys as $key ) {
 			$post_type = false;
-			// Check if it's a key relevant to post type entertainments.
+			// Check if it's a key relevant to post type boilers.
 			foreach ( $relevant_keys as $relevant_key ) {
 				if ( \strpos( $key, $relevant_key ) === 0 ) {
 					$post_type = \substr( $key, \strlen( $relevant_key ) );
@@ -113,15 +113,15 @@ class Indexable_Post_Type_entertainment_Watcher implements Integration_Interface
 	}
 
 	/**
-	 * Saves the post type entertainment.
+	 * Saves the post type boiler.
 	 *
 	 * @param string $post_type The post type.
 	 *
 	 * @return void
 	 */
 	public function build_indexable( $post_type ) {
-		$indexable = $this->repository->find_for_post_type_entertainment( $post_type, false );
-		$indexable = $this->builder->build_for_post_type_entertainment( $post_type, $indexable );
+		$indexable = $this->repository->find_for_post_type_boiler( $post_type, false );
+		$indexable = $this->builder->build_for_post_type_boiler( $post_type, $indexable );
 
 		if ( $indexable ) {
 			$indexable->object_last_modified = \max( $indexable->object_last_modified, \current_time( 'mysql' ) );

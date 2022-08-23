@@ -2064,7 +2064,7 @@ msgid "Page Link"
 msgstr "Sayfa bağlantısı"
 
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arşivler"
 
 #: includes/fields/class-acf-field-page_link.php:262
@@ -2098,7 +2098,7 @@ msgid "All taxonomies"
 msgstr "Tüm taksonomiler"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Arşivler adresine izin ver"
 
 #: includes/fields/class-acf-field-page_link.php:526
@@ -3577,7 +3577,7 @@ msgstr "Elliot Condon"
 #~ "New Relationship field setting for 'Filters' (Search, Post Type, Taxonomy)"
 #~ msgstr "'Filtreler' için yeni ilişki ayarı (Arama, yazı tipi, taksonomi)"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Yeni arşivler page_link alanı seçiminde gruplanır"
 
 #~ msgid "Better Options Pages"

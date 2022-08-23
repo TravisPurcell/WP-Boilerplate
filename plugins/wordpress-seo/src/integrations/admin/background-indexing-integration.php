@@ -5,7 +5,7 @@ namespace Yoast\WP\SEO\Integrations\Admin;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_General_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Indexing_Complete_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Post_Link_Indexing_Action;
 use Yoast\WP\SEO\Actions\Indexing\Term_Link_Indexing_Action;
@@ -37,11 +37,11 @@ class Background_Indexing_Integration implements Integration_Interface {
 	protected $term_indexation;
 
 	/**
-	 * The post type entertainment indexing action.
+	 * The post type boiler indexing action.
 	 *
-	 * @var Indexable_Post_Type_entertainment_Indexation_Action
+	 * @var Indexable_Post_Type_boiler_Indexation_Action
 	 */
-	protected $post_type_entertainment_indexation;
+	protected $post_type_boiler_indexation;
 
 	/**
 	 * Represents the general indexing.
@@ -96,7 +96,7 @@ class Background_Indexing_Integration implements Integration_Interface {
 	 *
 	 * @param Indexable_Post_Indexation_Action              $post_indexation              The post indexing action.
 	 * @param Indexable_Term_Indexation_Action              $term_indexation              The term indexing action.
-	 * @param Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation The post type entertainment indexing action.
+	 * @param Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation The post type boiler indexing action.
 	 * @param Indexable_General_Indexation_Action           $general_indexation           The general indexing action.
 	 * @param Indexable_Indexing_Complete_Action            $complete_indexation_action   The complete indexing action.
 	 * @param Post_Link_Indexing_Action                     $post_link_indexing_action    The post indexing action.
@@ -106,7 +106,7 @@ class Background_Indexing_Integration implements Integration_Interface {
 	public function __construct(
 		Indexable_Post_Indexation_Action $post_indexation,
 		Indexable_Term_Indexation_Action $term_indexation,
-		Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation,
+		Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation,
 		Indexable_General_Indexation_Action $general_indexation,
 		Indexable_Indexing_Complete_Action $complete_indexation_action,
 		Post_Link_Indexing_Action $post_link_indexing_action,
@@ -115,7 +115,7 @@ class Background_Indexing_Integration implements Integration_Interface {
 	) {
 		$this->post_indexation              = $post_indexation;
 		$this->term_indexation              = $term_indexation;
-		$this->post_type_entertainment_indexation = $post_type_entertainment_indexation;
+		$this->post_type_boiler_indexation = $post_type_boiler_indexation;
 		$this->general_indexation           = $general_indexation;
 		$this->complete_indexation_action   = $complete_indexation_action;
 		$this->post_link_indexing_action    = $post_link_indexing_action;
@@ -150,7 +150,7 @@ class Background_Indexing_Integration implements Integration_Interface {
 		$this->post_indexation->index();
 		$this->term_indexation->index();
 		$this->general_indexation->index();
-		$this->post_type_entertainment_indexation->index();
+		$this->post_type_boiler_indexation->index();
 		$this->post_link_indexing_action->index();
 		$this->term_link_indexing_action->index();
 		$this->complete_indexation_action->complete();

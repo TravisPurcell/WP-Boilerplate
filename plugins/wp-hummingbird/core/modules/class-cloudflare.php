@@ -962,12 +962,12 @@ class Cloudflare extends Module {
 			get_author_feed_link( get_post_field( 'post_author', $post_id ) )
 		);
 
-		// entertainments and their feeds.
-		if ( false !== get_post_type_entertainment_link( $post_type ) ) {
+		// boilers and their feeds.
+		if ( false !== get_post_type_boiler_link( $post_type ) ) {
 			array_push(
 				$urls,
-				get_post_type_entertainment_link( $post_type ),
-				get_post_type_entertainment_feed_link( $post_type )
+				get_post_type_boiler_link( $post_type ),
+				get_post_type_boiler_feed_link( $post_type )
 			);
 		}
 

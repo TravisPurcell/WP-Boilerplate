@@ -117,14 +117,14 @@ class Breadcrumbs_Generator implements Generator_Interface {
 			$context->indexable->object_type === 'post'
 			&& $context->indexable->object_sub_type !== 'post'
 			&& $context->indexable->object_sub_type !== 'page'
-			&& $this->post_type_helper->has_entertainment( $context->indexable->object_sub_type )
+			&& $this->post_type_helper->has_boiler( $context->indexable->object_sub_type )
 		) {
-			$static_ancestors[] = $this->repository->find_for_post_type_entertainment( $context->indexable->object_sub_type );
+			$static_ancestors[] = $this->repository->find_for_post_type_boiler( $context->indexable->object_sub_type );
 		}
 		if ( $context->indexable->object_type === 'term' ) {
 			$parent = $this->get_taxonomy_post_type_parent( $context->indexable->object_sub_type );
-			if ( $parent && $parent !== 'post' && $this->post_type_helper->has_entertainment( $parent ) ) {
-				$static_ancestors[] = $this->repository->find_for_post_type_entertainment( $parent );
+			if ( $parent && $parent !== 'post' && $this->post_type_helper->has_boiler( $parent ) ) {
+				$static_ancestors[] = $this->repository->find_for_post_type_boiler( $parent );
 			}
 		}
 
@@ -147,8 +147,8 @@ class Breadcrumbs_Generator implements Generator_Interface {
 				case 'post':
 					$crumb = $this->get_post_crumb( $crumb, $ancestor );
 					break;
-				case 'post-type-entertainment':
-					$crumb = $this->get_post_type_entertainment_crumb( $crumb, $ancestor );
+				case 'post-type-boiler':
+					$crumb = $this->get_post_type_boiler_crumb( $crumb, $ancestor );
 					break;
 				case 'term':
 					$crumb = $this->get_term_crumb( $crumb, $ancestor );
@@ -159,8 +159,8 @@ class Breadcrumbs_Generator implements Generator_Interface {
 				case 'user':
 					$crumb = $this->get_user_crumb( $crumb, $ancestor );
 					break;
-				case 'date-entertainment':
-					$crumb = $this->get_date_entertainment_crumb( $crumb );
+				case 'date-boiler':
+					$crumb = $this->get_date_boiler_crumb( $crumb );
 					break;
 			}
 			return $crumb;
@@ -216,8 +216,8 @@ class Breadcrumbs_Generator implements Generator_Interface {
 	 *
 	 * @return array The crumb.
 	 */
-	private function get_post_type_entertainment_crumb( $crumb, $ancestor ) {
-		$crumb['ptentertainment'] = $ancestor->object_sub_type;
+	private function get_post_type_boiler_crumb( $crumb, $ancestor ) {
+		$crumb['ptboiler'] = $ancestor->object_sub_type;
 
 		return $crumb;
 	}
@@ -266,21 +266,21 @@ class Breadcrumbs_Generator implements Generator_Interface {
 	 */
 	private function get_user_crumb( $crumb, $ancestor ) {
 		$display_name  = \get_the_author_meta( 'display_name', $ancestor->object_id );
-		$crumb['text'] = $this->options->get( 'breadcrumbs-entertainmentprefix' ) . ' ' . $display_name;
+		$crumb['text'] = $this->options->get( 'breadcrumbs-boilerprefix' ) . ' ' . $display_name;
 
 		return $crumb;
 	}
 
 	/**
-	 * Returns the modified date entertainment crumb.
+	 * Returns the modified date boiler crumb.
 	 *
 	 * @param array $crumb The crumb.
 	 *
 	 * @return array The crumb.
 	 */
-	protected function get_date_entertainment_crumb( $crumb ) {
+	protected function get_date_boiler_crumb( $crumb ) {
 		$home_url = $this->url_helper->home();
-		$prefix   = $this->options->get( 'breadcrumbs-entertainmentprefix' );
+		$prefix   = $this->options->get( 'breadcrumbs-boilerprefix' );
 
 		if ( \is_day() ) {
 			$day           = \esc_html( \get_the_date() );
@@ -350,7 +350,7 @@ class Breadcrumbs_Generator implements Generator_Interface {
 	}
 
 	/**
-	 * Adds a crumb for the current page, if we're on an entertainment page or paginated post.
+	 * Adds a crumb for the current page, if we're on an boiler page or paginated post.
 	 *
 	 * @param array     $crumbs            The array of breadcrumbs.
 	 * @param Indexable $current_indexable The current indexable.

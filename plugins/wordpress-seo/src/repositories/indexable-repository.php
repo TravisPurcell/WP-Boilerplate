@@ -122,19 +122,19 @@ class Indexable_Repository {
 			case $this->current_page->is_home_posts_page():
 				$indexable = $this->find_for_home_page();
 				break;
-			case $this->current_page->is_term_entertainment():
+			case $this->current_page->is_term_boiler():
 				$indexable = $this->find_by_id_and_type( $this->current_page->get_term_id(), 'term' );
 				break;
-			case $this->current_page->is_date_entertainment():
-				$indexable = $this->find_for_date_entertainment();
+			case $this->current_page->is_date_boiler():
+				$indexable = $this->find_for_date_boiler();
 				break;
 			case $this->current_page->is_search_result():
 				$indexable = $this->find_for_system_page( 'search-result' );
 				break;
-			case $this->current_page->is_post_type_entertainment():
-				$indexable = $this->find_for_post_type_entertainment( $this->current_page->get_queried_post_type() );
+			case $this->current_page->is_post_type_boiler():
+				$indexable = $this->find_for_post_type_boiler( $this->current_page->get_queried_post_type() );
 				break;
-			case $this->current_page->is_author_entertainment():
+			case $this->current_page->is_author_boiler():
 				$indexable = $this->find_by_id_and_type( $this->current_page->get_author_id(), 'user' );
 				break;
 			case $this->current_page->is_404():
@@ -246,48 +246,48 @@ class Indexable_Repository {
 	}
 
 	/**
-	 * Retrieves the date entertainment indexable.
+	 * Retrieves the date boiler indexable.
 	 *
 	 * @param bool $auto_create Optional. Create the indexable if it does not exist.
 	 *
 	 * @return bool|Indexable Instance of indexable.
 	 */
-	public function find_for_date_entertainment( $auto_create = true ) {
+	public function find_for_date_boiler( $auto_create = true ) {
 		/**
 		 * Indexable instance.
 		 *
 		 * @var Indexable $indexable
 		 */
-		$indexable = $this->query()->where( 'object_type', 'date-entertainment' )->find_one();
+		$indexable = $this->query()->where( 'object_type', 'date-boiler' )->find_one();
 
 		if ( $auto_create && ! $indexable ) {
-			$indexable = $this->builder->build_for_date_entertainment();
+			$indexable = $this->builder->build_for_date_boiler();
 		}
 
 		return $this->upgrade_indexable( $indexable );
 	}
 
 	/**
-	 * Retrieves an indexable for a post type entertainment.
+	 * Retrieves an indexable for a post type boiler.
 	 *
 	 * @param string $post_type   The post type.
 	 * @param bool   $auto_create Optional. Create the indexable if it does not exist.
 	 *
 	 * @return bool|Indexable The indexable, false if none could be found.
 	 */
-	public function find_for_post_type_entertainment( $post_type, $auto_create = true ) {
+	public function find_for_post_type_boiler( $post_type, $auto_create = true ) {
 		/**
 		 * Indexable instance.
 		 *
 		 * @var Indexable $indexable
 		 */
 		$indexable = $this->query()
-			->where( 'object_type', 'post-type-entertainment' )
+			->where( 'object_type', 'post-type-boiler' )
 			->where( 'object_sub_type', $post_type )
 			->find_one();
 
 		if ( $auto_create && ! $indexable ) {
-			$indexable = $this->builder->build_for_post_type_entertainment( $post_type );
+			$indexable = $this->builder->build_for_post_type_boiler( $post_type );
 		}
 
 		return $this->upgrade_indexable( $indexable );

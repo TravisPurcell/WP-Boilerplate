@@ -2391,8 +2391,8 @@ msgstr "Seiten-Link"
 
 # @ acf
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
-msgstr "entertainment"
+msgid "boilers"
+msgstr "boiler"
 
 #: includes/fields/class-acf-field-page_link.php:262
 #: includes/fields/class-acf-field-post_object.php:267
@@ -2429,7 +2429,7 @@ msgid "All taxonomies"
 msgstr "Alle Taxonomien"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Archiv-URL's zulassen"
 
 # @ acf
@@ -4192,7 +4192,7 @@ msgstr "Elliot Condon"
 #~ "Beitrags-Typ und oder Taxonomie filtern zu können"
 
 # @ acf
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr ""
 #~ "Im neuen Seitenlink-Feld werden alle Archiv-URL's der verfügbaren Custom "
 #~ "Post Types in einer Options-Gruppe zusammengefasst"

@@ -4,11 +4,11 @@
 namespace Yoast\WP\SEO\Actions\Importing\Aioseo;
 
 /**
- * Importing action for AIOSEO default entertainment settings data.
+ * Importing action for AIOSEO default boiler settings data.
  *
  * @phpcs:disable Yoast.NamingConventions.ObjectNameDepth.MaxExceeded
  */
-class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Aioseo_Settings_Importing_Action {
+class Aioseo_Default_boiler_Settings_Importing_Action extends Abstract_Aioseo_Settings_Importing_Action {
 
 	/**
 	 * The plugin of the action.
@@ -18,7 +18,7 @@ class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Ai
 	/**
 	 * The type of the action.
 	 */
-	const TYPE = 'default_entertainment_settings';
+	const TYPE = 'default_boiler_settings';
 
 	/**
 	 * The option_name of the AIOSEO option that contains the settings.
@@ -37,7 +37,7 @@ class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Ai
 	 *
 	 * @var string
 	 */
-	protected $settings_tab = 'entertainments';
+	protected $settings_tab = 'boilers';
 
 	/**
 	 * Builds the mapping that ties AOISEO option keys with Yoast ones and their data transformation method.
@@ -55,11 +55,11 @@ class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Ai
 				'transform_method' => 'simple_import',
 			],
 			'/date/title'                         => [
-				'yoast_name'       => 'title-entertainment-wpseo',
+				'yoast_name'       => 'title-boiler-wpseo',
 				'transform_method' => 'simple_import',
 			],
 			'/date/metaDescription'               => [
-				'yoast_name'       => 'metadesc-entertainment-wpseo',
+				'yoast_name'       => 'metadesc-boiler-wpseo',
 				'transform_method' => 'simple_import',
 			],
 			'/search/title'                       => [
@@ -69,14 +69,14 @@ class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Ai
 			'/author/advanced/robotsMeta/noindex' => [
 				'yoast_name'       => 'noindex-author-wpseo',
 				'transform_method' => 'import_noindex',
-				'type'             => 'entertainments',
+				'type'             => 'boilers',
 				'subtype'          => 'author',
 				'option_name'      => 'aioseo_options',
 			],
 			'/date/advanced/robotsMeta/noindex'   => [
-				'yoast_name'       => 'noindex-entertainment-wpseo',
+				'yoast_name'       => 'noindex-boiler-wpseo',
 				'transform_method' => 'import_noindex',
-				'type'             => 'entertainments',
+				'type'             => 'boilers',
 				'subtype'          => 'date',
 				'option_name'      => 'aioseo_options',
 			],
@@ -84,15 +84,15 @@ class Aioseo_Default_entertainment_Settings_Importing_Action extends Abstract_Ai
 	}
 
 	/**
-	 * Returns a setting map of the robot setting for author entertainments.
+	 * Returns a setting map of the robot setting for author boilers.
 	 *
-	 * @return array The setting map of the robot setting for author entertainments.
+	 * @return array The setting map of the robot setting for author boilers.
 	 */
 	public function pluck_robot_setting_from_mapping() {
 		$this->build_mapping();
 
 		foreach ( $this->aioseo_options_to_yoast_map as $setting ) {
-			// Return the first entertainment setting map.
+			// Return the first boiler setting map.
 			if ( $setting['transform_method'] === 'import_noindex' && isset( $setting['subtype'] ) && $setting['subtype'] === 'author' ) {
 				return $setting;
 			}

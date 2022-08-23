@@ -75,7 +75,7 @@ class Yoast_Network_Admin implements WPSEO_WordPress_AJAX_Integration, WPSEO_Wor
 	public function get_site_states( $site ) {
 		$available_states = [
 			'public'   => __( 'public', 'wordpress-seo' ),
-			'entertainmentd' => __( 'entertainmentd', 'wordpress-seo' ),
+			'boilerd' => __( 'boilerd', 'wordpress-seo' ),
 			'mature'   => __( 'mature', 'wordpress-seo' ),
 			'spam'     => __( 'spam', 'wordpress-seo' ),
 			'deleted'  => __( 'deleted', 'wordpress-seo' ),

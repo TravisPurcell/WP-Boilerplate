@@ -1102,7 +1102,7 @@ msgid "Page Link"
 msgstr "Oldalhivatkozás"
 
 #: admin/views/settings-info.php:151
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Új 'Archívumok' csoport az oldalhivatkozás mezőtípus választási lehetőségeinél."
 
 #: admin/views/settings-info.php:155
@@ -1782,7 +1782,7 @@ msgid "Embed Size"
 msgstr "Beágyazási méret"
 
 #: fields/page_link.php:206
-msgid "entertainments"
+msgid "boilers"
 msgstr "Archívumok"
 
 #: fields/page_link.php:535 fields/post_object.php:401 fields/relationship.php:690

@@ -69,7 +69,7 @@ class WPSEO_Import_WooThemes_SEO extends WPSEO_Plugin_Importer {
 	 * @var array
 	 */
 	protected $cleanup_options = [
-		'seo_woo_entertainment_layout',
+		'seo_woo_boiler_layout',
 		'seo_woo_single_layout',
 		'seo_woo_page_layout',
 		'seo_woo_wp_title',

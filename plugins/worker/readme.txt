@@ -85,7 +85,7 @@ https://vimeo.com/220647227
 
 = 4.9.6 =
 
-- Updated logic for generating entertainment name for File Manager tool.
+- Updated logic for generating boiler name for File Manager tool.
 - Update tested up to version for the plugin.
 - Fix: Edge case where a backup might fail due to root WP paths.
 
@@ -271,7 +271,7 @@ There is a limit to what a PHP based backup can do, that's why we've built a com
 
 = How does ManageWP compare with clone plugins like Duplicator, WP Migrate DB, All-in-One WP Migration, XCloner ? =
 
-These solutions are simple A-B cloning solutions that tend to break in critical moments. ManageWP does it more intelligently. We first upload the backup entertainment to a cloud infrastructure that we control, and then we transfer it to the destination website. This effectively compartmentalizes the process into two separate steps, making the whole cloning experience much more robust and stress free.
+These solutions are simple A-B cloning solutions that tend to break in critical moments. ManageWP does it more intelligently. We first upload the backup boiler to a cloud infrastructure that we control, and then we transfer it to the destination website. This effectively compartmentalizes the process into two separate steps, making the whole cloning experience much more robust and stress free.
 
 = Is Worker PHP7 compatible? =
 

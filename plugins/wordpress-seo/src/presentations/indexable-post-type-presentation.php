@@ -313,7 +313,7 @@ class Indexable_Post_Type_Presentation extends Indexable_Presentation {
 			$robots,
 			[
 				'imageindex' => ( $this->model->is_robots_noimageindex === true ) ? 'noimageindex' : null,
-				'entertainment'    => ( $this->model->is_robots_noentertainment === true ) ? 'noentertainment' : null,
+				'boiler'    => ( $this->model->is_robots_noboiler === true ) ? 'noboiler' : null,
 				'snippet'    => ( $this->model->is_robots_nosnippet === true ) ? 'nosnippet' : null,
 			]
 		);
@@ -409,7 +409,7 @@ class Indexable_Post_Type_Presentation extends Indexable_Presentation {
 	 *
 	 * @codeCoverageIgnore A wrapper method.
 	 *
-	 * @param string $url  The un-paginated URL of the current entertainment.
+	 * @param string $url  The un-paginated URL of the current boiler.
 	 * @param string $page The page number to add on to $url for the $link tag.
 	 *
 	 * @return string The paginated URL.

@@ -4,7 +4,7 @@ namespace Yoast\WP\SEO\Helpers;
 
 use Yoast\WP\SEO\Actions\Indexing\Indexable_General_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Indexation_Action;
-use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_entertainment_Indexation_Action;
+use Yoast\WP\SEO\Actions\Indexing\Indexable_Post_Type_boiler_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexable_Term_Indexation_Action;
 use Yoast\WP\SEO\Actions\Indexing\Indexation_Action_Interface;
 use Yoast\WP\SEO\Actions\Indexing\Limited_Indexing_Action_Interface;
@@ -71,7 +71,7 @@ class Indexing_Helper {
 	 *
 	 * @param Indexable_Post_Indexation_Action              $post_indexation              The post indexing action.
 	 * @param Indexable_Term_Indexation_Action              $term_indexation              The term indexing action.
-	 * @param Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation The posttype indexing action.
+	 * @param Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation The posttype indexing action.
 	 * @param Indexable_General_Indexation_Action           $general_indexation           The general indexing (homepage etc) action.
 	 * @param Post_Link_Indexing_Action                     $post_link_indexing_action    The post crosslink indexing action.
 	 * @param Term_Link_Indexing_Action                     $term_link_indexing_action    The term crossling indexing action.
@@ -79,7 +79,7 @@ class Indexing_Helper {
 	public function set_indexing_actions(
 		Indexable_Post_Indexation_Action $post_indexation,
 		Indexable_Term_Indexation_Action $term_indexation,
-		Indexable_Post_Type_entertainment_Indexation_Action $post_type_entertainment_indexation,
+		Indexable_Post_Type_boiler_Indexation_Action $post_type_boiler_indexation,
 		Indexable_General_Indexation_Action $general_indexation,
 		Post_Link_Indexing_Action $post_link_indexing_action,
 		Term_Link_Indexing_Action $term_link_indexing_action
@@ -87,7 +87,7 @@ class Indexing_Helper {
 		$this->indexing_actions = [
 			$post_indexation,
 			$term_indexation,
-			$post_type_entertainment_indexation,
+			$post_type_boiler_indexation,
 			$general_indexation,
 			$post_link_indexing_action,
 			$term_link_indexing_action,

@@ -564,7 +564,7 @@ class WPSEO_Upgrade {
 	 */
 	private function upgrade_772() {
 		if ( YoastSEO()->helpers->woocommerce->is_active() ) {
-			$this->migrate_woocommerce_entertainment_setting_to_shop_page();
+			$this->migrate_woocommerce_boiler_setting_to_shop_page();
 		}
 	}
 
@@ -1032,7 +1032,7 @@ class WPSEO_Upgrade {
 		Yoast_Notification_Center::get()->remove_notification_by_id( 'wpseo-dismiss-recalculate' );
 		Yoast_Notification_Center::get()->remove_notification_by_id( 'wpseo-dismiss-blog-public-notice' );
 		Yoast_Notification_Center::get()->remove_notification_by_id( 'wpseo-links-table-not-accessible' );
-		Yoast_Notification_Center::get()->remove_notification_by_id( 'wpseo-post-type-entertainment-notification' );
+		Yoast_Notification_Center::get()->remove_notification_by_id( 'wpseo-post-type-boiler-notification' );
 	}
 
 	/**
@@ -1155,13 +1155,13 @@ class WPSEO_Upgrade {
 	}
 
 	/**
-	 * Migrates WooCommerce entertainment settings to the WooCommerce Shop page meta-data settings.
+	 * Migrates WooCommerce boiler settings to the WooCommerce Shop page meta-data settings.
 	 *
 	 * If no Shop page is defined, nothing will be migrated.
 	 *
 	 * @return void
 	 */
-	private function migrate_woocommerce_entertainment_setting_to_shop_page() {
+	private function migrate_woocommerce_boiler_setting_to_shop_page() {
 		$shop_page_id = wc_get_page_id( 'shop' );
 
 		if ( $shop_page_id === -1 ) {
@@ -1171,7 +1171,7 @@ class WPSEO_Upgrade {
 		$title = WPSEO_Meta::get_value( 'title', $shop_page_id );
 
 		if ( empty( $title ) ) {
-			$option_title = WPSEO_Options::get( 'title-ptentertainment-product' );
+			$option_title = WPSEO_Options::get( 'title-ptboiler-product' );
 
 			WPSEO_Meta::set_value(
 				'title',
@@ -1179,13 +1179,13 @@ class WPSEO_Upgrade {
 				$shop_page_id
 			);
 
-			WPSEO_Options::set( 'title-ptentertainment-product', '' );
+			WPSEO_Options::set( 'title-ptboiler-product', '' );
 		}
 
 		$meta_description = WPSEO_Meta::get_value( 'metadesc', $shop_page_id );
 
 		if ( empty( $meta_description ) ) {
-			$option_metadesc = WPSEO_Options::get( 'metadesc-ptentertainment-product' );
+			$option_metadesc = WPSEO_Options::get( 'metadesc-ptboiler-product' );
 
 			WPSEO_Meta::set_value(
 				'metadesc',
@@ -1193,13 +1193,13 @@ class WPSEO_Upgrade {
 				$shop_page_id
 			);
 
-			WPSEO_Options::set( 'metadesc-ptentertainment-product', '' );
+			WPSEO_Options::set( 'metadesc-ptboiler-product', '' );
 		}
 
 		$bc_title = WPSEO_Meta::get_value( 'bctitle', $shop_page_id );
 
 		if ( empty( $bc_title ) ) {
-			$option_bctitle = WPSEO_Options::get( 'bctitle-ptentertainment-product' );
+			$option_bctitle = WPSEO_Options::get( 'bctitle-ptboiler-product' );
 
 			WPSEO_Meta::set_value(
 				'bctitle',
@@ -1207,13 +1207,13 @@ class WPSEO_Upgrade {
 				$shop_page_id
 			);
 
-			WPSEO_Options::set( 'bctitle-ptentertainment-product', '' );
+			WPSEO_Options::set( 'bctitle-ptboiler-product', '' );
 		}
 
 		$noindex = WPSEO_Meta::get_value( 'meta-robots-noindex', $shop_page_id );
 
 		if ( $noindex === '0' ) {
-			$option_noindex = WPSEO_Options::get( 'noindex-ptentertainment-product' );
+			$option_noindex = WPSEO_Options::get( 'noindex-ptboiler-product' );
 
 			WPSEO_Meta::set_value(
 				'meta-robots-noindex',
@@ -1221,7 +1221,7 @@ class WPSEO_Upgrade {
 				$shop_page_id
 			);
 
-			WPSEO_Options::set( 'noindex-ptentertainment-product', false );
+			WPSEO_Options::set( 'noindex-ptboiler-product', false );
 		}
 	}
 
@@ -1294,13 +1294,13 @@ class WPSEO_Upgrade {
 		$updated_options = [];
 
 		$updated_options['social-title-author-wpseo']  = '%%name%%';
-		$updated_options['social-title-entertainment-wpseo'] = '%%date%%';
+		$updated_options['social-title-boiler-wpseo'] = '%%date%%';
 
 		/* translators: %s expands to the name of a post type (plural). */
-		$post_type_entertainment_default = sprintf( __( '%s entertainment', 'wordpress-seo' ), '%%pt_plural%%' );
+		$post_type_boiler_default = sprintf( __( '%s boiler', 'wordpress-seo' ), '%%pt_plural%%' );
 
 		/* translators: %s expands to the variable used for term title. */
-		$term_entertainment_default = sprintf( __( '%s entertainments', 'wordpress-seo' ), '%%term_title%%' );
+		$term_boiler_default = sprintf( __( '%s boilers', 'wordpress-seo' ), '%%term_title%%' );
 
 		$post_type_objects = get_post_types( [ 'public' => true ], 'objects' );
 
@@ -1310,9 +1310,9 @@ class WPSEO_Upgrade {
 				if ( isset( $wpseo_titles[ 'social-title-' . $pt->name ] ) ) {
 					$updated_options[ 'social-title-' . $pt->name ] = '%%title%%';
 				}
-				// Post type entertainments.
-				if ( isset( $wpseo_titles[ 'social-title-ptentertainment-' . $pt->name ] ) ) {
-					$updated_options[ 'social-title-ptentertainment-' . $pt->name ] = $post_type_entertainment_default;
+				// Post type boilers.
+				if ( isset( $wpseo_titles[ 'social-title-ptboiler-' . $pt->name ] ) ) {
+					$updated_options[ 'social-title-ptboiler-' . $pt->name ] = $post_type_boiler_default;
 				}
 			}
 		}
@@ -1322,7 +1322,7 @@ class WPSEO_Upgrade {
 		if ( $taxonomy_objects ) {
 			foreach ( $taxonomy_objects as $tax ) {
 				if ( isset( $wpseo_titles[ 'social-title-tax-' . $tax->name ] ) ) {
-					$updated_options[ 'social-title-tax-' . $tax->name ] = $term_entertainment_default;
+					$updated_options[ 'social-title-tax-' . $tax->name ] = $term_boiler_default;
 				}
 			}
 		}

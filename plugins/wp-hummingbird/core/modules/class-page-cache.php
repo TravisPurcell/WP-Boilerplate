@@ -505,7 +505,7 @@ class Page_Cache extends Module {
 			),
 			'exclude'           => array(
 				'url_strings' => array( 'wp-.*\.php', 'index\.php', 'xmlrpc\.php', 'sitemap[^\/.]*\.xml' ),
-				'user_agents' => array( 'bot', 'is_entertainment', 'slurp', 'crawl', 'spider', 'Yandex' ),
+				'user_agents' => array( 'bot', 'is_boiler', 'slurp', 'crawl', 'spider', 'Yandex' ),
 				'cookies'     => array( 'wp_woocommerce_session_' ),
 			),
 		);
@@ -577,7 +577,7 @@ class Page_Cache extends Module {
 	 */
 	public static function get_page_types( $keys = false ) {
 		if ( $keys ) {
-			return array( 'frontpage', 'home', 'page', 'single', 'entertainment', 'category', 'tag' );
+			return array( 'frontpage', 'home', 'page', 'single', 'boiler', 'category', 'tag' );
 		}
 
 		return array(
@@ -585,7 +585,7 @@ class Page_Cache extends Module {
 			'home'      => __( 'Blog', 'wphb' ),
 			'page'      => __( 'Pages', 'wphb' ),
 			'single'    => __( 'Posts', 'wphb' ),
-			'entertainment'   => __( 'entertainments', 'wphb' ),
+			'boiler'   => __( 'boilers', 'wphb' ),
 			'category'  => __( 'Categories', 'wphb' ),
 			'tag'       => __( 'Tags', 'wphb' ),
 		);
@@ -777,8 +777,8 @@ class Page_Cache extends Module {
 			return true;
 		} elseif ( is_single() && ! in_array( 'single', $wphb_cache_config->page_types, true ) ) {
 			return true;
-		} elseif ( is_entertainment() ) {
-			if ( in_array( 'entertainment', $wphb_cache_config->page_types, true ) ) {
+		} elseif ( is_boiler() ) {
+			if ( in_array( 'boiler', $wphb_cache_config->page_types, true ) ) {
 				return false;
 			} elseif ( is_category() && ! in_array( 'category', $wphb_cache_config->page_types, true ) ) {
 				return true;

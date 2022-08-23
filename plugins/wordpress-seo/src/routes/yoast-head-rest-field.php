@@ -109,7 +109,7 @@ class Yoast_Head_REST_Field implements Route_Interface {
 		}
 
 		$this->register_rest_fields( 'user', 'for_author' );
-		$this->register_rest_fields( 'type', 'for_post_type_entertainment' );
+		$this->register_rest_fields( 'type', 'for_post_type_boiler' );
 	}
 
 	/**
@@ -162,22 +162,22 @@ class Yoast_Head_REST_Field implements Route_Interface {
 	}
 
 	/**
-	 * Returns the head for a post type entertainment.
+	 * Returns the head for a post type boiler.
 	 *
 	 * @param array  $params The rest request params.
 	 * @param string $format The desired output format.
 	 *
 	 * @return string|null The head.
 	 */
-	public function for_post_type_entertainment( $params, $format = self::YOAST_HEAD_ATTRIBUTE_NAME ) {
+	public function for_post_type_boiler( $params, $format = self::YOAST_HEAD_ATTRIBUTE_NAME ) {
 		if ( $params['slug'] === 'post' ) {
 			$obj = $this->head_action->for_posts_page();
 		}
-		elseif ( ! $this->post_type_helper->has_entertainment( $params['slug'] ) ) {
+		elseif ( ! $this->post_type_helper->has_boiler( $params['slug'] ) ) {
 			return null;
 		}
 		else {
-			$obj = $this->head_action->for_post_type_entertainment( $params['slug'] );
+			$obj = $this->head_action->for_post_type_boiler( $params['slug'] );
 		}
 
 		return $this->render_object( $obj, $format );

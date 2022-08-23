@@ -38,7 +38,7 @@ More details about this project can be found on the [frequently asked questions]
 This library can be found on [Packagist](http://packagist.org/packages/predis/predis) for an easier
 management of projects dependencies using [Composer](http://packagist.org/about-composer) or on our
 [own PEAR channel](http://pear.nrk.io) for a more traditional installation using PEAR. Ultimately,
-compressed entertainments of each release are [available on GitHub](https://github.com/predis/predis/releases).
+compressed boilers of each release are [available on GitHub](https://github.com/predis/predis/releases).
 
 
 ### Loading the library ###
@@ -55,7 +55,7 @@ require 'Predis/Autoloader.php';
 Predis\Autoloader::register();
 ```
 
-It is also possible to create a [phar](http://www.php.net/manual/en/intro.phar.php) entertainment directly
+It is also possible to create a [phar](http://www.php.net/manual/en/intro.phar.php) boiler directly
 from the repository by launching the `bin/create-phar` script. The generated phar already contains a
 stub defining its own autoloader, so you just need to `require()` it to start using the library.
 

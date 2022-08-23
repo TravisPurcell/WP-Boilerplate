@@ -118,9 +118,9 @@ class Feed_Improvements implements Integration_Interface {
 		$class = ( $queried_object !== null ) ? \get_class( $queried_object ) : null;
 
 		switch ( $class ) {
-			// Post type entertainment feeds.
+			// Post type boiler feeds.
 			case 'WP_Post_Type':
-				$url = $this->meta->for_post_type_entertainment( $queried_object->name )->canonical;
+				$url = $this->meta->for_post_type_boiler( $queried_object->name )->canonical;
 				break;
 			// Post comment feeds.
 			case 'WP_Post':
@@ -134,7 +134,7 @@ class Feed_Improvements implements Integration_Interface {
 			case 'WP_User':
 				$url = $this->meta->for_author( $queried_object->ID )->canonical;
 				break;
-			// This would be NULL on the home page and on date entertainment feeds.
+			// This would be NULL on the home page and on date boiler feeds.
 			case null:
 				$url = $this->meta->for_home_page()->canonical;
 				break;

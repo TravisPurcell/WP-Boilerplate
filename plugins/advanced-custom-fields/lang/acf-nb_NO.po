@@ -1135,7 +1135,7 @@ msgid "Page Link"
 msgstr "Sidekobling"
 
 #: includes/admin/views/settings-info.php:145
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Ny arkiver gruppe i page_link feltvalg"
 
 #: includes/admin/views/settings-info.php:149
@@ -2068,7 +2068,7 @@ msgid "Embed Size"
 msgstr "Embed-størrelse"
 
 #: includes/fields/class-acf-field-page_link.php:192
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arkiv"
 
 #: includes/fields/class-acf-field-page_link.php:500
@@ -2105,7 +2105,7 @@ msgid "Allow Null?"
 msgstr "Tillat Null?"
 
 #: includes/fields/class-acf-field-page_link.php:538
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Tillat arkiv-URL-er"
 
 #: includes/fields/class-acf-field-page_link.php:548

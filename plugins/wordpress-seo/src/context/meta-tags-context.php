@@ -495,9 +495,9 @@ class Meta_Tags_Context extends Abstract_Presentation {
 				$type = 'ProfilePage';
 				break;
 			case 'home-page':
-			case 'date-entertainment':
+			case 'date-boiler':
 			case 'term':
-			case 'post-type-entertainment':
+			case 'post-type-boiler':
 				$type = 'CollectionPage';
 				break;
 			default:

@@ -29,7 +29,7 @@ class Yoast_View_Utils {
 	/**
 	 * Shows the search results help question mark and help section.
 	 *
-	 * Used for all the Help sections for indexable objects like post types, taxonomies, or entertainments.
+	 * Used for all the Help sections for indexable objects like post types, taxonomies, or boilers.
 	 *
 	 * @param string|object $post_type        The post type to show the search results help for.
 	 * @param string        $help_text_switch Switch the help text to one that's more appropriate
@@ -45,9 +45,9 @@ class Yoast_View_Utils {
 		/* translators: 1: expands to an indexable object's name, like a post type or taxonomy; 2: expands to <code>noindex</code>; 3: link open tag; 4: link close tag. */
 		$help_text = esc_html__( 'Not showing %1$s in the search results technically means those will have a %2$s robots meta and will be excluded from XML sitemaps. %3$sMore info on the search results settings%4$s.', 'wordpress-seo' );
 
-		if ( $help_text_switch === 'entertainment' ) {
+		if ( $help_text_switch === 'boiler' ) {
 			/* translators: 1: expands to an indexable object's name, like a post type or taxonomy; 2: expands to <code>noindex</code>; 3: link open tag; 4: link close tag. */
-			$help_text = esc_html__( 'Not showing the entertainment for %1$s in the search results technically means those will have a %2$s robots meta and will be excluded from XML sitemaps. %3$sMore info on the search results settings%4$s.', 'wordpress-seo' );
+			$help_text = esc_html__( 'Not showing the boiler for %1$s in the search results technically means those will have a %2$s robots meta and will be excluded from XML sitemaps. %3$sMore info on the search results settings%4$s.', 'wordpress-seo' );
 		}
 
 		$help_panel = new WPSEO_Admin_Help_Panel(
@@ -69,7 +69,7 @@ class Yoast_View_Utils {
 	/**
 	 * Generates the OpenGraph disabled alert, depending on whether the OpenGraph feature is disabled.
 	 *
-	 * @param string $type The type of message. Can be altered to homepage, taxonomies or entertainments. Empty string by default.
+	 * @param string $type The type of message. Can be altered to homepage, taxonomies or boilers. Empty string by default.
 	 *
 	 * @return string The alert. Returns an empty string if the setting is enabled.
 	 */
@@ -97,7 +97,7 @@ class Yoast_View_Utils {
 	/**
 	 * Generates the OpenGraph disabled alert text.
 	 *
-	 * @param string $type The type of message. Can be altered to homepage, taxonomies or entertainments. Empty string by default.
+	 * @param string $type The type of message. Can be altered to homepage, taxonomies or boilers. Empty string by default.
 	 *
 	 * @return string The alert. Returns an empty string if the setting is enabled.
 	 */
@@ -142,11 +142,11 @@ class Yoast_View_Utils {
 			);
 		}
 
-		if ( $type === 'entertainments' ) {
+		if ( $type === 'boilers' ) {
 			return sprintf(
 				/* translators: 1: link open tag; 2: link close tag. */
 				esc_html__(
-					'The social appearance settings for entertainments require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s.',
+					'The social appearance settings for boilers require Open Graph metadata (which is currently disabled). You can enable this in the %1$s‘Social’ settings under the ‘Facebook’ tab%2$s.',
 					'wordpress-seo'
 				),
 				'<a href="' . esc_url( admin_url( 'admin.php?page=wpseo_social#top#facebook' ) ) . '">',

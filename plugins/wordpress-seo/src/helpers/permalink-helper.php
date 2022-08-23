@@ -35,8 +35,8 @@ class Permalink_Helper {
 				return \get_term_link( $term, $term->taxonomy );
 			case $indexable->object_type === 'system-page' && $indexable->object_sub_type === 'search-page':
 				return \get_search_link();
-			case $indexable->object_type === 'post-type-entertainment':
-				return \get_post_type_entertainment_link( $indexable->object_sub_type );
+			case $indexable->object_type === 'post-type-boiler':
+				return \get_post_type_boiler_link( $indexable->object_sub_type );
 			case $indexable->object_type === 'user':
 				return \get_author_posts_url( $indexable->object_id );
 		}

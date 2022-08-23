@@ -10,9 +10,9 @@
 /* translators: %1$s expands to Yoast SEO */
 $wpseo_up_settings_header    = sprintf( __( '%1$s settings', 'wordpress-seo' ), 'Yoast SEO' );
 $wpseo_no_index_author_label = sprintf(
-	/* translators: %s expands to "this author's entertainments". */
+	/* translators: %s expands to "this author's boilers". */
 	__( 'Do not allow search engines to show %s in search results.', 'wordpress-seo' ),
-	__( 'this author\'s entertainments', 'wordpress-seo' )
+	__( 'this author\'s boilers', 'wordpress-seo' )
 );
 ?>
 

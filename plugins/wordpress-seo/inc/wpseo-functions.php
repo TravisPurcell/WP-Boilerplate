@@ -138,7 +138,7 @@ function wpseo_register_var_replacement( $replacevar_name, $replace_function, $t
  * WPML plugin support: Set titles for custom types / taxonomies as translatable.
  *
  * It adds new keys to a wpml-config.xml file for a custom post type title, metadesc,
- * title-ptentertainment and metadesc-ptentertainment fields translation.
+ * title-ptboiler and metadesc-ptboiler fields translation.
  * Documentation: http://wpml.org/documentation/support/language-configuration-files/
  *
  * @global $sitepress
@@ -159,8 +159,8 @@ function wpseo_wpml_config( $config ) {
 					foreach ( $translate_cp as $post_type ) {
 						$admin_texts[ $k ]['key'][]['attr']['name'] = 'title-' . $post_type;
 						$admin_texts[ $k ]['key'][]['attr']['name'] = 'metadesc-' . $post_type;
-						$admin_texts[ $k ]['key'][]['attr']['name'] = 'title-ptentertainment-' . $post_type;
-						$admin_texts[ $k ]['key'][]['attr']['name'] = 'metadesc-ptentertainment-' . $post_type;
+						$admin_texts[ $k ]['key'][]['attr']['name'] = 'title-ptboiler-' . $post_type;
+						$admin_texts[ $k ]['key'][]['attr']['name'] = 'metadesc-ptboiler-' . $post_type;
 
 						$translate_tax = $sitepress->get_translatable_taxonomies( false, $post_type );
 						if ( is_array( $translate_tax ) && $translate_tax !== [] ) {

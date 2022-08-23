@@ -29,7 +29,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				'taxonomy'       => array(),
 				'allow_null'     => 0,
 				'multiple'       => 0,
-				'allow_entertainments' => 1,
+				'allow_boilers' => 1,
 			);
 
 			// extra
@@ -135,14 +135,14 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 			$args = apply_filters( 'acf/fields/page_link/query/name=' . $field['name'], $args, $field, $options['post_id'] );
 			$args = apply_filters( 'acf/fields/page_link/query/key=' . $field['key'], $args, $field, $options['post_id'] );
 
-			// add entertainments to $results
-			if ( $field['allow_entertainments'] && $args['paged'] == 1 ) {
+			// add boilers to $results
+			if ( $field['allow_boilers'] && $args['paged'] == 1 ) {
 
 				// Generate unique list of URLs.
 				$links   = array();
 				$links[] = home_url();
 				foreach ( $args['post_type'] as $post_type ) {
-					$links[] = get_post_type_entertainment_link( $post_type );
+					$links[] = get_post_type_boiler_link( $post_type );
 				}
 				$links = array_filter( $links );
 				$links = array_unique( $links );
@@ -162,7 +162,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				}
 				if ( $children ) {
 					$results[] = array(
-						'text'     => __( 'entertainments', 'acf' ),
+						'text'     => __( 'boilers', 'acf' ),
 						'children' => $children,
 					);
 				}
@@ -487,13 +487,13 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				)
 			);
 
-			// allow_entertainments
+			// allow_boilers
 			acf_render_field_setting(
 				$field,
 				array(
-					'label'        => __( 'Allow entertainments URLs', 'acf' ),
+					'label'        => __( 'Allow boilers URLs', 'acf' ),
 					'instructions' => '',
-					'name'         => 'allow_entertainments',
+					'name'         => 'allow_boilers',
 					'type'         => 'true_false',
 					'ui'           => 1,
 				)
@@ -651,7 +651,7 @@ if ( ! class_exists( 'acf_field_page_link' ) ) :
 				$schema['minItems'] = 1;
 			}
 
-			if ( ! empty( $field['allow_entertainments'] ) ) {
+			if ( ! empty( $field['allow_boilers'] ) ) {
 				$schema['type'][]          = 'string';
 				$schema['items']['type'][] = 'string';
 			}

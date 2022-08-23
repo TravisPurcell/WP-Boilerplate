@@ -213,8 +213,8 @@ class Indexable_To_Postmeta_Helper {
 			$adv_settings_to_be_imported[] = 'noimageindex';
 			$no_adv_settings               = false;
 		}
-		if ( $indexable->is_robots_noentertainment === true ) {
-			$adv_settings_to_be_imported[] = 'noentertainment';
+		if ( $indexable->is_robots_noboiler === true ) {
+			$adv_settings_to_be_imported[] = 'noboiler';
 			$no_adv_settings               = false;
 		}
 		if ( $indexable->is_robots_nosnippet === true ) {

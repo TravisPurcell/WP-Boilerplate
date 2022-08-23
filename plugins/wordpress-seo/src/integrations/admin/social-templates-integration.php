@@ -19,7 +19,7 @@ use Yoast_Form;
 /**
  * Class Social_Templates_Integration.
  *
- * Adds the social fields to the meta tabs for post types, taxonomies and entertainments.
+ * Adds the social fields to the meta tabs for post types, taxonomies and boilers.
  */
 class Social_Templates_Integration implements Integration_Interface {
 
@@ -57,10 +57,10 @@ class Social_Templates_Integration implements Integration_Interface {
 	 * Initializes the integration.
 	 */
 	public function register_hooks() {
-		\add_action( 'Yoast\WP\SEO\admin_author_entertainments_meta', [ $this, 'social_author_entertainments' ] );
-		\add_action( 'Yoast\WP\SEO\admin_date_entertainments_meta', [ $this, 'social_date_entertainments' ] );
-		\add_action( 'Yoast\WP\SEO\admin_post_types_beforeentertainment', [ $this, 'social_post_type' ], \PHP_INT_MAX, 2 );
-		\add_action( 'Yoast\WP\SEO\admin_post_types_entertainment', [ $this, 'social_post_types_entertainment' ], 10, 2 );
+		\add_action( 'Yoast\WP\SEO\admin_author_boilers_meta', [ $this, 'social_author_boilers' ] );
+		\add_action( 'Yoast\WP\SEO\admin_date_boilers_meta', [ $this, 'social_date_boilers' ] );
+		\add_action( 'Yoast\WP\SEO\admin_post_types_beforeboiler', [ $this, 'social_post_type' ], \PHP_INT_MAX, 2 );
+		\add_action( 'Yoast\WP\SEO\admin_post_types_boiler', [ $this, 'social_post_types_boiler' ], 10, 2 );
 		\add_action( 'Yoast\WP\SEO\admin_taxonomies_meta', [ $this, 'social_taxonomies' ], 10, 2 );
 	}
 
@@ -91,27 +91,27 @@ class Social_Templates_Integration implements Integration_Interface {
 	}
 
 	/**
-	 * Build a set of social fields for the author entertainments in the Search Appearance section.
+	 * Build a set of social fields for the author boilers in the Search Appearance section.
 	 *
 	 * @param Yoast_Form $yform The form builder.
 	 */
-	public function social_author_entertainments( $yform ) {
+	public function social_author_boilers( $yform ) {
 		$identifier            = 'author-wpseo';
-		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_entertainment( 'author' );
-		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_entertainment( 'author' );
+		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_boiler( 'author' );
+		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_boiler( 'author' );
 
 		$this->build_social_fields( $yform, $identifier, $page_type_recommended, $page_type_specific );
 	}
 
 	/**
-	 * Build a set of social fields for the date entertainments in the Search Appearance section.
+	 * Build a set of social fields for the date boilers in the Search Appearance section.
 	 *
 	 * @param Yoast_Form $yform The form builder.
 	 */
-	public function social_date_entertainments( $yform ) {
-		$identifier            = 'entertainment-wpseo';
-		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_entertainment( 'date' );
-		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_entertainment( 'date' );
+	public function social_date_boilers( $yform ) {
+		$identifier            = 'boiler-wpseo';
+		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_boiler( 'date' );
+		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_boiler( 'date' );
 
 		$this->build_social_fields( $yform, $identifier, $page_type_recommended, $page_type_specific );
 	}
@@ -134,15 +134,15 @@ class Social_Templates_Integration implements Integration_Interface {
 	}
 
 	/**
-	 * Build a set of social fields for the post types entertainments in the Search Appearance section.
+	 * Build a set of social fields for the post types boilers in the Search Appearance section.
 	 *
 	 * @param Yoast_Form $yform          The form builder.
 	 * @param string     $post_type_name The name of the current post_type that gets the social fields added.
 	 */
-	public function social_post_types_entertainment( $yform, $post_type_name ) {
-		$identifier            = 'ptentertainment-' . $post_type_name;
-		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_entertainment( $post_type_name );
-		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_entertainment( $post_type_name );
+	public function social_post_types_boiler( $yform, $post_type_name ) {
+		$identifier            = 'ptboiler-' . $post_type_name;
+		$page_type_recommended = $this->get_admin_recommended_replace_vars()->determine_for_boiler( $post_type_name );
+		$page_type_specific    = $this->get_admin_editor_specific_replace_vars()->determine_for_boiler( $post_type_name );
 
 		$this->build_social_fields( $yform, $identifier, $page_type_recommended, $page_type_specific );
 	}

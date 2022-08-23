@@ -191,10 +191,10 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 
 				$this->html_single();
 
-				// entertainment
+				// boiler
 			} else {
 
-				$this->html_entertainment();
+				$this->html_boiler();
 
 			}
 
@@ -312,7 +312,7 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 
 
 		/**
-		 *  html_entertainment
+		 *  html_boiler
 		 *
 		 *  description
 		 *
@@ -323,7 +323,7 @@ if ( ! class_exists( 'ACF_Admin_Tool_Export' ) ) :
 		 *  @return  n/a
 		 */
 
-		function html_entertainment() {
+		function html_boiler() {
 
 			?>
 		<p><?php _e( 'Select the field groups you would like to export and then select your export method. Use the download button to export to a .json file which you can then import to another ACF installation. Use the generate button to export to PHP code which you can place in your theme.', 'acf' ); ?></p>

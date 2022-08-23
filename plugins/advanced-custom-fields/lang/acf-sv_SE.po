@@ -2070,7 +2070,7 @@ msgid "Page Link"
 msgstr "Sidlänk"
 
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arkiv"
 
 #: includes/fields/class-acf-field-page_link.php:262
@@ -2104,7 +2104,7 @@ msgid "All taxonomies"
 msgstr "Alla taxonomier"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Tillåt arkiv-URL:er"
 
 #: includes/fields/class-acf-field-page_link.php:526
@@ -3481,7 +3481,7 @@ msgstr "Elliot Condon"
 #~ "Ny fältgrupp funktionalitet tillåter dig att flytta ett fält mellan "
 #~ "grupper och föräldrar"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Ny arkivgrupp i page_link fältval"
 
 #~ msgid "Better Options Pages"

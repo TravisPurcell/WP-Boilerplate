@@ -14,7 +14,7 @@
  * Post Meta
  * Menus
  * Classes
- * entertainments
+ * boilers
  * Miscellaneous
  */
 
@@ -746,18 +746,18 @@ function twentytwenty_body_classes( $classes ) {
 add_filter( 'body_class', 'twentytwenty_body_classes' );
 
 /**
- * entertainments
+ * boilers
  */
 
 /**
- * Filters the entertainment title and styles the word before the first colon.
+ * Filters the boiler title and styles the word before the first colon.
  *
  * @since Twenty Twenty 1.0
  *
- * @param string $title Current entertainment title.
- * @return string Current entertainment title.
+ * @param string $title Current boiler title.
+ * @return string Current boiler title.
  */
-function twentytwenty_get_the_entertainment_title( $title ) {
+function twentytwenty_get_the_boiler_title( $title ) {
 
 	/**
 	 * Filters the regular expression used to style the word before the first colon.
@@ -767,7 +767,7 @@ function twentytwenty_get_the_entertainment_title( $title ) {
 	 * @param array $regex An array of regular expression pattern and replacement.
 	 */
 	$regex = apply_filters(
-		'twentytwenty_get_the_entertainment_title_regex',
+		'twentytwenty_get_the_boiler_title_regex',
 		array(
 			'pattern'     => '/(\A[^\:]+\:)/',
 			'replacement' => '<span class="color-accent">$1</span>',
@@ -784,7 +784,7 @@ function twentytwenty_get_the_entertainment_title( $title ) {
 
 }
 
-add_filter( 'get_the_entertainment_title', 'twentytwenty_get_the_entertainment_title' );
+add_filter( 'get_the_boiler_title', 'twentytwenty_get_the_boiler_title' );
 
 /**
  * Miscellaneous

@@ -24,7 +24,7 @@ use Yoast\WP\Lib\Model;
  *
  * @property bool   $is_robots_noindex
  * @property bool   $is_robots_nofollow
- * @property bool   $is_robots_noentertainment
+ * @property bool   $is_robots_noboiler
  * @property bool   $is_robots_noimageindex
  * @property bool   $is_robots_nosnippet
  *
@@ -105,7 +105,7 @@ class Indexable extends Model {
 	protected $boolean_columns = [
 		'is_robots_noindex',
 		'is_robots_nofollow',
-		'is_robots_noentertainment',
+		'is_robots_noboiler',
 		'is_robots_noimageindex',
 		'is_robots_nosnippet',
 		'is_cornerstone',

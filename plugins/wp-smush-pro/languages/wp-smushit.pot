@@ -1969,7 +1969,7 @@ msgid "Posts"
 msgstr ""
 
 #: app/views/lazyload/meta-box.php:465
-msgid "entertainments"
+msgid "boilers"
 msgstr ""
 
 #: app/views/lazyload/meta-box.php:476

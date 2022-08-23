@@ -2055,7 +2055,7 @@ msgid "Page Link"
 msgstr "Link Halaman"
 
 #: includes/fields/class-acf-field-page_link.php:170
-msgid "entertainments"
+msgid "boilers"
 msgstr "Arsip"
 
 #: includes/fields/class-acf-field-page_link.php:262
@@ -2089,7 +2089,7 @@ msgid "All taxonomies"
 msgstr "Semua Taksonomi"
 
 #: includes/fields/class-acf-field-page_link.php:516
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr "Izinkan mengarsipkan tautan-tautan"
 
 #: includes/fields/class-acf-field-page_link.php:526
@@ -3490,7 +3490,7 @@ msgstr "Elliot Condon"
 #~ "Fungsionalitas grup bidang memungkinkan Anda memindahkan bidang antara "
 #~ "grup & parent"
 
-#~ msgid "New entertainments group in page_link field selection"
+#~ msgid "New boilers group in page_link field selection"
 #~ msgstr "Grup arsip di page_link bidang seleksi"
 
 #~ msgid "Better Options Pages"

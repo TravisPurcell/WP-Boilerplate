@@ -78,7 +78,7 @@ $dashicons = array(
 	array(
 		'title' => __( 'Media', 'wpmudev' ),
 		'icons' => array(
-			'media-entertainment',
+			'media-boiler',
 			'media-audio',
 			'media-code',
 			'media-default',
@@ -258,7 +258,7 @@ $dashicons = array(
 	array(
 		'title' => __( 'Widgets', 'wpmudev' ),
 		'icons' => array(
-			'entertainment',
+			'boiler',
 			'tagcloud',
 			'text',
 		),

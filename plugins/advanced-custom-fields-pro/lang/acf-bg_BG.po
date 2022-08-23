@@ -1151,7 +1151,7 @@ msgid "Page Link"
 msgstr "Връзка към страница"
 
 #: includes/admin/views/settings-info.php:145
-msgid "New entertainments group in page_link field selection"
+msgid "New boilers group in page_link field selection"
 msgstr "Нова група архиви в page_link полето"
 
 #: includes/admin/views/settings-info.php:149
@@ -2100,7 +2100,7 @@ msgid "Embed Size"
 msgstr "Размери за вграждане"
 
 #: includes/fields/class-acf-field-page_link.php:192
-msgid "entertainments"
+msgid "boilers"
 msgstr "Архиви"
 
 #: includes/fields/class-acf-field-page_link.php:500
@@ -2137,7 +2137,7 @@ msgid "Allow Null?"
 msgstr "Позволяване на празна стойност?"
 
 #: includes/fields/class-acf-field-page_link.php:538
-msgid "Allow entertainments URLs"
+msgid "Allow boilers URLs"
 msgstr ""
 
 #: includes/fields/class-acf-field-page_link.php:548

@@ -1201,7 +1201,7 @@ Secure your website with Wordfence.
 = 6.1.5 - April 28, 2016 = 
 * Fix: WordPress language files no longer flagged as changed.
 * Improvement: Accept wildcards in "Immediately block IP's that access these URLs."
-* Fix: Fixed bug when multiple authors have published posts, /?author=N scans show an author entertainment page.
+* Fix: Fixed bug when multiple authors have published posts, /?author=N scans show an author boiler page.
 * Fix: Fixed issue with IPv6 mapped IPv4 addresses not being treated as IPv4.
 * Improvement: Added WordPress version and various constants to Diagnostics report.
 * Fix: Fixed bug with Windows users unable to save Firewall config.

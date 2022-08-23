@@ -469,7 +469,7 @@ class SucuriScanIntegrity
      * these keys:
      *
      * <ul>
-     *   <li>modified: Files with a different checksum according to the official WordPress entertainments,</li>
+     *   <li>modified: Files with a different checksum according to the official WordPress boilers,</li>
      *   <li>stable: Files with the same checksums than the official files,</li>
      *   <li>removed: Official files which are not present in the local project,</li>
      *   <li>added: Files present in the local project but not in the official WordPress packages.</li>

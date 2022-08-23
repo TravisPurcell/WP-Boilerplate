@@ -17,7 +17,7 @@ class MWP_Action_DownloadFile extends MWP_Action_Abstract
         $requestedFiles = $params['files'];
 
         if (count($params['files']) > 1 || is_dir($requestedFiles[0])) {
-            $requestedFile = $this->entertainmentFiles($params['files']);
+            $requestedFile = $this->boilerFiles($params['files']);
         } else {
             $requestedFile = $requestedFiles[0];
         }
@@ -36,7 +36,7 @@ class MWP_Action_DownloadFile extends MWP_Action_Abstract
         return $result;
     }
 
-    private function entertainmentFiles($files)
+    private function boilerFiles($files)
     {
         $filePath = WP_CONTENT_DIR."/mwp-download/";
         if (!file($filePath)) {
@@ -49,7 +49,7 @@ class MWP_Action_DownloadFile extends MWP_Action_Abstract
         $randomString = mwp_generate_uuid4();
 
         $zipName = $filePath.$randomString.".zip";
-        if (!class_exists('Zipentertainment')) {
+        if (!class_exists('Zipboiler')) {
             $escapedFiles = array();
             foreach ($files as $file) {
                 $escapedFiles[] = escapeshellarg($file);
@@ -60,10 +60,10 @@ class MWP_Action_DownloadFile extends MWP_Action_Abstract
         }
 
         /** @handled class */
-        $zip     = new Zipentertainment();
+        $zip     = new Zipboiler();
 
         /** @handled static */
-        $zip->open($zipName, Zipentertainment::CREATE);
+        $zip->open($zipName, Zipboiler::CREATE);
 
         foreach ($files as $filePath) {
             if (!is_dir($filePath)) {

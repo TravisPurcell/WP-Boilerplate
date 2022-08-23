@@ -34,28 +34,28 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		'separator'                        => 'sc-dash',
 		'title-home-wpseo'                 => '%%sitename%% %%page%% %%sep%% %%sitedesc%%', // Text field.
 		'title-author-wpseo'               => '', // Text field.
-		'title-entertainment-wpseo'              => '%%date%% %%page%% %%sep%% %%sitename%%', // Text field.
+		'title-boiler-wpseo'              => '%%date%% %%page%% %%sep%% %%sitename%%', // Text field.
 		'title-search-wpseo'               => '', // Text field.
 		'title-404-wpseo'                  => '', // Text field.
 
 		'social-title-author-wpseo'        => '%%name%%', // Text field.
-		'social-title-entertainment-wpseo'       => '%%date%%', // Text field.
+		'social-title-boiler-wpseo'       => '%%date%%', // Text field.
 		'social-description-author-wpseo'  => '', // Text area.
-		'social-description-entertainment-wpseo' => '', // Text area.
+		'social-description-boiler-wpseo' => '', // Text area.
 		'social-image-url-author-wpseo'    => '', // Hidden input field.
-		'social-image-url-entertainment-wpseo'   => '', // Hidden input field.
+		'social-image-url-boiler-wpseo'   => '', // Hidden input field.
 		'social-image-id-author-wpseo'     => 0, // Hidden input field.
-		'social-image-id-entertainment-wpseo'    => 0, // Hidden input field.
+		'social-image-id-boiler-wpseo'    => 0, // Hidden input field.
 
 		'metadesc-home-wpseo'              => '', // Text area.
 		'metadesc-author-wpseo'            => '', // Text area.
-		'metadesc-entertainment-wpseo'           => '', // Text area.
+		'metadesc-boiler-wpseo'           => '', // Text area.
 		'rssbefore'                        => '', // Text area.
 		'rssafter'                         => '', // Text area.
 
 		'noindex-author-wpseo'             => false,
 		'noindex-author-noposts-wpseo'     => true,
-		'noindex-entertainment-wpseo'            => true,
+		'noindex-boiler-wpseo'            => true,
 
 		'disable-author'                   => false,
 		'disable-date'                     => false,
@@ -65,7 +65,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		'breadcrumbs-404crumb'             => '', // Text field.
 		'breadcrumbs-display-blog-page'    => true,
 		'breadcrumbs-boldlast'             => false,
-		'breadcrumbs-entertainmentprefix'        => '', // Text field.
+		'breadcrumbs-boilerprefix'        => '', // Text field.
 		'breadcrumbs-enable'               => true,
 		'breadcrumbs-home'                 => '', // Text field.
 		'breadcrumbs-prefix'               => '', // Text field.
@@ -99,10 +99,10 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		 * - 'noindex-' . $pt->name              => false;
 		 * - 'display-metabox-pt-' . $pt->name   => false;
 		 *
-		 * - 'title-ptentertainment-' . $pt->name      => ''; // Text field.
-		 * - 'metadesc-ptentertainment-' . $pt->name   => ''; // Text field.
-		 * - 'bctitle-ptentertainment-' . $pt->name    => ''; // Text field.
-		 * - 'noindex-ptentertainment-' . $pt->name    => false;
+		 * - 'title-ptboiler-' . $pt->name      => ''; // Text field.
+		 * - 'metadesc-ptboiler-' . $pt->name   => ''; // Text field.
+		 * - 'bctitle-ptboiler-' . $pt->name    => ''; // Text field.
+		 * - 'noindex-ptboiler-' . $pt->name    => false;
 		 *
 		 * - 'title-tax-' . $tax->name           => '''; // Text field.
 		 * - 'metadesc-tax-' . $tax->name        => ''; // Text field.
@@ -131,7 +131,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		'metadesc-',
 		'noindex-',
 		'display-metabox-pt-',
-		'bctitle-ptentertainment-',
+		'bctitle-ptboiler-',
 		'post_types-',
 		'taxonomy-',
 		'schema-page-type-',
@@ -251,7 +251,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		$this->defaults['rssafter'] = sprintf( __( 'The post %1$s appeared first on %2$s.', 'wordpress-seo' ), '%%POSTLINK%%', '%%BLOGLINK%%' );
 
 		$this->defaults['breadcrumbs-404crumb']      = __( 'Error 404: Page not found', 'wordpress-seo' );
-		$this->defaults['breadcrumbs-entertainmentprefix'] = __( 'entertainments for', 'wordpress-seo' );
+		$this->defaults['breadcrumbs-boilerprefix'] = __( 'boilers for', 'wordpress-seo' );
 		$this->defaults['breadcrumbs-home']          = __( 'Home', 'wordpress-seo' );
 		$this->defaults['breadcrumbs-searchprefix']  = __( 'You searched for', 'wordpress-seo' );
 	}
@@ -280,7 +280,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 		if ( $post_type_objects ) {
 			/* translators: %s expands to the name of a post type (plural). */
-			$entertainment = sprintf( __( '%s entertainment', 'wordpress-seo' ), '%%pt_plural%%' );
+			$boiler = sprintf( __( '%s boiler', 'wordpress-seo' ), '%%pt_plural%%' );
 
 			foreach ( $post_type_objects as $pt ) {
 				$enriched_defaults[ 'title-' . $pt->name ]                   = '%%title%% %%page%% %%sep%% %%sitename%%'; // Text field.
@@ -298,16 +298,16 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 					$enriched_defaults[ 'social-image-id-' . $pt->name ]    = 0; // Hidden input field.
 				}
 
-				// Custom post types that have entertainments.
-				if ( ! $pt->_builtin && WPSEO_Post_Type::has_entertainment( $pt ) ) {
-					$enriched_defaults[ 'title-ptentertainment-' . $pt->name ]              = $entertainment . ' %%page%% %%sep%% %%sitename%%'; // Text field.
-					$enriched_defaults[ 'metadesc-ptentertainment-' . $pt->name ]           = ''; // Text area.
-					$enriched_defaults[ 'bctitle-ptentertainment-' . $pt->name ]            = ''; // Text field.
-					$enriched_defaults[ 'noindex-ptentertainment-' . $pt->name ]            = false;
-					$enriched_defaults[ 'social-title-ptentertainment-' . $pt->name ]       = $entertainment; // Text field.
-					$enriched_defaults[ 'social-description-ptentertainment-' . $pt->name ] = ''; // Text area.
-					$enriched_defaults[ 'social-image-url-ptentertainment-' . $pt->name ]   = ''; // Hidden input field.
-					$enriched_defaults[ 'social-image-id-ptentertainment-' . $pt->name ]    = 0; // Hidden input field.
+				// Custom post types that have boilers.
+				if ( ! $pt->_builtin && WPSEO_Post_Type::has_boiler( $pt ) ) {
+					$enriched_defaults[ 'title-ptboiler-' . $pt->name ]              = $boiler . ' %%page%% %%sep%% %%sitename%%'; // Text field.
+					$enriched_defaults[ 'metadesc-ptboiler-' . $pt->name ]           = ''; // Text area.
+					$enriched_defaults[ 'bctitle-ptboiler-' . $pt->name ]            = ''; // Text field.
+					$enriched_defaults[ 'noindex-ptboiler-' . $pt->name ]            = false;
+					$enriched_defaults[ 'social-title-ptboiler-' . $pt->name ]       = $boiler; // Text field.
+					$enriched_defaults[ 'social-description-ptboiler-' . $pt->name ] = ''; // Text area.
+					$enriched_defaults[ 'social-image-url-ptboiler-' . $pt->name ]   = ''; // Hidden input field.
+					$enriched_defaults[ 'social-image-id-ptboiler-' . $pt->name ]    = 0; // Hidden input field.
 				}
 			}
 		}
@@ -316,16 +316,16 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 		if ( $taxonomy_objects ) {
 			/* translators: %s expands to the variable used for term title. */
-			$entertainments = sprintf( __( '%s entertainments', 'wordpress-seo' ), '%%term_title%%' );
+			$boilers = sprintf( __( '%s boilers', 'wordpress-seo' ), '%%term_title%%' );
 
 			foreach ( $taxonomy_objects as $tax ) {
-				$enriched_defaults[ 'title-tax-' . $tax->name ]           = $entertainments . ' %%page%% %%sep%% %%sitename%%'; // Text field.
+				$enriched_defaults[ 'title-tax-' . $tax->name ]           = $boilers . ' %%page%% %%sep%% %%sitename%%'; // Text field.
 				$enriched_defaults[ 'metadesc-tax-' . $tax->name ]        = ''; // Text area.
 				$enriched_defaults[ 'display-metabox-tax-' . $tax->name ] = true;
 
 				$enriched_defaults[ 'noindex-tax-' . $tax->name ] = ( $tax->name === 'post_format' );
 
-				$enriched_defaults[ 'social-title-tax-' . $tax->name ]       = $entertainments; // Text field.
+				$enriched_defaults[ 'social-title-tax-' . $tax->name ]       = $boilers; // Text field.
 				$enriched_defaults[ 'social-description-tax-' . $tax->name ] = ''; // Text area.
 				$enriched_defaults[ 'social-image-url-tax-' . $tax->name ]   = ''; // Hidden input field.
 				$enriched_defaults[ 'social-image-id-tax-' . $tax->name ]    = 0; // Hidden input field.
@@ -379,7 +379,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 				/* Breadcrumbs text fields. */
 				case 'breadcrumbs-404crumb':
-				case 'breadcrumbs-entertainmentprefix':
+				case 'breadcrumbs-boilerprefix':
 				case 'breadcrumbs-home':
 				case 'breadcrumbs-prefix':
 				case 'breadcrumbs-searchprefix':
@@ -395,15 +395,15 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 				/*
 				 * Covers:
-				 *  'title-home-wpseo', 'title-author-wpseo', 'title-entertainment-wpseo', // phpcs:ignore Squiz.PHP.CommentedOutCode.Found -- This isn't commented out code.
+				 *  'title-home-wpseo', 'title-author-wpseo', 'title-boiler-wpseo', // phpcs:ignore Squiz.PHP.CommentedOutCode.Found -- This isn't commented out code.
 				 *  'title-search-wpseo', 'title-404-wpseo'
 				 *  'title-' . $pt->name
-				 *  'title-ptentertainment-' . $pt->name
+				 *  'title-ptboiler-' . $pt->name
 				 *  'title-tax-' . $tax->name
 				 *  'social-title-' . $pt->name
-				 *  'social-title-ptentertainment-' . $pt->name
+				 *  'social-title-ptboiler-' . $pt->name
 				 *  'social-title-tax-' . $tax->name
-				 *  'social-title-author-wpseo', 'social-title-entertainment-wpseo'
+				 *  'social-title-author-wpseo', 'social-title-boiler-wpseo'
 				 *  'open_graph_frontpage_title'
 				 */
 				case 'website_name':
@@ -444,9 +444,9 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 				/*
 				 * Covers:
 				 *  'social-image-url-' . $pt->name
-				 *  'social-image-url-ptentertainment-' . $pt->name
+				 *  'social-image-url-ptboiler-' . $pt->name
 				 *  'social-image-url-tax-' . $tax->name
-				 *  'social-image-url-author-wpseo', 'social-image-url-entertainment-wpseo'
+				 *  'social-image-url-author-wpseo', 'social-image-url-boiler-wpseo'
 				 */
 				case 'social-image-url-':
 					$this->validate_url( $key, $dirty, $old, $clean );
@@ -454,20 +454,20 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 				/*
 				 * Covers:
-				 *  'metadesc-home-wpseo', 'metadesc-author-wpseo', 'metadesc-entertainment-wpseo'
+				 *  'metadesc-home-wpseo', 'metadesc-author-wpseo', 'metadesc-boiler-wpseo'
 				 *  'metadesc-' . $pt->name
-				 *  'metadesc-ptentertainment-' . $pt->name
+				 *  'metadesc-ptboiler-' . $pt->name
 				 *  'metadesc-tax-' . $tax->name
 				 *  and also:
-				 *  'bctitle-ptentertainment-' . $pt->name
+				 *  'bctitle-ptboiler-' . $pt->name
 				 *  'social-description-' . $pt->name
-				 *  'social-description-ptentertainment-' . $pt->name
+				 *  'social-description-ptboiler-' . $pt->name
 				 *  'social-description-tax-' . $tax->name
-				 *  'social-description-author-wpseo', 'social-description-entertainment-wpseo'
+				 *  'social-description-author-wpseo', 'social-description-boiler-wpseo'
 				 *  'open_graph_frontpage_desc'
 				 */
 				case 'metadesc-':
-				case 'bctitle-ptentertainment-':
+				case 'bctitle-ptboiler-':
 				case 'company_name':
 				case 'person_name':
 				case 'social-description-':
@@ -570,9 +570,9 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 				 *  'company_or_person_user_id'
 				 *  'company_logo_id', 'person_logo_id', 'open_graph_frontpage_image_id'
 				 *  'social-image-id-' . $pt->name
-				 *  'social-image-id-ptentertainment-' . $pt->name
+				 *  'social-image-id-ptboiler-' . $pt->name
 				 *  'social-image-id-tax-' . $tax->name
-				 *  'social-image-id-author-wpseo', 'social-image-id-entertainment-wpseo'
+				 *  'social-image-id-author-wpseo', 'social-image-id-boiler-wpseo'
 				 */
 				case 'company_or_person_user_id':
 				case 'company_logo_id':
@@ -645,9 +645,9 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 				/*
 				 * Covers:
-				 *  'noindex-author-wpseo', 'noindex-author-noposts-wpseo', 'noindex-entertainment-wpseo'
+				 *  'noindex-author-wpseo', 'noindex-author-noposts-wpseo', 'noindex-boiler-wpseo'
 				 *  'noindex-' . $pt->name
-				 *  'noindex-ptentertainment-' . $pt->name
+				 *  'noindex-ptboiler-' . $pt->name
 				 *  'noindex-tax-' . $tax->name
 				 *  'forcerewritetitle':
 				 *  'noodp':
@@ -696,7 +696,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 
 		if ( is_array( $post_types ) && $post_types !== [] ) {
 			foreach ( $post_types as $type ) {
-				if ( WPSEO_Post_Type::has_entertainment( $type ) ) {
+				if ( WPSEO_Post_Type::has_boiler( $type ) ) {
 					$allowed_post_types[] = $type->name;
 				}
 			}
@@ -750,7 +750,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 			$move = [
 				'noindexauthor'     => 'noindex-author',
 				'disableauthor'     => 'disable-author',
-				'noindexdate'       => 'noindex-entertainment',
+				'noindexdate'       => 'noindex-boiler',
 				'noindexcat'        => 'noindex-category',
 				'noindextag'        => 'noindex-post_tag',
 				'noindexpostformat' => 'noindex-post_format',
@@ -774,7 +774,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		/*
 		 * Renaming these options to avoid ever overwritting these if a (bloody stupid) user /
 		 * programmer would use any of the following as a custom post type or custom taxonomy:
-		 * 'home', 'author', 'entertainment', 'search', '404', 'subpages'.
+		 * 'home', 'author', 'boiler', 'search', '404', 'subpages'.
 		 *
 		 * Similarly, renaming the tax options to avoid a custom post type and a taxonomy
 		 * with the same name occupying the same option.
@@ -782,14 +782,14 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 		$rename = [
 			'title-home'       => 'title-home-wpseo',
 			'title-author'     => 'title-author-wpseo',
-			'title-entertainment'    => 'title-entertainment-wpseo',
+			'title-boiler'    => 'title-boiler-wpseo',
 			'title-search'     => 'title-search-wpseo',
 			'title-404'        => 'title-404-wpseo',
 			'metadesc-home'    => 'metadesc-home-wpseo',
 			'metadesc-author'  => 'metadesc-author-wpseo',
-			'metadesc-entertainment' => 'metadesc-entertainment-wpseo',
+			'metadesc-boiler' => 'metadesc-boiler-wpseo',
 			'noindex-author'   => 'noindex-author-wpseo',
-			'noindex-entertainment'  => 'noindex-entertainment-wpseo',
+			'noindex-boiler'  => 'noindex-boiler-wpseo',
 		];
 		foreach ( $rename as $old => $new ) {
 			if ( isset( $option_value[ $old ] ) && ! isset( $option_value[ $new ] ) ) {
@@ -863,7 +863,7 @@ class WPSEO_Option_Titles extends WPSEO_Option {
 					/* Text fields. */
 					case 'title-':
 					case 'metadesc-':
-					case 'bctitle-ptentertainment-':
+					case 'bctitle-ptboiler-':
 						$option_value[ $key ] = WPSEO_Utils::sanitize_text_field( $value );
 						break;
 

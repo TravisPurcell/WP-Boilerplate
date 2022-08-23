@@ -3,7 +3,7 @@
 /**
  *  html-admin-tools
  *
- *  View to output admin tools for both entertainment and single
+ *  View to output admin tools for both boiler and single
  *
  *  @date    20/10/17
  *  @since   5.6.3

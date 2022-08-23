@@ -63,7 +63,7 @@ class Indexable_General_Indexation_Action implements Indexation_Action_Interface
 	}
 
 	/**
-	 * Creates indexables for unindexed system pages, the date entertainment, and the homepage.
+	 * Creates indexables for unindexed system pages, the date boiler, and the homepage.
 	 *
 	 * @return Indexable[] The created indexables.
 	 */
@@ -79,8 +79,8 @@ class Indexable_General_Indexation_Action implements Indexation_Action_Interface
 			$indexables[] = $this->indexable_repository->find_for_system_page( 'search-result' );
 		}
 
-		if ( isset( $indexables_to_create['date_entertainment'] ) ) {
-			$indexables[] = $this->indexable_repository->find_for_date_entertainment();
+		if ( isset( $indexables_to_create['date_boiler'] ) ) {
+			$indexables[] = $this->indexable_repository->find_for_date_boiler();
 		}
 		if ( isset( $indexables_to_create['home_page'] ) ) {
 			$indexables[] = $this->indexable_repository->find_for_home_page();
@@ -116,8 +116,8 @@ class Indexable_General_Indexation_Action implements Indexation_Action_Interface
 			$indexables_to_create['search'] = true;
 		}
 
-		if ( ! $this->indexable_repository->find_for_date_entertainment( false ) ) {
-			$indexables_to_create['date_entertainment'] = true;
+		if ( ! $this->indexable_repository->find_for_date_boiler( false ) ) {
+			$indexables_to_create['date_boiler'] = true;
 		}
 
 		$need_home_page_indexable = ( (int) \get_option( 'page_on_front' ) === 0 && \get_option( 'show_on_front' ) === 'posts' );

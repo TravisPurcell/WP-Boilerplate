@@ -142,8 +142,8 @@ class WP_Robots_Integration implements Integration_Interface {
 		if ( ! empty( $robots['nofollow'] ) ) {
 			$robots['follow'] = null;
 		}
-		if ( ! empty( $robots['noentertainment'] ) ) {
-			$robots['entertainment'] = null;
+		if ( ! empty( $robots['noboiler'] ) ) {
+			$robots['boiler'] = null;
 		}
 		if ( ! empty( $robots['noimageindex'] ) ) {
 			$robots['imageindex'] = null;
@@ -162,8 +162,8 @@ class WP_Robots_Integration implements Integration_Interface {
 			$robots['index']             = null;
 			$robots['imageindex']        = null;
 			$robots['noimageindex']      = null;
-			$robots['entertainment']           = null;
-			$robots['noentertainment']         = null;
+			$robots['boiler']           = null;
+			$robots['noboiler']         = null;
 			$robots['snippet']           = null;
 			$robots['nosnippet']         = null;
 			$robots['max-snippet']       = null;

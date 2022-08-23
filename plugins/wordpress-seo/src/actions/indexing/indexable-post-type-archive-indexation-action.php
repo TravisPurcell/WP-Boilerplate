@@ -9,16 +9,16 @@ use Yoast\WP\SEO\Repositories\Indexable_Repository;
 use Yoast\WP\SEO\Values\Indexables\Indexable_Builder_Versions;
 
 /**
- * Reindexing action for post type entertainment indexables.
+ * Reindexing action for post type boiler indexables.
  *
  * @phpcs:disable Yoast.NamingConventions.ObjectNameDepth.MaxExceeded
  */
-class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_Action_Interface, Limited_Indexing_Action_Interface {
+class Indexable_Post_Type_boiler_Indexation_Action implements Indexation_Action_Interface, Limited_Indexing_Action_Interface {
 
 	/**
 	 * The transient cache key.
 	 */
-	const UNINDEXED_COUNT_TRANSIENT = 'wpseo_total_unindexed_post_type_entertainments';
+	const UNINDEXED_COUNT_TRANSIENT = 'wpseo_total_unindexed_post_type_boilers';
 
 	/**
 	 * The post type helper.
@@ -42,14 +42,14 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 	protected $builder;
 
 	/**
-	 * The current version of the post type entertainment indexable builder.
+	 * The current version of the post type boiler indexable builder.
 	 *
 	 * @var int
 	 */
 	protected $version;
 
 	/**
-	 * Indexation_Post_Type_entertainment_Action constructor.
+	 * Indexation_Post_Type_boiler_Action constructor.
 	 *
 	 * @param Indexable_Repository       $repository The indexable repository.
 	 * @param Indexable_Builder          $builder    The indexable builder.
@@ -65,15 +65,15 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 		$this->repository = $repository;
 		$this->builder    = $builder;
 		$this->post_type  = $post_type;
-		$this->version    = $versions->get_latest_version_for_type( 'post-type-entertainment' );
+		$this->version    = $versions->get_latest_version_for_type( 'post-type-boiler' );
 	}
 
 	/**
-	 * Returns the total number of unindexed post type entertainments.
+	 * Returns the total number of unindexed post type boilers.
 	 *
 	 * @param int $limit Limit the number of counted objects.
 	 *
-	 * @return int The total number of unindexed post type entertainments.
+	 * @return int The total number of unindexed post type boilers.
 	 */
 	public function get_total_unindexed( $limit = false ) {
 		$transient = \get_transient( static::UNINDEXED_COUNT_TRANSIENT );
@@ -83,7 +83,7 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 
 		\set_transient( static::UNINDEXED_COUNT_TRANSIENT, 0, \DAY_IN_SECONDS );
 
-		$result = \count( $this->get_unindexed_post_type_entertainments( $limit ) );
+		$result = \count( $this->get_unindexed_post_type_boilers( $limit ) );
 
 		\set_transient( static::UNINDEXED_COUNT_TRANSIENT, $result, \DAY_IN_SECONDS );
 
@@ -91,16 +91,16 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 	}
 
 	/**
-	 * Creates indexables for post type entertainments.
+	 * Creates indexables for post type boilers.
 	 *
 	 * @return Indexable[] The created indexables.
 	 */
 	public function index() {
-		$unindexed_post_type_entertainments = $this->get_unindexed_post_type_entertainments( $this->get_limit() );
+		$unindexed_post_type_boilers = $this->get_unindexed_post_type_boilers( $this->get_limit() );
 
 		$indexables = [];
-		foreach ( $unindexed_post_type_entertainments as $post_type_entertainment ) {
-			$indexables[] = $this->builder->build_for_post_type_entertainment( $post_type_entertainment );
+		foreach ( $unindexed_post_type_boilers as $post_type_boiler ) {
+			$indexables[] = $this->builder->build_for_post_type_boiler( $post_type_boiler );
 		}
 
 		if ( \count( $indexables ) > 0 ) {
@@ -111,17 +111,17 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 	}
 
 	/**
-	 * Returns the number of post type entertainments that will be indexed in a single indexing pass.
+	 * Returns the number of post type boilers that will be indexed in a single indexing pass.
 	 *
 	 * @return int The limit.
 	 */
 	public function get_limit() {
 		/**
-		 * Filter 'wpseo_post_type_entertainment_indexation_limit' - Allow filtering the number of posts indexed during each indexing pass.
+		 * Filter 'wpseo_post_type_boiler_indexation_limit' - Allow filtering the number of posts indexed during each indexing pass.
 		 *
 		 * @api int The maximum number of posts indexed.
 		 */
-		$limit = \apply_filters( 'wpseo_post_type_entertainment_indexation_limit', 25 );
+		$limit = \apply_filters( 'wpseo_post_type_boiler_indexation_limit', 25 );
 
 		if ( ! \is_int( $limit ) || $limit < 1 ) {
 			$limit = 25;
@@ -131,17 +131,17 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 	}
 
 	/**
-	 * Retrieves the list of post types for which no indexable for its entertainment page has been made yet.
+	 * Retrieves the list of post types for which no indexable for its boiler page has been made yet.
 	 *
 	 * @param int|false $limit Limit the number of retrieved indexables to this number.
 	 *
-	 * @return array The list of post types for which no indexable for its entertainment page has been made yet.
+	 * @return array The list of post types for which no indexable for its boiler page has been made yet.
 	 */
-	protected function get_unindexed_post_type_entertainments( $limit = false ) {
-		$post_types_with_entertainment_pages = $this->get_post_types_with_entertainment_pages();
-		$indexed_post_types            = $this->get_indexed_post_type_entertainments();
+	protected function get_unindexed_post_type_boilers( $limit = false ) {
+		$post_types_with_boiler_pages = $this->get_post_types_with_boiler_pages();
+		$indexed_post_types            = $this->get_indexed_post_type_boilers();
 
-		$unindexed_post_types = \array_diff( $post_types_with_entertainment_pages, $indexed_post_types );
+		$unindexed_post_types = \array_diff( $post_types_with_boiler_pages, $indexed_post_types );
 
 		if ( $limit ) {
 			return \array_slice( $unindexed_post_types, 0, $limit );
@@ -151,33 +151,33 @@ class Indexable_Post_Type_entertainment_Indexation_Action implements Indexation_
 	}
 
 	/**
-	 * Returns the names of all the post types that have entertainment pages.
+	 * Returns the names of all the post types that have boiler pages.
 	 *
-	 * @return array The list of names of all post types that have entertainment pages.
+	 * @return array The list of names of all post types that have boiler pages.
 	 */
-	protected function get_post_types_with_entertainment_pages() {
-		// We only want to index entertainment pages of public post types that have them.
+	protected function get_post_types_with_boiler_pages() {
+		// We only want to index boiler pages of public post types that have them.
 		$public_post_types       = $this->post_type->get_public_post_types( 'object' );
-		$post_types_with_entertainment = \array_filter( $public_post_types, [ $this->post_type, 'has_entertainment' ] );
+		$post_types_with_boiler = \array_filter( $public_post_types, [ $this->post_type, 'has_boiler' ] );
 
 		// We only need the post type names, not the objects.
 		$post_types = [];
-		foreach ( $post_types_with_entertainment as $post_type_with_entertainment ) {
-			$post_types[] = $post_type_with_entertainment->name;
+		foreach ( $post_types_with_boiler as $post_type_with_boiler ) {
+			$post_types[] = $post_type_with_boiler->name;
 		}
 
 		return $post_types;
 	}
 
 	/**
-	 * Retrieves the list of post type names for which an entertainment indexable exists.
+	 * Retrieves the list of post type names for which an boiler indexable exists.
 	 *
-	 * @return array The list of names of post types with unindexed entertainment pages.
+	 * @return array The list of names of post types with unindexed boiler pages.
 	 */
-	protected function get_indexed_post_type_entertainments() {
+	protected function get_indexed_post_type_boilers() {
 		$results = $this->repository->query()
 			->select( 'object_sub_type' )
-			->where( 'object_type', 'post-type-entertainment' )
+			->where( 'object_type', 'post-type-boiler' )
 			->where_equal( 'version', $this->version )
 			->find_array();
 

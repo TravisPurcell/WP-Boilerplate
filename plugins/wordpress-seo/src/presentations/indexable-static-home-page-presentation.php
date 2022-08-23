@@ -12,7 +12,7 @@ class Indexable_Static_Home_Page_Presentation extends Indexable_Post_Type_Presen
 	/**
 	 * Wraps the get_paginated_url pagination helper method.
 	 *
-	 * @param string $url  The un-paginated URL of the current entertainment.
+	 * @param string $url  The un-paginated URL of the current boiler.
 	 * @param string $page The page number to add on to $url for the $link tag.
 	 *
 	 * @return string The paginated URL.

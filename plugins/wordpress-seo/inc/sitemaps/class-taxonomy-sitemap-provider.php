@@ -6,7 +6,7 @@
  */
 
 /**
- * Sitemap provider for author entertainments.
+ * Sitemap provider for author boilers.
  */
 class WPSEO_Taxonomy_Sitemap_Provider implements WPSEO_Sitemap_Provider {
 

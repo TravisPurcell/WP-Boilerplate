@@ -49,8 +49,8 @@ class Aioseo_Validate_Data_Action extends Abstract_Aioseo_Importing_Action {
 	 *
 	 * @param wpdb                                               $wpdb                              The WordPress database instance.
 	 * @param Options_Helper                                     $options                           The options helper.
-	 * @param Aioseo_Custom_entertainment_Settings_Importing_Action    $custom_entertainment_action             The Custom entertainment Settings importing action.
-	 * @param Aioseo_Default_entertainment_Settings_Importing_Action   $default_entertainment_action            The Default entertainment Settings importing action.
+	 * @param Aioseo_Custom_boiler_Settings_Importing_Action    $custom_boiler_action             The Custom boiler Settings importing action.
+	 * @param Aioseo_Default_boiler_Settings_Importing_Action   $default_boiler_action            The Default boiler Settings importing action.
 	 * @param Aioseo_General_Settings_Importing_Action           $general_settings_action           The General Settings importing action.
 	 * @param Aioseo_Posttype_Defaults_Settings_Importing_Action $posttype_defaults_settings_action The Posttype Defaults Settings importing action.
 	 * @param Aioseo_Taxonomy_Settings_Importing_Action          $taxonomy_settings_action          The Taxonomy Settings importing action.
@@ -59,8 +59,8 @@ class Aioseo_Validate_Data_Action extends Abstract_Aioseo_Importing_Action {
 	public function __construct(
 		wpdb $wpdb,
 		Options_Helper $options,
-		Aioseo_Custom_entertainment_Settings_Importing_Action $custom_entertainment_action,
-		Aioseo_Default_entertainment_Settings_Importing_Action $default_entertainment_action,
+		Aioseo_Custom_boiler_Settings_Importing_Action $custom_boiler_action,
+		Aioseo_Default_boiler_Settings_Importing_Action $default_boiler_action,
 		Aioseo_General_Settings_Importing_Action $general_settings_action,
 		Aioseo_Posttype_Defaults_Settings_Importing_Action $posttype_defaults_settings_action,
 		Aioseo_Taxonomy_Settings_Importing_Action $taxonomy_settings_action,
@@ -70,8 +70,8 @@ class Aioseo_Validate_Data_Action extends Abstract_Aioseo_Importing_Action {
 		$this->options                    = $options;
 		$this->post_importing_action      = $post_importing_action;
 		$this->settings_importing_actions = [
-			$custom_entertainment_action,
-			$default_entertainment_action,
+			$custom_boiler_action,
+			$default_boiler_action,
 			$general_settings_action,
 			$posttype_defaults_settings_action,
 			$taxonomy_settings_action,

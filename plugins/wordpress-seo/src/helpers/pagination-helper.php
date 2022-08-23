@@ -57,7 +57,7 @@ class Pagination_Helper {
 	/**
 	 * Builds a paginated URL.
 	 *
-	 * @param string $url                   The un-paginated URL of the current entertainment.
+	 * @param string $url                   The un-paginated URL of the current boiler.
 	 * @param string $page                  The page number to add on to $url for the $link tag.
 	 * @param bool   $add_pagination_base   Optional. Whether to add the pagination base (`page`) to the url.
 	 * @param string $pagination_query_name Optional. The name of the query argument that holds the current page.
@@ -80,22 +80,22 @@ class Pagination_Helper {
 	}
 
 	/**
-	 * Gets the number of entertainment pages.
+	 * Gets the number of boiler pages.
 	 *
-	 * @return int The number of entertainment pages.
+	 * @return int The number of boiler pages.
 	 */
-	public function get_number_of_entertainment_pages() {
+	public function get_number_of_boiler_pages() {
 		$wp_query = $this->wp_query_wrapper->get_query();
 
 		return (int) $wp_query->max_num_pages;
 	}
 
 	/**
-	 * Returns the current page for paged entertainments.
+	 * Returns the current page for paged boilers.
 	 *
-	 * @return int The current entertainment page.
+	 * @return int The current boiler page.
 	 */
-	public function get_current_entertainment_page_number() {
+	public function get_current_boiler_page_number() {
 		$wp_query = $this->wp_query_wrapper->get_main_query();
 
 		return (int) $wp_query->get( 'paged' );
@@ -118,7 +118,7 @@ class Pagination_Helper {
 	 * @return int The current page number.
 	 */
 	public function get_current_page_number() {
-		// Get the page number for an entertainment page.
+		// Get the page number for an boiler page.
 		$page_number = \get_query_var( 'paged', 1 );
 		if ( $page_number > 1 ) {
 			return $page_number;

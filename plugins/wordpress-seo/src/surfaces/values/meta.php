@@ -231,7 +231,7 @@ class Meta {
 	protected function get_presenters() {
 		$presenters = $this->front_end->get_presenters( $this->context->page_type, $this->context );
 
-		if ( $this->context->page_type === 'Date_entertainment' ) {
+		if ( $this->context->page_type === 'Date_boiler' ) {
 			/**
 			 * Define a filter that removes objects of type Rel_Next_Presenter or Rel_Prev_Presenter from a list.
 			 *

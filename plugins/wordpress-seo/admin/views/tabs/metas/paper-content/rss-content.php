@@ -36,7 +36,7 @@ echo $rss_variables_help->get_panel_html();
 	<tbody>
 	<tr>
 		<td class="yoast-variable-name">%%AUTHORLINK%%</td>
-		<td class="yoast-variable-desc"><?php esc_html_e( 'A link to the entertainment for the post author, with the authors name as anchor text.', 'wordpress-seo' ); ?></td>
+		<td class="yoast-variable-desc"><?php esc_html_e( 'A link to the boiler for the post author, with the authors name as anchor text.', 'wordpress-seo' ); ?></td>
 	</tr>
 	<tr>
 		<td class="yoast-variable-name">%%POSTLINK%%</td>

@@ -166,7 +166,7 @@ class WooCommerce implements Integration_Interface {
 		}
 
 		foreach ( $indexables as $index => $indexable ) {
-			if ( $indexable->object_type === 'post-type-entertainment' && $indexable->object_sub_type === 'product' ) {
+			if ( $indexable->object_type === 'post-type-boiler' && $indexable->object_sub_type === 'product' ) {
 				$indexables[ $index ] = $this->repository->find_by_id_and_type( $shop_page_id, 'post' );
 			}
 		}
@@ -208,7 +208,7 @@ class WooCommerce implements Integration_Interface {
 			return $title;
 		}
 
-		if ( ! \is_entertainment() ) {
+		if ( ! \is_boiler() ) {
 			return $title;
 		}
 
@@ -244,7 +244,7 @@ class WooCommerce implements Integration_Interface {
 			return $description;
 		}
 
-		if ( ! \is_entertainment() ) {
+		if ( ! \is_boiler() ) {
 			return $description;
 		}
 
@@ -322,7 +322,7 @@ class WooCommerce implements Integration_Interface {
 			return null;
 		}
 
-		$current_page = \max( 1, $this->pagination_helper->get_current_entertainment_page_number() );
+		$current_page = \max( 1, $this->pagination_helper->get_current_boiler_page_number() );
 
 		if ( $rel === 'curr' && $current_page === 1 ) {
 			return $permalink;
@@ -340,7 +340,7 @@ class WooCommerce implements Integration_Interface {
 			return $this->pagination_helper->get_paginated_url( $permalink, ( $current_page - 1 ) );
 		}
 
-		if ( $rel === 'next' && $current_page < $this->pagination_helper->get_number_of_entertainment_pages() ) {
+		if ( $rel === 'next' && $current_page < $this->pagination_helper->get_number_of_boiler_pages() ) {
 			return $this->pagination_helper->get_paginated_url( $permalink, ( $current_page + 1 ) );
 		}
 
