@@ -1,10 +1,10 @@
 <?php
 /**
- * boiler functions and definitions
+ * entertainment functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package boiler
+ * @package entertainment
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
@@ -19,14 +19,14 @@ if ( ! defined( '_S_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function boiler_setup() {
+function entertainment_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on boiler, use a find and replace
-		* to change 'boiler' to the name of your theme in all the template files.
+		* If you're building a theme based on entertainment, use a find and replace
+		* to change 'entertainment' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'boiler', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'entertainment', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -48,13 +48,9 @@ function boiler_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'desktop_main' => esc_html__( 'Main Menu - Desktop', 'boiler' ),
-		'header' => esc_html__( 'Header', 'boiler' ),
-		'secondary' => esc_html__( 'Secondary Menu', 'boiler' ),
-		'footer' => esc_html__( 'Footer', 'boiler' ),
-		'sidebar' => esc_html__( 'Sidebar', 'boiler' ),
-		'sidebar-single' => esc_html__( 'Sidebar (Single)', 'boiler' ),
-		'sidebar-locations' => esc_html__( 'Sidebar (Locations)', 'boiler' )
+		'main' => esc_html__( 'Main Menu - Desktop', 'entertainment' ),
+		'footer' => esc_html__( 'Footer', 'entertainment' ),
+		'sidebar' => esc_html__( 'Sidebar', 'entertainment' ),
 	) );
 
 	/*
@@ -78,7 +74,7 @@ function boiler_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'boiler_custom_background_args',
+			'entertainment_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -104,7 +100,7 @@ function boiler_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'boiler_setup' );
+add_action( 'after_setup_theme', 'entertainment_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -113,22 +109,22 @@ add_action( 'after_setup_theme', 'boiler_setup' );
  *
  * @global int $content_width
  */
-function boiler_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'boiler_content_width', 640 );
+function entertainment_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'entertainment_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'boiler_content_width', 0 );
+add_action( 'after_setup_theme', 'entertainment_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function boiler_widgets_init() {
+function entertainment_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'boiler' ),
+			'name'          => esc_html__( 'Sidebar', 'entertainment' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'boiler' ),
+			'description'   => esc_html__( 'Add widgets here.', 'entertainment' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -136,26 +132,26 @@ function boiler_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'boiler_widgets_init' );
+add_action( 'widgets_init', 'entertainment_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function boiler_scripts() {
-	wp_enqueue_style( 'boiler-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
-	wp_style_add_data( 'boiler-style', 'rtl', 'replace' );
+function entertainment_scripts() {
+	wp_enqueue_style( 'entertainment-style', get_stylesheet_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
+	wp_style_add_data( 'entertainment-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'boiler-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'entertainment-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	
-	wp_enqueue_script( 'boiler-vendor', get_template_directory_uri() . '/dist/js/vendor.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'entertainment-vendor', get_template_directory_uri() . '/dist/js/vendor.js', array('jquery'), _S_VERSION, true );
 
-	wp_enqueue_script( 'boiler-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array('jquery', 'boiler-vendor'), _S_VERSION, true );
+	wp_enqueue_script( 'entertainment-scripts', get_template_directory_uri() . '/dist/js/bundle.js', array('jquery', 'entertainment-vendor'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'boiler_scripts' );
+add_action( 'wp_enqueue_scripts', 'entertainment_scripts' );
 
 /**
  * Implement the Custom Header feature.
@@ -188,27 +184,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
-/* Exclude Headings from Excerpt
--------------------------------------*/
-
-function wp_strip_header_tags( $excerpt='' ) {
-
-	$raw_excerpt = $excerpt;
-	if ( '' == $excerpt ) {
-		$excerpt = get_the_content(''); 
-		$excerpt = strip_shortcodes( $excerpt );
-		$excerpt = apply_filters('the_content', $excerpt);
-		$excerpt = str_replace(']]>', ']]&gt;', $excerpt);
-}
-
-$regex = '#(<h([1-6])[^>]*>)\s?(.*)?\s?(<\/h\2>)#';
-		$excerpt = preg_replace($regex,'', $excerpt);
-
-		$excerpt_length = apply_filters('excerpt_length', 55);
-		$excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-		$excerpt = wp_trim_words( $excerpt, $excerpt_length, $excerpt_more );
-
-return apply_filters('wp_trim_excerpt', preg_replace($regex,'', $excerpt), $raw_excerpt);
-}
-add_filter( 'get_the_excerpt', 'wp_strip_header_tags', 9);
