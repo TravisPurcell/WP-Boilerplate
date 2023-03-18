@@ -1,4 +1,4 @@
-# WP Boilerplate with GUlp
+# WP Boilerplate with Gulp
 
 This repo contains a complete wp-content directory for quickly setting up a local dev site for the Boiler theme. Most of the tools used for development are within the [boiler](themes/boiler) directory.
 
