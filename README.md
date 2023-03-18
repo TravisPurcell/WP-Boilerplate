@@ -1,4 +1,4 @@
-# WP Boilerplate
+# WP Boilerplate with GUlp
 
 This repo contains a complete wp-content directory for quickly setting up a local dev site for the Boiler theme. Most of the tools used for development are within the [boiler](themes/boiler) directory.
 
@@ -12,4 +12,3 @@ Once the node modules are installed there are three scripts available from the [
 
 * `gulp` or `npm run dev` will run browsersync and other packages for improving development workflow.
 * `npm run build` will output a production-ready zip folder that can be uploaded through the admin panel for testing updates without needing to change the theme version number.# WP-Boilerplate
-# WP-Boilerplate

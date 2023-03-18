@@ -1,0 +1,278 @@
+/* Variables
+---------------------------------------*/
+
+/***** Custom Colors */
+
+
+
+/***** Custom Fonts */
+$font__main: Arial;
+
+
+/* General
+---------------------------------------*/
+
+section {
+    padding: 2em 0;
+}
+
+body {
+    font-family: $font__main;
+    font-weight: 400;
+}
+
+h1 {
+  
+}
+
+h2 {
+  
+}
+
+h3 {
+  
+}
+
+h4 {
+   
+}
+
+p {
+
+}
+
+a {
+    font-family: $font__main;
+    text-decoration: none;
+
+    &:hover, &:focus, &:active {
+        text-decoration: underline;
+    }
+}
+
+a.btn {
+    padding: 0.75em 3.25em;
+
+    &:hover, &:active, &:focus {
+    }
+}
+
+a.inline {
+}
+
+@media (min-width: 768px) {
+
+    section {
+    }
+    
+    body {
+    }
+    
+    h1 {
+      
+    }
+    
+    h2 {
+      
+    }
+    
+    h3 {
+      
+    }
+    
+    h4 {
+       
+    }
+    
+    p {
+    
+    }
+
+    a {
+    
+        &:hover, &:focus, &:active {
+        }
+    }
+    
+    a.btn {
+    
+        &:hover, &:active, &:focus {
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    
+    section {
+    }
+    
+    body {
+    }
+    
+    h1 {
+      
+    }
+    
+    h2 {
+      
+    }
+    
+    h3 {
+      
+    }
+    
+    h4 {
+       
+    }
+    
+    p {
+    
+    }
+
+    a {
+    
+        &:hover, &:focus, &:active {
+        }
+    }
+    
+    a.btn {
+    
+        &:hover, &:active, &:focus {
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+    section {
+
+    }
+    
+    body {
+
+    }
+    
+    h1 {
+      
+    }
+    
+    h2 {
+      
+    }
+    
+    h3 {
+      
+    }
+    
+    h4 {
+       
+    }
+    
+    p {
+    
+    }
+
+    a {
+    
+        &:hover, &:focus, &:active {
+        }
+    }
+    
+    a.btn {
+    
+        &:hover, &:active, &:focus {
+        }
+    }
+}
+
+/* Header
+---------------------------------------*/
+
+header {
+  
+}
+
+@media (min-width: 768px) {
+
+    header {
+      
+    }
+}
+
+@media (min-width: 992px) {
+    
+    header {
+
+       
+    }
+}
+
+@media (min-width: 1200px) {
+
+    header {
+
+        
+    }
+}
+
+/* Hero
+---------------------------------------*/
+
+
+/* Section - 1
+---------------------------------------*/
+
+    .section-1 {
+
+    }
+
+    @media (min-width: 768px) {
+
+        .section-1 {
+
+        }
+    }
+
+    @media (min-width: 992px) {
+        
+        .section-1 {
+
+        } 
+    }
+
+    @media (min-width: 1200px) {
+        
+        .section-1 {
+
+        }
+    }
+
+
+/* Footer
+---------------------------------------*/
+
+footer {
+    padding: 2.5em 0;
+   
+}
+
+@media (min-width: 768px) {
+
+    footer {
+     
+    }
+}
+
+@media (min-width: 992px) {
+    
+    footer {
+      
+    }
+}
+
+@media (min-width: 1200px) {
+    
+    footer {
+       
+    }
+}
